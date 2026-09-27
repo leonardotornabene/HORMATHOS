@@ -1,8 +1,12 @@
-# HEXIS 3.1 — registro di riconciliazione V2
+> **English translation; the Italian original governs** (V3-012).
+> Original: `docs/V2_RECONCILIATION.md` at commit `5f1ec06` (tag `archive/pre-realign`), kept at this path until V3-012; SHA-256 `028f8f4832c4e9cdc26a6af1805c17a186b55f2e5ee5b86d368b9ec6177d784e`.
+> Translated on 2026-09-27. Structure, values and identifiers follow the original; numbers use English notation; commands, outputs and code blocks are reproduced unchanged; link targets are reproduced unchanged and resolve as they did at `5f1ec06`. Any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
 
-Piano utente: riallineamento → 2A M1–M3 → 2B persistenza → 2C evidenze → revisione separata → chiusura; nessun fit reale V3, push o merge. Base `8b4d50432724442465d4d3003a2d37717395126a`, ramo `codex/hexis31-v0-v1`, checkout richiesto già attivo, solo `?? scripts/` iniziale. Autorità: V3-001 e piano/JSON depositati; attesi immutabili.
+# HEXIS 3.1 — V2 reconciliation register
 
-Digest SHA-256 iniziali:
+User plan: realignment → 2A M1–M3 → 2B persistence → 2C evidence → separate review → closure; no real V3 fit, push or merge. Base `8b4d50432724442465d4d3003a2d37717395126a`, branch `codex/hexis31-v0-v1`, requested checkout already active, only `?? scripts/` initially. Authority: V3-001 and the deposited plan/JSON; expectations immutable.
+
+Initial SHA-256 digests:
 
 ```json
 {
@@ -12,58 +16,58 @@ Digest SHA-256 iniziali:
 }
 ```
 
-| Sottostadio | Stato | Evidenza |
+| Sub-stage | Status | Evidence |
 |---|---|---|
-| 1 — riallineamento | COMPLETATO — a535484 | 12 test documentali superati; attestazioni storiche conservate |
-| 2A — M1–M3 | COMPLETATO | 262 v31 pass; 25 sintetici + 9 stress; revisione separata delle correzioni superata |
-| 2B — M4 | COMPLETATO | 302 v31 pass; 86 test mirati pass |
-| 2C — M5 | COMPLETATO — 482cef0 | V3 ricalcolato; inventario completo; meccanismo provato su fixture e sulla suite reale |
-| 3 — revisione integrale | COMPLETATO — f3f8a65, 5dc7d1b, 0a6f644 | Verifiche indipendenti; difetti corretti test-first |
-| 4 — chiusura | COMPLETATO | V2 chiusa; figure §11.6 implementate (559dc40); arresto prima di V3 |
+| 1 — realignment | COMPLETED — a535484 | 12 documentary tests passed; historical attestations kept |
+| 2A — M1–M3 | COMPLETED | 262 v31 pass; 25 synthetic + 9 stress; separate review of the fixes passed |
+| 2B — M4 | COMPLETED | 302 v31 pass; 86 targeted tests pass |
+| 2C — M5 | COMPLETED — 482cef0 | V3 recomputed; complete inventory; mechanism proved on fixtures and on the real suite |
+| 3 — integral review | COMPLETED — f3f8a65, 5dc7d1b, 0a6f644 | Independent checks; defects fixed test-first |
+| 4 — closure | COMPLETED | V2 closed; §11.6 figures implemented (559dc40); stop before V3 |
 
-La modifica dei test documentali sostituisce l'attesa di una dichiarazione generale non giustificata con la rettifica richiesta dall'utente; non indebolisce proprietà scientifiche.
+The change to the documentary tests replaces the expectation of an unjustified general statement with the correction requested by the user; it does not weaken scientific properties.
 
-## 2A — verifiche e divergenze dimostrate
+## 2A — checks and demonstrated divergences
 
-Base riprodotta: `uv run pytest -m v31 -q` → `240 passed, 338 deselected in 87.27s (0:01:27)`; documentazione dopo rettifica → `12 passed in 0.12s`.
+Base reproduced: `uv run pytest -m v31 -q` → `240 passed, 338 deselected in 87.27s (0:01:27)`; documentation after the correction → `12 passed in 0.12s`.
 
-Il confronto M1–M3 ha rilevato istogrammi di supporto mancanti (§9.1), incontri con rami non osservati persi quando la massa va in underflow, slot duplicati/provenienza non biunivoca e simboli invalidi non rifiutati dal percorso score. Dodici regressioni prima rosse, poi verdi. Generatori, RNG, formule CTW/Q/R1 e attesi congelati restano invariati.
+The M1–M3 comparison found missing support histograms (§9.1), encounters with unobserved branches lost when the mass underflows, duplicated slots/non-bijective provenance and invalid symbols not refused by the score path. Twelve regressions first red, then green. Generators, RNG, CTW/Q/R1 formulas and frozen expectations remain unchanged.
 
-La batteria restituiva successo con righe mancanti/duplicate, stress non finito o fuori normalizzazione, conteggi/supporti/deficit corrotti e PASS non coerente con le perdite: dieci fallimenti osservati prima della correzione. La revisione separata ha inoltre richiesto il confronto dell'oracle registrato con la fixture congelata. I nove stress mantengono un criterio di validità numerica, senza richiesta di raggiungere l'oracle.
+The battery returned success with missing/duplicated rows, non-finite or unnormalized stress, corrupted counts/supports/deficits and a PASS inconsistent with the losses: ten failures observed before the fix. The separate review also required the comparison of the recorded oracle with the frozen fixture. The nine stresses keep a criterion of numerical validity, without requiring them to reach the oracle.
 
-Verifica mirata protocollo: `uv run pytest -q tests/test_v31_scores.py tests/test_v31_r1.py tests/test_v31_sampling.py` → `58 passed in 16.50s`. Un primo controllo del nuovo validatore ha rifiutato anche log-evidenze NumPy valide; la serializzazione esplicita float64→float nativo nel record corregge il tipo senza modificare il valore.
+Targeted protocol check: `uv run pytest -q tests/test_v31_scores.py tests/test_v31_r1.py tests/test_v31_sampling.py` → `58 passed in 16.50s`. A first check of the new validator also refused valid NumPy log-evidences; the explicit float64→native float serialization in the record corrects the type without changing the value.
 
-Chiusura 2A: `uv run pytest -m v31 -q` → `262 passed, 338 deselected in 77.00s (0:01:16)`, exit 0, nessuno skip/xfail. Include i 25 sintetici e i nove stress. Review separata delle correzioni conclusa senza rilievi aperti dopo regressione oracle-drift rossa/verde.
+2A closure: `uv run pytest -m v31 -q` → `262 passed, 338 deselected in 77.00s (0:01:16)`, exit 0, no skip/xfail. It includes the 25 synthetic cases and the nine stresses. Separate review of the fixes concluded without open findings after a red/green oracle-drift regression.
 
-## 2B — persistenza e controlli semantici
+## 2B — persistence and semantic checks
 
-Sette regressioni iniziali rosse riproducono lock ereditato, documento senza target, risorse assenti e famiglie/bracci non controllati. Aggiunte regressioni rosse per semi bool/float, somme corrotte in resume, misure risorse mancanti/duplicate/negative o con unità ambigue e JSON con chiavi duplicate. Il lettore verifica ora schemi esatti, chiavi e conteggi, denominatori del corpus/budget e masse; ricostruisce da C0 anche somme e conteggi validi/null di L_resolved e somme unseen. La tolleranza CE è 1e-9 bit/target (§6.5); diagnostiche e conservazione delle masse usano 1e-12 per posizione per l'accumulo numerico. Chiavi e conteggi restano esatti.
+Seven initial red regressions reproduce an inherited lock, a document without targets, absent resources and unchecked families/arms. Red regressions added for bool/float seeds, corrupted sums on resume, missing/duplicated/negative resource measurements or ones with ambiguous units, and JSON with duplicate keys. The reader now checks exact schemas, keys and counts, corpus/budget denominators and masses; it reconstructs from C0 also sums and valid/null counts of L_resolved and unseen sums. The CE tolerance is 1e-9 bits/target (§6.5); diagnostics and mass conservation use 1e-12 per position for numerical accumulation. Keys and counts remain exact.
 
-Le righe documento/fascia vuote sono prodotte e ricostruite usando tutti i documenti held-out, con somme zero e null motivati nel report. Il precedente test negativo ora corrompe esplicitamente il risultato: conserva il rifiuto dell'omissione senza richiedere che il produttore continui a omettere le righe.
+Empty document/band rows are produced and reconstructed using all the held-out documents, with zero sums and nulls with their reason in the report. The previous negative test now corrupts the result explicitly: it keeps the refusal of the omission without requiring the producer to keep omitting the rows.
 
-Tempi di fit e valutazione in secondi da `time.perf_counter`; RSS in byte da `resource.getrusage(RUSAGE_SELF).ru_maxrss`, massimo storico del processo osservato per modello, non misura isolata dell'allocazione del singolo modello. Tutte le misure sono in `metadata`, escluse da identità, partizioni e tabelle deterministiche. Nessuna previsione della campagna.
+Fit and evaluation times in seconds from `time.perf_counter`; RSS in bytes from `resource.getrusage(RUSAGE_SELF).ru_maxrss`, the historical maximum of the process observed per model, not an isolated measurement of the allocation of the single model. All measurements are in `metadata`, excluded from identity, partitions and deterministic tables. No forecast of the campaign.
 
-R1 conserva ora sia frequenze empiriche sia smussate accanto ai conteggi (§8.3), senza cambiare la JSD. Revisioni dei cambiamenti separate dalla scrittura hanno segnalato e fatto coprire anche la completezza dei metadati delle risorse. Nessun fit reale.
+R1 now keeps both empirical and smoothed frequencies beside the counts (§8.3), without changing the JSD. Reviews of the changes, separate from the writing, flagged and had covered also the completeness of the resource metadata. No real fit.
 
-Chiusura 2B: `uv run pytest -q tests/test_v31_report_semantics.py tests/test_v31_completion.py tests/test_v31_descriptive.py --tb=short` → `86 passed in 17.65s`; `uv run pytest -m v31 -q` → `302 passed, 338 deselected in 82.57s (0:01:22)`, exit 0 e zero skip/xfail.
+2B closure: `uv run pytest -q tests/test_v31_report_semantics.py tests/test_v31_completion.py tests/test_v31_descriptive.py --tb=short` → `86 passed in 17.65s`; `uv run pytest -m v31 -q` → `302 passed, 338 deselected in 82.57s (0:01:22)`, exit 0 and zero skip/xfail.
 
-## 2C — evidenze nel manifest
+## 2C — evidence in the manifest
 
-Ripresa del 22 settembre dopo l'interruzione: nessun danno (verifiche nell'[handoff](HANDOFF.md)); il diff non committato del sottostadio era coerente (`318 passed, 338 deselected`) ed è stato conservato. Il test del record V3 ricalcolato è stato eseguito rosso prima della correzione (`2 failed, 1 passed`: i due record manomessi arrivavano al fit), poi verde. Inventario: sulla raccolta reale completa nessuna mancanza; togliendo un test il gate nomina esattamente quel test. Commit `482cef0`: `321 passed, 338 deselected`; `642 passed, 17 skipped`.
+Resumption on 22 September after the interruption: no damage (checks in the [handoff](HANDOFF.md)); the uncommitted diff of the sub-stage was consistent (`318 passed, 338 deselected`) and was kept. The test of the recomputed V3 record was run red before the fix (`2 failed, 1 passed`: the two tampered records reached the fit), then green. Inventory: on the complete real collection nothing missing; removing a test, the gate names exactly that test. Commit `482cef0`: `321 passed, 338 deselected`; `642 passed, 17 skipped`.
 
-## 3 — revisione integrale
+## 3 — integral review
 
-Verifiche indipendenti nell'[handoff](HANDOFF.md). Correzioni, ciascuna con test rosso prima:
+Independent checks in the [handoff](HANDOFF.md). Fixes, each with a red test first:
 
-- `f3f8a65`, nomi del contratto del report e risorse in `model_diagnostics.csv`: `322 passed, 338 deselected`; `643 passed, 17 skipped`.
-- `5dc7d1b`, `training`/`fragments` ricalcolati dal ledger e nodi osservati (§9.1): `324 passed, 338 deselected`; `645 passed, 17 skipped`.
-- `0a6f644`, tabelle del report complete e confronto di rigenerazione §12.2: `328 passed, 338 deselected`; `649 passed, 17 skipped`.
+- `f3f8a65`, names of the report contract and resources in `model_diagnostics.csv`: `322 passed, 338 deselected`; `643 passed, 17 skipped`.
+- `5dc7d1b`, `training`/`fragments` recomputed from the ledger and observed nodes (§9.1): `324 passed, 338 deselected`; `645 passed, 17 skipped`.
+- `0a6f644`, complete report tables and regeneration comparison §12.2: `328 passed, 338 deselected`; `649 passed, 17 skipped`.
 
-Restava prima di V3 l'implementazione delle cinque figure §11.6, perché l'identità del codice comprende tutto `src/hexis`: eseguita in `559dc40` (sezione 5).
+What remained before V3 was the implementation of the five §11.6 figures, because the code identity covers all of `src/hexis`: done in `559dc40` (section 5).
 
-## 4 — chiusura
+## 4 — closure
 
-Sui byte del commit di chiusura, codice identico a `0a6f644`, righe finali verbatim, tutti exit 0:
+On the bytes of the closure commit, code identical to `0a6f644`, final lines verbatim, all exit 0:
 
 ```text
 uv run --frozen pytest -m v31 -q -p no:cacheprovider
@@ -76,11 +80,11 @@ uv lock --check
 Resolved 23 packages in 3ms
 ```
 
-V2 chiusa. Arresto per revisione prima di V3; nessun push.
+V2 closed. Stop for review before V3; no push.
 
-## 5 — figure §11.6
+## 5 — §11.6 figures
 
-Firme approvate dal proprietario, testo delle figure in inglese, SVG prodotti da `run_report` dalle stesse tabelle verificate. Test nuovi rossi sul codice precedente (`4 failed`), poi verdi; figure della fixture ispezionate visivamente e corrette per leggibilità. Corretta anche la serializzazione di `model_diagnostics.csv`, che scriveva l'istogramma dei supporti come repr Python. Commit `559dc40`, righe finali verbatim, tutti exit 0:
+Signatures approved by the owner, text of the figures in English, SVGs produced by `run_report` from the same verified tables. New tests red on the previous code (`4 failed`), then green; figures of the fixture inspected visually and corrected for readability. Also corrected the serialization of `model_diagnostics.csv`, which wrote the support histogram as a Python repr. Commit `559dc40`, final lines verbatim, all exit 0:
 
 ```text
 uv run --frozen pytest -m v31 -q -p no:cacheprovider
@@ -93,4 +97,4 @@ uv lock --check
 Resolved 23 packages in 3ms
 ```
 
-Arresto per revisione prima di V3; nessun push.
+Stop for review before V3; no push.

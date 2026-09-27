@@ -1,37 +1,41 @@
-# Handoff HEXIS 3.1 — V3-001 — riconciliazione V2
+> **English translation; the Italian original governs** (V3-012).
+> Original: `docs/HANDOFF.md` at commit `5f1ec06` (tag `archive/pre-realign`), kept at this path until V3-012; SHA-256 `6cf7a46d7d0f779aa9d07709e20d44b1db8e2208dbc27f17275ca232cf1305a0`.
+> Translated on 2026-09-27. Structure, values and identifiers follow the original; numbers use English notation; commands and outputs are reproduced unchanged, and the comments inside the command blocks are translated; link targets are reproduced unchanged and resolve as they did at `5f1ec06`. Any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
 
-## Revisione integrale pre-V3 — 22 settembre 2026
+# Handoff HEXIS 3.1 — V3-001 — V2 reconciliation
 
-**V0–V2 completati; codice e test definitivi per V3 dopo questa revisione; V3–V5 non attestati; nessun fit reale; nessun push.** La revisione integrale chiesta dall'utente (sola lettura, a `a123278`) ha riprodotto l'attestazione precedente (332/653+17/lock 23), verificato i 63 digest del deposito, la storia v2.1 byte per byte contro `852644b` e i due run V1, e ha trovato difetti poi corretti test-first nel commit di codice `0dc69b5`. Il commit documentale che contiene questa sezione non cita se stesso.
+## Integral pre-V3 review — 22 September 2026
 
-**Decisioni del proprietario (22/09/2026).** D1: nessun push pubblico finché un atto di pubblicazione non decide sui derivati; il deposito contiene `HEXIS_v3_allegati/verifiche_CTW_precedenti.zip` → `ctw_validation/pilot_positions_example.npz`, 46.634 perdite per posizione dei target omerici del pilot storico (65 valori distinti di `root_loss`, funzione del simbolo in ciascuna posizione), cioè un derivato per posizione che il §17.3 lascia locale. D2: il validatore rigenera ledger, conteggi di shuffle e provenienza C0. D3: la deviazione della CLI dal §14.1 è registrata nella nota V3-001 del [Decision Log](02_DECISION_LOG.md). D4: figure corrette nei difetti e nella leggibilità.
+**V0–V2 completed; code and tests final for V3 after this review; V3–V5 not attested; no real fit; no push.** The integral review requested by the user (read-only, at `a123278`) reproduced the previous attestation (332/653+17/lock 23), verified the 63 digests of the deposit, the v2.1 history byte for byte against `852644b` and the two V1 runs, and found defects then fixed test-first in the code commit `0dc69b5`. The documentary commit that contains this section does not cite itself.
 
-**Correzioni (`0dc69b5`).**
-- T05/T08/T24 sulla campagna: `run_report.validate_partitions` rigenera con `sampling.pair_streams` (condivisa con `run_pair`, output identico byte per byte) il ledger di ogni coppia, i conteggi di shuffle e in C0 la provenienza rimescolata; prima un ledger manomesso e ri-hashato con una frase held-out o `inventory_only` passava. Costo misurato sul corpus reale 0,2–0,3 s per coppia.
-- Figure: fig. 5 disegnava a zero le masse di C0 per ℓ = 9…12 (colonne di D12 vuote sommate); fig. 2 etichettava i documenti col `doc_id` grezzo e ora mostra «autore, opera (n=…)» (dominanza dell'Iliade, §3.3) con blocchi in ordine di gruppo; fig. 1 aveva un titolo tagliato; fig. 4 ora nomina i simboli (colonna `symbol` nelle tabelle R1) e aveva un titolo tagliato con tre rappresentazioni; fig. 3 segue l'ordine delle celle del contratto. Anteprime ispezionate: fig. 1 e 4 sui dati V1 reali, fig. 2, 3 e 5 alla cardinalità reale con valori fittizi, senza fit.
-- Test: inventario v31 esaustivo e imposto (8 test attivi ne erano fuori); fissate con `match=` le sette guardie del validatore mai esercitate. Mutazioni su una copia: 35 di 40 rilevate, le 5 sopravvissute dominate da controlli più forti ([inventario](TEST_INVENTORY.md)).
-- Commento `ponytail` di `run_descriptive` riscritto: la rivalidazione a ogni pubblicazione costa circa 8 s per coppia per il corpus più una crescita quadratica, stimate in circa 2 h su 490 coppie; renderla più rapida dopo V3 è una nuova identità e rifà V3.
+**Owner's decisions (22/09/2026).** D1: no public push until a publication act decides on the derivatives; the deposit contains `HEXIS_v3_allegati/verifiche_CTW_precedenti.zip` → `ctw_validation/pilot_positions_example.npz`, 46,634 per-position losses of the Homeric targets of the historical pilot (65 distinct values of `root_loss`, a function of the symbol in each position), that is a per-position derivative that §17.3 leaves local. D2: the validator regenerates ledgers, shuffle counts and C0 provenance. D3: the deviation of the CLI from §14.1 is recorded in the V3-001 note of the [Decision Log](02_DECISION_LOG.md). D4: figures corrected in their defects and readability.
 
-**Perimetro del congelamento.** `_code_identity()` copre tutto `src/hexis`; l'evidenza V2 (`validation_run.context`) lega anche `tests/*.py`, `conftest.py`, `pyproject.toml`, il file di configurazione, `uv.lock` e il manifest del corpus usato. Una modifica a uno di questi dopo la pubblicazione della validazione impedisce la ripresa e impone una nuova directory con V2 e V3 rifatti. I documenti restano modificabili.
+**Fixes (`0dc69b5`).**
+- T05/T08/T24 on the campaign: `run_report.validate_partitions` regenerates with `sampling.pair_streams` (shared with `run_pair`, output identical byte for byte) the ledger of every pair, the shuffle counts and in C0 the shuffled provenance; before, a tampered and re-hashed ledger with a held-out or `inventory_only` sentence passed. Cost measured on the real corpus 0.2–0.3 s per pair.
+- Figures: fig. 5 drew the C0 masses at zero for ℓ = 9…12 (empty D12 columns summed); fig. 2 labelled the documents with the raw `doc_id` and now shows «author, work (n=…)» (dominance of the Iliad, §3.3) with blocks in group order; fig. 1 had a truncated title; fig. 4 now names the symbols (column `symbol` in the R1 tables) and had a truncated title with three representations; fig. 3 follows the order of the cells of the contract. Previews inspected: fig. 1 and 4 on the real V1 data, fig. 2, 3 and 5 at the real cardinality with dummy values, without fits.
+- Tests: v31 inventory exhaustive and enforced (8 active tests were outside it); the seven validator guards never exercised pinned with `match=`. Mutations on a copy: 35 of 40 detected, the 5 survivors dominated by stronger checks ([inventory](TEST_INVENTORY.md)).
+- `ponytail` comment of `run_descriptive` rewritten: the revalidation at every publication costs about 8 s per pair for the corpus plus a quadratic growth, estimated at about 2 h over 490 pairs; making it faster after V3 is a new identity and redoes V3.
 
-**Sequenza operativa prevista per V3–V5, non eseguita.** Albero tracciato pulito (`scripts/` non tracciato è ammesso), corpus `results/hexis31/v1`, destinazioni nuove sotto `results/hexis31/`:
+**Freeze perimeter.** `_code_identity()` covers all of `src/hexis`; the V2 evidence (`validation_run.context`) also binds `tests/*.py`, `conftest.py`, `pyproject.toml`, the configuration file, `uv.lock` and the manifest of the corpus used. A change to one of these after the publication of the validation prevents the resume and requires a new directory with V2 and V3 redone. The documents remain modifiable.
+
+**Operational sequence planned for V3–V5, not executed.** Clean tracked tree (untracked `scripts/` is admitted), corpus `results/hexis31/v1`, new destinations under `results/hexis31/`:
 
 ```bash
 uv sync --frozen
 uv run python -m hexis.pipeline.run_tree_validation --config config/default.yaml --corpus-dir results/hexis31/v1 --output-dir results/hexis31/<run>
 uv run python -m hexis.pipeline.run_descriptive --config config/default.yaml --corpus-dir results/hexis31/v1 --output-dir results/hexis31/<run> --seed 0
-# §12.2: stessa coppia di comandi in una directory distinta, stesso codice
+# §12.2: same pair of commands in a distinct directory, same code
 uv run python -m hexis.pipeline.run_tree_validation --config config/default.yaml --corpus-dir results/hexis31/v1 --output-dir results/hexis31/<regen>
 uv run python -m hexis.pipeline.run_descriptive --config config/default.yaml --corpus-dir results/hexis31/v1 --output-dir results/hexis31/<regen> --seed 0
-# V4, dopo la revisione di V3
+# V4, after the review of V3
 uv run python -m hexis.pipeline.run_descriptive --config config/default.yaml --corpus-dir results/hexis31/v1 --output-dir results/hexis31/<run> --resume
 # V5
 uv run python -m hexis.pipeline.run_report --config config/default.yaml --corpus-dir results/hexis31/v1 --output-dir results/hexis31/<run> --regenerated-dir results/hexis31/<regen>
 ```
 
-**Deposito.** Il commit V0 `e98fb8e` aveva depositato 64 file, tra cui `hexis-verifica/.DS_Store` (metadati del Finder, sha256 `18cc90e9ff3e6473b1790a06f5bbf5afb3be60f5359284118c94b4f8383df96b`, assente da `hexis-verifica/SHA256SUMS.json` e ancora presente nell'originale sul Desktop). Il commit V1 `7afdd3a` lo ha rimosso insieme alla sua riga in `V3-001-deposit.json`, senza documentarlo. I 63 digest restanti sono invariati e coincidono coi file tracciati; `.DS_Store` è ora in `.gitignore`.
+**Deposit.** The V0 commit `e98fb8e` had deposited 64 files, among them `hexis-verifica/.DS_Store` (Finder metadata, sha256 `18cc90e9ff3e6473b1790a06f5bbf5afb3be60f5359284118c94b4f8383df96b`, absent from `hexis-verifica/SHA256SUMS.json` and still present in the original on the Desktop). The V1 commit `7afdd3a` removed it together with its row in `V3-001-deposit.json`, without documenting it. The remaining 63 digests are unchanged and match the tracked files; `.DS_Store` is now in `.gitignore`.
 
-Comandi sui byte di `0dc69b5`, righe finali verbatim, tutti exit 0:
+Commands on the bytes of `0dc69b5`, final lines verbatim, all exit 0:
 
 ```text
 uv run --frozen pytest -m v31 -q -p no:cacheprovider
@@ -44,13 +48,13 @@ uv lock --check
 Resolved 23 packages in 12ms
 ```
 
-Commit soltanto locali. Arresto per revisione prima di V3.
+Local commits only. Stop for review before V3.
 
-## Figure §11.6 — 22 settembre 2026
+## §11.6 figures — 22 September 2026
 
-**V0–V2 completati; il codice necessario prima di V3 è completo; V3–V5 non attestati; nessun fit reale.** Il vincolo registrato nella chiusura V2 qui sotto è soddisfatto in `559dc40`: `viz/plots.py` sostituisce lo stub v2.1 con le cinque figure del contratto (`corpus_annotation`, `block_document_profiles`, `sensitivities_two_weights`, `R1`, `supports_mixture_masses`), disegnate soltanto dalle tabelle verificate e pubblicate da `run_report` come SVG deterministici, con testo in inglese. Nessuna figura calcola quantità proprie oltre l'aggregazione unica di `scores`/`diagnostics`; nessun intervallo inferenziale, solo min–max computazionali fra semi. La revisione ha corretto anche `model_diagnostics.csv`, che scriveva l'istogramma dei supporti come repr Python: le colonne strutturate sono ora JSON canonico. Firme approvate dal proprietario; verifiche su fixture, esecuzione reale in V5.
+**V0–V2 completed; the code needed before V3 is complete; V3–V5 not attested; no real fit.** The constraint recorded in the V2 closure below is satisfied in `559dc40`: `viz/plots.py` replaces the v2.1 stub with the five figures of the contract (`corpus_annotation`, `block_document_profiles`, `sensitivities_two_weights`, `R1`, `supports_mixture_masses`), drawn only from the verified tables and published by `run_report` as deterministic SVGs, with text in English. No figure computes quantities of its own beyond the single aggregation of `scores`/`diagnostics`; no inferential interval, only computational min–max across seeds. The review also corrected `model_diagnostics.csv`, which wrote the support histogram as a Python repr: the structured columns are now canonical JSON. Signatures approved by the owner; checks on fixtures, real execution in V5.
 
-Comandi sui byte di `559dc40`, righe finali verbatim, tutti exit 0:
+Commands on the bytes of `559dc40`, final lines verbatim, all exit 0:
 
 ```text
 uv run --frozen pytest -m v31 -q -p no:cacheprovider
@@ -63,30 +67,30 @@ uv lock --check
 Resolved 23 packages in 3ms
 ```
 
-Commit soltanto locali, nessun push. Arresto per revisione prima di V3.
+Local commits only, no push. Stop for review before V3.
 
-## Chiusura V2 — 22 settembre 2026
+## V2 closure — 22 September 2026
 
-**V0–V2 completati; V3–V5 non attestati; nessun nuovo fit reale.** Questa sezione chiude i residui M1–M5 della rettifica del 18 settembre, che resta come storia, dopo la revisione integrale richiesta prima di V3. Codice di chiusura `0a6f644`, dopo `482cef0`, `f3f8a65` e `5dc7d1b`; il commit documentale che contiene questa sezione non cita se stesso. Commit soltanto locali, nessun push.
+**V0–V2 completed; V3–V5 not attested; no new real fit.** This section closes the residues M1–M5 of the correction of 18 September, which remains as history, after the integral review requested before V3. Closure code `0a6f644`, after `482cef0`, `f3f8a65` and `5dc7d1b`; the documentary commit that contains this section does not cite itself. Local commits only, no push.
 
-**Ripresa dopo l'interruzione del sottostadio 2C: nessun danno.** Tre CoNLL-U greci con gli hash del contratto, clone a `37837c7`; piano, allegati 3.1, ZIP 3.0.1 e `hexis-verifica` identici byte per byte al Desktop; `uv.lock` `33db43b0…` e `uv lock --check` invariati; `scripts/reacquire_raw_data.sh` al digest registrato, non tracciato e preservato; manifest V1 `154433c7…`/`de08d13d…` validi, nove artefatti identici fra le due directory; sotto `results/hexis31/` soltanto le tre directory V1. Il lavoro 2C non committato era coerente (318 v31 pass) ed è stato conservato.
+**Resumption after the interruption of sub-stage 2C: no damage.** Three Greek CoNLL-U files with the hashes of the contract, clone at `37837c7`; plan, 3.1 attachments, 3.0.1 ZIP and `hexis-verifica` identical byte for byte to the Desktop; `uv.lock` `33db43b0…` and `uv lock --check` unchanged; `scripts/reacquire_raw_data.sh` at the recorded digest, untracked and preserved; V1 manifests `154433c7…`/`de08d13d…` valid, nine artifacts identical between the two directories; under `results/hexis31/` only the three V1 directories. The uncommitted 2C work was consistent (318 v31 pass) and was kept.
 
-**2C/M5 — `482cef0`.** Stadio `validation` nel manifest `hexis-scientific-manifest-2`: batteria §12.1, processo `pytest -m v31` e JUnit confrontati per insieme con la raccolta effettiva. Nessun fit reale senza di esso; campagna completa soltanto dopo il record V3 del seme 0 (42/84, distinto da 490/980). Corretti test-first: un record V3 scritto a mano con codice/lock corretti era accettato — ora ogni V3 registrato è ricalcolato dal run pubblicato; `test_v31_validation_run.py` mancava dall'inventario obbligatorio. Provato su fixture; sulla suite reale il meccanismo ha raccolto 321 test e 321 casi JUnit corrispondenti, senza pubblicare alcun run. L'evidenza V2 sulla configurazione depositata si produce all'apertura di V3, a codice congelato.
+**2C/M5 — `482cef0`.** Stage `validation` in the manifest `hexis-scientific-manifest-2`: §12.1 battery, `pytest -m v31` process and JUnit compared as sets with the actual collection. No real fit without it; complete campaign only after the V3 record of seed 0 (42/84, distinct from 490/980). Fixed test-first: a hand-written V3 record with correct code/lock was accepted — now every recorded V3 is recomputed from the published run; `test_v31_validation_run.py` was missing from the mandatory inventory. Proved on fixtures; on the real suite the mechanism collected 321 tests and 321 matching JUnit cases, without publishing any run. The V2 evidence on the deposited configuration is produced at the opening of V3, with the code frozen.
 
-**Revisione integrale, con verifiche indipendenti.**
-- CTW contro un'enumerazione degli alberi scritta dalle formule §6 (26 alberi): log-evidenza identica, predizione entro 1e-15.
-- Batteria §12.1 rieseguita: 25/25 entro soglia; stress lag 2 m106 CE 5,09–5,13 contro oracle 1,13109; generatore identico (AST) alla fixture `e6a55b08…`.
-- Vettore §12.2 ricalcolato con sole `hashlib`/`numpy`; sei celle identiche al §10; sul corpus reale, senza fit, sette fold × due semi: ledger C0 = a_total1 = D12 = upos, q_half prefisso dell'ordine C0, budget 53.304/26.652.
-- Controesempio §7 riprodotto (Q 0,71346; scorciatoia −0,66505). Nessun test indebolito da `852644b`; l'unica sostituzione di attesi (firme v2.1) è registrata in V3-001.
+**Integral review, with independent checks.**
+- CTW against an enumeration of the trees written from the §6 formulas (26 trees): identical log-evidence, prediction within 1e-15.
+- §12.1 battery rerun: 25/25 within threshold; lag 2 m106 stress CE 5.09–5.13 against oracle 1.13109; generator identical (AST) to the fixture `e6a55b08…`.
+- §12.2 vector recomputed with `hashlib`/`numpy` only; six cells identical to §10; on the real corpus, without fits, seven folds × two seeds: ledger C0 = a_total1 = D12 = upos, q_half prefix of the C0 order, budget 53,304/26,652.
+- §7 counterexample reproduced (Q 0.71346; shortcut −0.66505). No test weakened since `852644b`; the only replacement of expectations (v2.1 signatures) is recorded in V3-001.
 
-**Difetti trovati dalla revisione e corretti test-first, su decisione del proprietario.**
-- `f3f8a65`: otto campi persistiti con nomi diversi dal `report_contract_v3.1.json`, ora identici e vincolati da un test che legge il contratto depositato; risorse per modello in `model_diagnostics.csv` (§11.5), con l'identità fra destinazioni che esenta esattamente quelle tre colonne misurate.
-- `5dc7d1b`: `training` e `fragments` delle coppie non erano verificati contro il ledger persistito, e `training` alimenta le quote di training del report; ora sono ricalcolati dal ledger. Con training vuoto la radice non osservata non conta più come nodo (§9.1, caso non raggiungibile nelle celle reali).
-- `0a6f644`: il codice del report fa parte dell'identità del run, quindi tutto ciò che il report deve emettere esiste prima di V3 — riepiloghi fra semi per gruppi, blocchi e documenti (§8.2); differenze accoppiate delle sensibilità per blocco/seme e per gruppo/seme (§10); quote di gruppo del training per fold (§5.1); tabella dei frammenti (§11.5); `compare_regeneration` per la rigenerazione del seme 0 (§12.2), richiesto dal report scientifico (§14.2 passo 6). Lo strumento esiste e non è stato eseguito su dati reali.
+**Defects found by the review and fixed test-first, on the owner's decision.**
+- `f3f8a65`: eight persisted fields with names different from `report_contract_v3.1.json`, now identical and bound by a test that reads the deposited contract; per-model resources in `model_diagnostics.csv` (§11.5), with the identity between destinations exempting exactly those three measured columns.
+- `5dc7d1b`: `training` and `fragments` of the pairs were not verified against the persisted ledger, and `training` feeds the training shares of the report; now they are recomputed from the ledger. With empty training the unobserved root no longer counts as a node (§9.1, a case not reachable in the real cells).
+- `0a6f644`: the report code is part of the run identity, so everything the report must emit exists before V3 — summaries across seeds for groups, blocks and documents (§8.2); paired differences of the sensitivities per block/seed and per group/seed (§10); group shares of the training per fold (§5.1); table of the fragments (§11.5); `compare_regeneration` for the regeneration of seed 0 (§12.2), required by the scientific report (§14.2 step 6). The tool exists and has not been run on real data.
 
-**Vincolo prima di V3.** `_code_identity()` comprende tutti i 39 file di `src/hexis/`, e il report rifiuta un run con un'altra identità. Le cinque figure del §11.6 (T27) non sono implementate: `viz/plots.py` è ancora lo stub v2.1. Vanno implementate e verificate su fixture prima del freeze di V3, previa approvazione delle firme; altrimenti il lavoro di V5 cambierebbe il `run_id` di V3/V4.
+**Constraint before V3.** `_code_identity()` covers all the 39 files of `src/hexis/`, and the report refuses a run with another identity. The five figures of §11.6 (T27) are not implemented: `viz/plots.py` is still the v2.1 stub. They must be implemented and verified on fixtures before the V3 freeze, after approval of the signatures; otherwise the V5 work would change the `run_id` of V3/V4.
 
-Comandi sui byte del commit di chiusura (codice identico a `0a6f644`; cambiano soltanto documenti e attesi documentali dei test), righe finali verbatim, tutti exit 0:
+Commands on the bytes of the closure commit (code identical to `0a6f644`; only documents and documentary expectations of the tests change), final lines verbatim, all exit 0:
 
 ```text
 uv run --frozen pytest -m v31 -q -p no:cacheprovider
@@ -99,33 +103,33 @@ uv lock --check
 Resolved 23 packages in 3ms
 ```
 
-Arresto per revisione prima di V3.
+Stop for review before V3.
 
-## Rettifica del 18 settembre 2026
+## Correction of 18 September 2026
 
-**V0–V1 completati; V2 ampiamente implementata, chiusura da riconciliare e verificare; V3–V5 non attestati.** La dichiarazione generale di completamento V2 delle attestazioni seguenti è rettificata: i conteggi e le proprietà dimostrate restano evidenze dei commit citati, ma non coprono i residui M4/M5 né la revisione integrale richiesta ora. Le sezioni datate precedenti sono conservate come resoconto storico, compresi i rinvii all'integrazione che questa tranche deve completare. Nessun nuovo fit reale né riscrittura del proposal.
+**V0–V1 completed; V2 largely implemented, closure to be reconciled and verified; V3–V5 not attested.** The general statement of V2 completion in the following attestations is corrected: the counts and the properties demonstrated remain evidence of the commits cited, but they do not cover the residues M4/M5 nor the integral review now requested. The previous dated sections are kept as a historical account, including the deferrals to the integration that this tranche must complete. No new real fit nor rewriting of the proposal.
 
-La nuova esecuzione parte da `8b4d50432724442465d4d3003a2d37717395126a`, ramo `codex/hexis31-v0-v1`; stato iniziale `?? scripts/`, nessuna modifica tracciata. Si lavora sul ramo richiesto nel checkout esistente. Script locale e risultati storici restano preservati. Il [registro della revisione](V2_RECONCILIATION.md) traccia sottostadi, digest e verifiche; l'[inventario](TEST_INVENTORY.md) distingue implementazione, prove e lacune.
+The new execution starts from `8b4d50432724442465d4d3003a2d37717395126a`, branch `codex/hexis31-v0-v1`; initial state `?? scripts/`, no tracked change. Work proceeds on the requested branch in the existing checkout. Local script and historical results remain preserved. The [review register](V2_RECONCILIATION.md) tracks sub-stages, digests and checks; the [inventory](TEST_INVENTORY.md) distinguishes implementation, proofs and gaps.
 
-## Attestazioni precedenti (stato riferito ai commit citati)
+## Previous attestations (state referred to the commits cited)
 
-**V0–V2 completati; V3–V5 non attestati; nessun nuovo fit reale.** Stato V0–V1 verificato il 16 settembre 2026, stato V2 il 17 settembre 2026. Ramo locale: `codex/hexis31-v0-v1`.
+**V0–V2 completed; V3–V5 not attested; no new real fit.** V0–V1 state verified on 16 September 2026, V2 state on 17 September 2026. Local branch: `codex/hexis31-v0-v1`.
 
-## Revisioni e autorità
+## Revisions and authority
 
-- Base verificata: `852644b6917790877c7b2ca5df2e76b17829d87c`.
-- V0, deposito e migrazione normativa: `e98fb8edde91e821c415e26f33b7bdeb549b50ba`.
-- V1, corpus e persistenza: `7afdd3a4f87341110b0f15a77179febe9075ee9b`.
-- V0+V1, attestazione documentale: `b607cef434ffa8698cb2e4ca0387d2b759a18862`.
-- V2, core e protocollo, quattro milestone chiusi in sequenza: `105c0aae26f4eb9b54267e02ee45f5449e565ac6`, `3119517da223940cc51eabaef096508c33c6ec03`, `e9c8c96e4573fb9585f4250ce38f47d5cc3a2998`, `de8ea5d576c415aa6bc082186b8ce649271a664b`.
-- Ripresa V2 e completamento dei collegamenti/persistenza: `d38b5a7`.
-- L'aggiornamento finale di questo handoff è documentale e cita il commit di implementazione precedente, senza autoriferimenti.
+- Verified base: `852644b6917790877c7b2ca5df2e76b17829d87c`.
+- V0, deposit and normative migration: `e98fb8edde91e821c415e26f33b7bdeb549b50ba`.
+- V1, corpus and persistence: `7afdd3a4f87341110b0f15a77179febe9075ee9b`.
+- V0+V1, documentary attestation: `b607cef434ffa8698cb2e4ca0387d2b759a18862`.
+- V2, core and protocol, four milestones closed in sequence: `105c0aae26f4eb9b54267e02ee45f5449e565ac6`, `3119517da223940cc51eabaef096508c33c6ec03`, `e9c8c96e4573fb9585f4250ce38f47d5cc3a2998`, `de8ea5d576c415aa6bc082186b8ce649271a664b`.
+- V2 resumption and completion of the links/persistence: `d38b5a7`.
+- The final update of this handoff is documentary and cites the previous implementation commit, without self-references.
 
-Autorità: [specifica attiva](01_MASTER_SPEC.md), [V3-001](02_DECISION_LOG.md) e piano/JSON byte-identificati in `contracts/hexis-3.1/`. Il [record esterno del deposito](V3-001-deposit.json) conserva i digest; nessun byte normativo o atteso è stato aggiornato per far passare i controlli. Verificati 8 digest della consegna, 14 verdetto/evidenze, 33 file del pacchetto storico, 103 dell'archivio interno e le quattro fixture CTW. Le fixture non sono state eseguite come programmi storici.
+Authority: [active specification](01_MASTER_SPEC.md), [V3-001](02_DECISION_LOG.md) and the byte-identified plan/JSON in `contracts/hexis-3.1/`. The [external record of the deposit](V3-001-deposit.json) keeps the digests; no normative byte or expectation was updated to make the checks pass. Verified 8 digests of the delivery, 14 of the verdict/evidence, 33 files of the historical package, 103 of the inner archive and the four CTW fixtures. The fixtures were not executed as historical programs.
 
-Le dieci copie v2.1 sono confrontate con gli originali tramite [inventario SHA-256](history/v2.1/SHA256SUMS.json). D01–D54, D55 proposto, ratifiche tecniche G1, proposal e materiali precedenti conservano il loro stato storico. Le fonti/limitazioni delle autorizzazioni pregresse restano in V3-001 e nel §2 del piano; nessun G2 retroattivo.
+The ten v2.1 copies are compared with the originals through the [SHA-256 inventory](history/v2.1/SHA256SUMS.json). D01–D54, the proposed D55, the G1 technical ratifications, the proposal and the previous materials keep their historical status. The sources/limitations of the earlier authorizations remain in V3-001 and in §2 of the plan; no retroactive G2.
 
-## Comandi e risultati effettivamente eseguiti (V0–V1)
+## Commands and results actually executed (V0–V1)
 
 ```bash
 uv lock --check
@@ -136,21 +140,21 @@ uv run pytest -q -m v31
 .venv/bin/python -m hexis.pipeline.run_encode --config config/default.yaml --data-root data/raw/UD_Ancient_Greek-Perseus --output-dir results/hexis31/v1-reproduction
 ```
 
-Tutti exit 0. L'interprete `.venv` è l'ambiente Python 3.12 gestito e sincronizzato da uv. `uv lock --check`: 23 pacchetti risolti, lock invariato. Suite completa: **411 passed, 17 skipped**, tutti scaffold storici; accettazione attiva: **88 passed, 340 deselected, zero skip**. Test nuovi scritti ed eseguiti rossi prima delle rispettive implementazioni. Una revisione indipendente di configurazione, corpus, persistenza e storia non ha rilevato problemi bloccanti.
+All exit 0. The `.venv` interpreter is the Python 3.12 environment managed and synchronized by uv. `uv lock --check`: 23 packages resolved, lock unchanged. Complete suite: **411 passed, 17 skipped**, all historical scaffolds; active acceptance: **88 passed, 340 deselected, zero skips**. New tests written and run red before their implementations. An independent review of configuration, corpus, persistence and history found no blocking problems.
 
-Le verifiche includono errori localizzati di parsing, input mancanti/extra/alterati e cambiati durante il run, record riordinati e coordinate numeriche, Ateneo XII/XIII, frasi vuote sintetiche, unknown UPOS pubblico, mapping globale e sottotipi, maschere C0/UPOS, inventari esclusivi, denominatori A/B, assert eseguiti e raccolta nominale, round-trip, corruzioni a cardinalità invariata, collisioni e scritture interrotte. Atomicità mediante temporanei nella destinazione e pubblicazione esclusiva con hard link; manifest sostituito atomicamente per ultimo. Questa scelta tecnica impedisce overwrite anche in una collisione fra controllo e pubblicazione.
+The checks include localized parsing errors, missing/extra/altered inputs and inputs changed during the run, reordered records and numeric coordinates, Athenaeus XII/XIII, synthetic empty sentences, public unknown UPOS, global mapping and subtypes, C0/UPOS masks, exclusive inventories, A/B denominators, executed asserts and nominal collection, round-trip, corruptions at unchanged cardinality, collisions and interrupted writes. Atomicity through temporaries in the destination and exclusive publication with hard links; manifest replaced atomically last. This technical choice prevents overwrites even in a collision between check and publication.
 
-## Esecuzioni reali e identità (V1)
+## Real executions and identity (V1)
 
-Identità comune: `a04db5ca9bdfec4e9444fc01745c7210862eaebe5654bb8046b545bfbe154d42`.
+Common identity: `a04db5ca9bdfec4e9444fc01745c7210862eaebe5654bb8046b545bfbe154d42`.
 
-- [Manifest principale](../results/hexis31/v1/manifest.json), SHA-256 `154433c772f41e444f86b8787e0ee0003c546d9fb398b6ee0f634ce193f3421f`.
-- [Manifest di riproduzione](../results/hexis31/v1-reproduction/manifest.json), SHA-256 `de08d13de608b33b4618b26b95359226179ad1c62c681e1104a151cca7611ef8`.
+- [Main manifest](../results/hexis31/v1/manifest.json), SHA-256 `154433c772f41e444f86b8787e0ee0003c546d9fb398b6ee0f634ce193f3421f`.
+- [Reproduction manifest](../results/hexis31/v1-reproduction/manifest.json), SHA-256 `de08d13de608b33b4618b26b95359226179ad1c62c681e1104a151cca7611ef8`.
 - Lock: `33db43b00bcb21ab12aedf6dcc4257764770bff0115dc0d1dfab6e5ea89876bf`.
 
-Entrambi registrano il commit V1, il commit V0 distinto e `tracked_dirty=false` al momento dell'esecuzione. `completed_stages=[audit, encode]`, `corpus_complete=true`, `scientific_complete=false`. I manifest differiscono nei metadati esterni (directory/timestamp), esclusi dall'identità. **Tutti i nove artefatti, incluse chiavi, contenuti, schemi e cardinalità, sono identici byte per byte nelle due directory.** `validate_run` ha riletto e verificato entrambe le esecuzioni; confronto aggiuntivo dei byte di ciascun file superato.
+Both record the V1 commit, the distinct V0 commit and `tracked_dirty=false` at the time of execution. `completed_stages=[audit, encode]`, `corpus_complete=true`, `scientific_complete=false`. The manifests differ in the external metadata (directory/timestamp), excluded from the identity. **All nine artifacts, including keys, contents, schemas and cardinality, are identical byte for byte in the two directories.** `validate_run` reread and verified both executions; additional comparison of the bytes of each file passed.
 
-| Artefatto | Cardinalità (righe o membri JSON) |
+| Artifact | Cardinality (rows or JSON members) |
 |---|---:|
 | `alphabets.json` | 3 |
 | `audit_A.csv` | 29 |
@@ -162,11 +166,11 @@ Entrambi registrano il commit V1, il commit V0 distinto e `tracked_dirty=false` 
 | `sequences.parquet` | 41757 |
 | `source_audit.json` | 9 |
 
-Riconteggio esatto: **202.989 token sorgente, 13.919 frasi, 18 prefissi, 17 documenti**, 11 primari in sette blocchi e sei `inventory_only`. Tre alfabeti **100/105/11**, con **9/10/0** tipi esclusivi dei documenti solo inventariati. **51 documenti/variante, 41.757 frasi/variante, 530.720 coordinate trattenute**. Controlli A e B: zero segnalazioni; restano diagnostici. Tutti gli attesi documentali, di blocco e di popolazione coincidono, non soltanto i totali.
+Exact recount: **202,989 source tokens, 13,919 sentences, 18 prefixes, 17 documents**, 11 primary in seven blocks and six `inventory_only`. Three alphabets **100/105/11**, with **9/10/0** types exclusive to the inventory-only documents. **51 documents/variant, 41,757 sentences/variant, 530,720 retained coordinates**. Checks A and B: zero reports; they remain diagnostic. All the documentary, block and population expectations coincide, not only the totals.
 
-La provenienza attiva è in [data/provenance_v31.json](../data/provenance_v31.json), fuori da raw. Tre input greci e commit sorgente `37837c7a3c592c9563f8c51cc63344b87247f8a5` verificati. Raw greci/latini, provenienza storica, risultati precedenti e script locale preservati. I derivati reali sono locali/ignorati da Git; nessuna pubblicazione dei dati. `v1-development` conserva una prova tecnica precedente sotto una diversa identità, non è il run consegnato.
+The active provenance is in [data/provenance_v31.json](../data/provenance_v31.json), outside raw. Three Greek inputs and source commit `37837c7a3c592c9563f8c51cc63344b87247f8a5` verified. Greek/Latin raw data, historical provenance, previous results and local script preserved. The real derivatives are local/ignored by Git; no publication of the data. `v1-development` keeps an earlier technical trial under a different identity; it is not the delivered run.
 
-## Comandi e risultati effettivamente eseguiti (V2)
+## Commands and results actually executed (V2)
 
 ```bash
 uv lock --check
@@ -174,32 +178,32 @@ uv run pytest -q
 uv run pytest -m v31 -q
 ```
 
-Rieseguiti sul codice `de8ea5d`, tutti exit 0. `uv lock --check`: 23 pacchetti risolti, lock invariato. Suite completa: **543 passed, 17 skipped**, i medesimi scaffold storici di V0–V1. Accettazione attiva: **220 passed, 340 deselected, zero skip**. Il criterio §14 per V2 — «Test esatti/sintetici e controlli pertinenti T01–T23/T26 superati, senza skip» — è soddisfatto: l'[inventario](TEST_INVENTORY.md) porta T05–T23 e T26 a V2, e T01–T04 restano coperti da V1.
+Rerun on the code `de8ea5d`, all exit 0. `uv lock --check`: 23 packages resolved, lock unchanged. Complete suite: **543 passed, 17 skipped**, the same historical scaffolds of V0–V1. Active acceptance: **220 passed, 340 deselected, zero skips**. The §14 criterion for V2 — «Exact/synthetic tests and relevant checks T01–T23/T26 passed, without skips» — is satisfied: the [inventory](TEST_INVENTORY.md) brings T05–T23 and T26 to V2, and T01–T04 remain covered by V1.
 
-I quattro milestone sono stati scritti test-first e revisionati singolarmente: nucleo CTW, numerica dei due pesi e batteria §12.1 congelata (T10–T16); campionamento, identità RNG contro il vettore §12.2 e controllo d'ordine accoppiato (T05–T09, T17, T18); quattro perdite, aggregazioni nelle due pesature, diagnostiche e R1 (T19–T23); persistenza scientifica, manifest `hexis-scientific-manifest-1`, CLI, ripresa e i ritiri §13.2 (T26). Le evidenze per ID sono nell'inventario, non duplicate qui.
+The four milestones were written test-first and reviewed one by one: CTW core, numerics of the two weights and frozen §12.1 battery (T10–T16); sampling, RNG identity against the §12.2 vector and coupled order control (T05–T09, T17, T18); four losses, aggregations in the two weightings, diagnostics and R1 (T19–T23); scientific persistence, manifest `hexis-scientific-manifest-1`, CLI, resume and the §13.2 retirements (T26). The evidence per ID is in the inventory, not duplicated here.
 
-## Ripresa dopo interruzione — 2026-09-17
+## Resumption after interruption — 2026-09-17
 
-La ripresa parte da `feb23af`: i milestone e la prima attestazione V2 erano già
-committati, con il solo `scripts/reacquire_raw_data.sh` non tracciato. La verifica
-iniziale ha riprodotto **220 passed, 340 deselected**, senza skip. Il lavoro
-esistente è stato conservato; sono stati completati i collegamenti rimasti nel
-percorso V2, con test rossi osservati prima delle modifiche:
+The resumption starts from `feb23af`: the milestones and the first V2 attestation were already
+committed, with only `scripts/reacquire_raw_data.sh` untracked. The initial
+check reproduced **220 passed, 340 deselected**, without skips. The existing
+work was kept; the links remaining in the
+V2 path were completed, with red tests observed before the changes:
 
-- API pubbliche `pooled_score_core` e `annotate_scores` operative, senza nuova
-  formula di scoring; le etichette si aggiungono agli score fissati.
-- Selezione `--seed 0` senza alterare configurazione o identità, pubblicazione
-  dopo ciascuna coppia e ripresa effettiva dopo un'interruzione fra coppie.
-- Ledger completi `sample_ledger__<sha256>.json`, condivisi dalle coppie che
-  riusano il campione, con riferimenti/hash/cardinalità verificati in lettura.
-- Verifica degli insiemi di slot anche nelle sensibilità prima di scartare i
-  vettori; configurazione della batteria sintetica validata e output atomico,
-  protetto da collisioni e destinazioni raw anche via symlink.
-- I record V0/V1 da soli non consentono più l'emissione di un report reale;
-  le evidenze V2/V3 saranno collegate nell'integrazione, non simulate qui.
+- Public APIs `pooled_score_core` and `annotate_scores` operational, without a new
+  scoring formula; the labels are added to the fixed scores.
+- `--seed 0` selection without altering configuration or identity, publication
+  after each pair and actual resumption after an interruption between pairs.
+- Complete ledgers `sample_ledger__<sha256>.json`, shared by the pairs that
+  reuse the sample, with references/hashes/cardinality verified on reading.
+- Check of the slot sets also in the sensitivities before discarding the
+  vectors; configuration of the synthetic battery validated and atomic output,
+  protected from collisions and raw destinations also via symlink.
+- The V0/V1 records alone no longer allow the emission of a real report;
+  the V2/V3 evidence will be linked in the integration, not simulated here.
 
-Comandi eseguiti sui byte poi committati in `d38b5a7` e righe finali verbatim,
-tutti exit 0:
+Commands executed on the bytes then committed in `d38b5a7` and final lines verbatim,
+all exit 0:
 
 ```text
 uv run pytest -q
@@ -212,43 +216,43 @@ uv lock --check
 Resolved 23 packages in 4ms
 ```
 
-Dopo l'allineamento finale dei testi, i 12 test documentali sono passati.
-Una precedente invocazione limitata a documentazione e inventario aveva ottenuto
-exit 1 perché il controllo di raccolta richiede l'intera accettazione: la
-selezione parziale non conteneva gli altri test obbligatori. Nessun controllo
-è stato indebolito; le due suite complete sopra hanno verificato la raccolta.
+After the final alignment of the texts, the 12 documentary tests passed.
+An earlier invocation limited to documentation and inventory had obtained
+exit 1 because the collection check requires the whole acceptance: the
+partial selection did not contain the other mandatory tests. No check
+was weakened; the two complete suites above verified the collection.
 
-I 20 test attivi in più comprendono 18 nuovi casi e i due controlli di firma
-già esistenti, ora inclusi anche in v31; i 17 skip restano tutti storici.
-I confronti indipendenti delle fixture verificano identità e artefatti byte per
-byte sia tra due destinazioni sia tra esecuzione ripresa ed esecuzione nuova;
-il fingerprint originale è inoltre rigenerato dal ledger riletto da disco.
-La batteria completa mantiene i 25 sintetici e i nove stress m106 alle soglie
-depositate. Nessun atteso numerico è stato rigenerato.
+The 20 additional active tests comprise 18 new cases and the two signature checks
+already existing, now also included in v31; the 17 skips all remain historical.
+The independent comparisons of the fixtures verify identity and artifacts byte for
+byte both between two destinations and between a resumed execution and a new one;
+the original fingerprint is also regenerated from the ledger reread from disk.
+The complete battery keeps the 25 synthetic cases and the nine m106 stresses at the
+deposited thresholds. No numerical expectation was regenerated.
 
-Piano, quattro JSON e `design_lock.json`: **sei confronti byte per byte col
-Desktop superati**. `uv.lock` resta
+Plan, four JSON files and `design_lock.json`: **six byte-for-byte comparisons with the
+Desktop passed**. `uv.lock` remains
 `33db43b00bcb21ab12aedf6dcc4257764770bff0115dc0d1dfab6e5ea89876bf`.
-Sotto `results/hexis31` restano i soli manifest `v1`, `v1-reproduction` e
-`v1-development`. Nessun nuovo fit reale, nessuna pubblicazione, script locale
-e materiali storici preservati. Arresto per la revisione successiva prima di V3.
+Under `results/hexis31` only the manifests `v1`, `v1-reproduction` and
+`v1-development` remain. No new real fit, no publication, local script
+and historical materials preserved. Stop for the next review before V3.
 
-## V2 non produce esecuzioni reali
+## V2 produces no real executions
 
-V2 non ha una sezione di esecuzioni reali e identità, e non per omissione: per disegno non esegue campagne e non pubblica artefatti scientifici. `results/hexis31/` contiene ancora soltanto le directory V1 già attestate; nessun manifest scientifico reale esiste. Il piano §14 fissa il confine: «I nuovi fit reali iniziano soltanto nella prova integrata, dopo V0–V2 nel nuovo percorso autorizzato». Il criterio di completamento di V2 è quindi la copertura di test, non un run.
+V2 has no section of real executions and identity, and not by omission: by design it runs no campaigns and publishes no scientific artifacts. `results/hexis31/` still contains only the V1 directories already attested; no real scientific manifest exists. Plan §14 sets the boundary: «The new real fits start only in the integrated trial, after V0–V2 in the new authorized path». The completion criterion of V2 is therefore test coverage, not a run.
 
-CTW, quattro punteggi, diagnostiche, R1 e persistenza scientifica sono verificati su fixture interamente sintetiche o analitiche: alfabeti giocattolo m=2…5, frasi giocattolo, tre e sette blocchi, tre documenti, due celle e uno o due semi. Per queste configurazioni giocattolo le due CLI esigono `--fixture` e il report registra `checks.scientific = False`. La proiezione analitica depositata è già accettata senza `--fixture`; l'opzione `--fixture` la rifiuta. La precedente frase secondo cui le CLI funzionavano soltanto su fixture era inesatta: questa ripresa corregge la documentazione, senza eseguire fit reali.
+CTW, four scores, diagnostics, R1 and scientific persistence are verified on entirely synthetic or analytical fixtures: toy alphabets m=2…5, toy sentences, three and seven blocks, three documents, two cells and one or two seeds. For these toy configurations the two CLIs require `--fixture` and the report records `checks.scientific = False`. The deposited analytical projection is already accepted without `--fixture`; the `--fixture` option refuses it. The previous sentence according to which the CLIs worked only on fixtures was inexact: this resumption corrects the documentation, without running real fits.
 
-Un solo contatto col corpus reale resta in V2, ed è di campionamento, non di modello: `tests/test_v31_sampling.py` ricostruisce il corpus V1 dai tre input greci per verificare, su sei celle × sette fold, che nessun documento held-out e nessun `inventory_only` entri nel training e che il ledger sia quello dichiarato. Nessun modello vi è fittato, esattamente come nei test corpus di V1.
+A single contact with the real corpus remains in V2, and it is of sampling, not of modelling: `tests/test_v31_sampling.py` rebuilds the V1 corpus from the three Greek inputs to verify, on six cells × seven folds, that no held-out document and no `inventory_only` enters the training and that the ledger is the declared one. No model is fitted there, exactly as in the V1 corpus tests.
 
-## Obblighi residui (stato al 17 settembre, superato dalla chiusura del 22 settembre)
+## Residual obligations (state at 17 September, superseded by the closure of 22 September)
 
-L'[inventario T01–T30](TEST_INVENTORY.md) distingue la copertura V0–V2 dalle parti ancora PENDING. V2 è concluso: CTW, sampling/RNG/shuffle, core comportamentalmente indipendente dalle etichette, quattro perdite, diagnostiche, R1 e resume esistono e sono coperti, con le fixture esatte e i 25 sintetici alle soglie congelate. Restano PENDING la parte modellistica di T24 e T29, T25 in V4, T27 e T30 in V5.
+The [inventory T01–T30](TEST_INVENTORY.md) distinguishes the V0–V2 coverage from the parts still PENDING. V2 is concluded: CTW, sampling/RNG/shuffle, core behaviourally independent of the labels, four losses, diagnostics, R1 and resume exist and are covered, with the exact fixtures and the 25 synthetic cases at the frozen thresholds. Still PENDING are the modelling part of T24 and T29, T25 in V4, T27 and T30 in V5.
 
-V3 resta la prossima tranche e non è aperta da questo handoff: un seme (0) per tutte le sei celle, misure risorse, freeze di codice e ambiente, per **42 coppie / 84 modelli tecnici**, finiti/coerenti, zero probe e schema finale verificato. `run_descriptive --seed 0` seleziona tale sottoinsieme senza modificare la configurazione analitica o il `run_id`; la successiva esecuzione senza `--seed`, con `--resume`, completa i semi previsti.
+V3 remains the next tranche and is not opened by this handoff: one seed (0) for all six cells, resource measurements, freeze of code and environment, for **42 pairs / 84 technical models**, finite/consistent, zero probes and final schema verified. `run_descriptive --seed 0` selects this subset without modifying the analytical configuration or the `run_id`; the following execution without `--seed`, with `--resume`, completes the planned seeds.
 
-All'apertura di V3 resta da collegare al manifest la prova dell'accettazione V2 e quella dell'integrazione V3 sotto codice/lock effettivi. L'esecutore oggi registra dai byte verificati soltanto V0/V1: il report reale ora rifiuta questi due record come evidenza sufficiente, mentre il report delle fixture resta disponibile e non scientifico. La suite V2 non attesta questa integrazione futura. V4 resta la campagna **490 coppie / 980 identità di modello**; V5 resta report, cinque figure, due pesature, ripresa e rigenerazione prefissata.
+At the opening of V3 it remains to link to the manifest the proof of the V2 acceptance and that of the V3 integration under the actual code/lock. The executor today records from the verified bytes only V0/V1: the real report now refuses these two records as sufficient evidence, while the report of the fixtures remains available and non-scientific. The V2 suite does not attest this future integration. V4 remains the campaign **490 pairs / 980 model identities**; V5 remains report, five figures, two weightings, resume and prefixed regeneration.
 
-Le istruzioni `AGENTS.md`/`CLAUDE.md`/`04_AI_HANDOFF_PROMPT.md`, la specifica attiva e il marker pytest sono riallineati allo stato V0–V2. Restano distinti codice implementato, accettazione sintetica e risultati scientifici: nessuna istruzione apre V3 automaticamente. La revisione integrale è rinviata come richiesto dall'utente; questa ripresa completa collegamenti e verifiche del piano V2, non attesta una nuova revisione integrale.
+The instructions `AGENTS.md`/`CLAUDE.md`/`04_AI_HANDOFF_PROMPT.md`, the active specification and the pytest marker are realigned to the V0–V2 state. Implemented code, synthetic acceptance and scientific results remain distinct: no instruction opens V3 automatically. The integral review is deferred as requested by the user; this resumption completes links and checks of the V2 plan, it does not attest a new integral review.
 
-Riscrittura del proposal e pubblicazione sono attività separate. Il vecchio [handoff v2.1](history/v2.1/HANDOFF.md) è conservato integralmente.
+Rewriting of the proposal and publication are separate activities. The old [v2.1 handoff](history/v2.1/HANDOFF.md) is kept in full.

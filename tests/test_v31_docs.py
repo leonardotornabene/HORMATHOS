@@ -26,6 +26,10 @@ REALIGNMENT_BASE = '5f1ec06afa192c8d0f006d7f39cdb97df72c2983'
 ARCHIVE_GUIDE = 'archive/README.md'
 ARCHIVE_TRANSLATIONS = {
     'archive/README_at_5f1ec06.md': 'README.md',
+    'archive/docs/HANDOFF.md': 'docs/HANDOFF.md',
+    'archive/docs/TEST_INVENTORY.md': 'docs/TEST_INVENTORY.md',
+    'archive/docs/V2_RECONCILIATION.md': 'docs/V2_RECONCILIATION.md',
+    'archive/docs/g1_ratification_record.md': 'docs/g1_ratification_record.md',
 }
 
 
