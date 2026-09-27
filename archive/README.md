@@ -10,7 +10,7 @@ This folder keeps the earlier stages of the project: designs, code, tests, docum
 | `docs/archive_v2_0_pdf/` | the same documents in version 2.0, as PDF; the two written in Italian are given as English Markdown | superseded by v2.1 |
 | `docs/audit/` | the audit that restored and amended the v2.0 texts into v2.1: record of every edit, changelog, restored specification, proposal D52 | historical |
 | `docs/g1_*.md`, `docs/g1_registry_proposal.yaml` | records of the **G1** checkpoint of v2.1: technical ratifications, a proposed registry of documents, proposal D55 (never applied) | historical; they ratify neither the corpus nor the present analysis |
-| `docs/HANDOFF.md`, `docs/TEST_INVENTORY.md`, `docs/V2_RECONCILIATION.md` | the technical record, test map and reconciliation register as they stood on 22 September, covering the first phases of the present design | the detailed account that the active decision log cites |
+| `docs/HANDOFF.md`, `docs/TEST_INVENTORY.md`, `docs/V2_RECONCILIATION.md` | the technical record, the test map and the register of the checks that brought the code in line with the deposited plan, as they stood on 22 September, covering the first phases of the present design | the detailed account that the active decision log cites |
 | `docs/implementation/`, `docs/probe_conllu.md` | early implementation plans and a probe of the corpus format | historical |
 | `src/hexis/`, `tests/` | retired code of v2.1: the statistical tests (permutation, bootstrap, Holm), the registry and sequence builders, the Latin and confirmatory stages, and their test suites | never imported and never collected by the active project |
 | `candidates/` | an alternative implementation of the prediction model, kept in quarantine | never imported |
@@ -21,7 +21,7 @@ This folder keeps the earlier stages of the project: designs, code, tests, docum
 
 ## What was abandoned
 
-Design v2.1 compared hexameter and prose in Greek and in Latin, and it tested hypotheses with statistical inference: permutation tests with fixed constants, a sign-stability criterion, a sequence of checkpoints G0–G7 and decisions D01–D55. The deposited plan retired all of these. The present study is descriptive, uses the Greek corpus alone and runs no statistical test. The retired elements must not return to the active project: decision-log entry V3-001 lists them, and the active tests check that the retired code stays out of the package.
+Design v2.1 compared hexameter and prose in Greek and in Latin, and it tested hypotheses with statistical inference: permutation tests with fixed constants, a sign-stability criterion, a sequence of checkpoints G0–G7 that each phase had to pass, and numbered decisions D01–D54 with a proposed D55. The deposited plan retired all of these. The present study is descriptive, uses the Greek corpus alone and runs no statistical test. The retired elements must not return to the active project: decision-log entry V3-001 lists them, and the active tests check that the retired code stays out of the package.
 
 ## Running it
 
@@ -29,7 +29,7 @@ Nothing here runs from the current repository. The paths inside these files, suc
 
 ## Translations of the Italian texts
 
-Some of these texts were written in Italian. Since decision-log entry V3-012 each of them is replaced here by its English translation, at the same path. A PDF is replaced by a Markdown file with the same name. Every translation opens with a header that names its original and the original's SHA-256. The Italian original keeps governing. It is preserved byte for byte in Git at commit `5f1ec06`, and a test checks each header against those bytes. Apart from this page, every other file here is byte for byte what the same path held at `5f1ec06`.
+Some of these texts were written in Italian. Since decision-log entry V3-012 each of them is replaced here by its English translation, at the same path. A PDF is replaced by a Markdown file with the same name. Every translation opens with a header that names its original and the original's SHA-256. The Italian original keeps governing. It is preserved byte for byte in Git at commit `5f1ec06`, and a test checks each header against those bytes. Apart from this page and the translations, every file here is byte for byte what its path, without the leading `archive/`, held at `5f1ec06`. The old front page, translated, is `README_at_5f1ec06.md`.
 
 ## Where to go next
 

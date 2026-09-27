@@ -8,7 +8,7 @@ From the repository root, after `uv sync --frozen` and fetching the corpus as th
 
 ```bash
 uv run pytest            # 431 passed
-uv run pytest -m v31     # the same 431: every test carries the marker v31
+uv run pytest -m v31     # the same 431: every test carries the marker v31 (version 3.1 of the plan)
 ```
 
 The root [`conftest.py`](../conftest.py) enforces the rules of acceptance on every run: each test carries the marker `v31`, none may be skipped or expected to fail, and each must execute at least one `assert`. A test that breaks these rules fails the whole run. `tests/conftest.py` only provides small CoNLL-U samples to the reader tests.

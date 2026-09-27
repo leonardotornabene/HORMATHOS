@@ -140,4 +140,4 @@ The output is deterministic: a second run writes the same bytes.
 
 ## Licence
 
-The figures derive from the corpus and are under CC BY-NC-SA 2.5, as their source, UD Ancient Greek Perseus r2.18 (commit `37837c7a3c592c9563f8c51cc63344b87247f8a5`) and AGDT/Perseus. `make_figures.py` is under MIT; this page under CC BY 4.0, except the corpus-derived values it quotes. The licence decisions are recorded in the [decision log](../../docs/02_DECISION_LOG.md).
+The figures derive from the corpus and are under CC BY-NC-SA 2.5, as their source, UD Ancient Greek Perseus r2.18 (commit `37837c7a3c592c9563f8c51cc63344b87247f8a5`) and the Ancient Greek Dependency Treebank (AGDT/Perseus). `make_figures.py` is under MIT; this page under CC BY 4.0, except the corpus-derived values it quotes. The licence decisions are recorded in the [decision log](../../docs/02_DECISION_LOG.md).

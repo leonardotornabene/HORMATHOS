@@ -40,6 +40,7 @@ This is a descriptive contrast in a finite corpus, not an attribution to metre. 
 | the research plan, fixed before the campaign was run | [plan 3.1, English companion](docs/contracts/hexis-3.1-en/HEXIS_piano_definitivo_v3.1_2026-09-15.md) (the [Italian original](docs/contracts/hexis-3.1/HEXIS_piano_definitivo_v3.1_2026-09-15.md) governs) |
 | why the project looks the way it does: every decision since the plan | [decision log](docs/02_DECISION_LOG.md) |
 | how the results were produced, checked and re-checked | [handoff](docs/HANDOFF.md) and [test inventory](docs/TEST_INVENTORY.md) |
+| what was tried before this design, and why it was abandoned | [archive guide](archive/README.md) |
 | a map of all documents | [docs/00_INDEX.md](docs/00_INDEX.md) |
 
 ## How the project developed
@@ -80,7 +81,7 @@ git -C data/raw/UD_Ancient_Greek-Perseus checkout 37837c7a3c592c9563f8c51cc63344
 uv run pytest            # 431 passed, no skip
 ```
 
-The SHA-256 of each input file is in [data/raw/PROVENANCE.md](data/raw/PROVENANCE.md). To verify the complete campaign, download the archives of the [GitHub Release](https://github.com/leonardotornabene/HORMATHOS/releases/tag/hormathos-v5-evidence) and follow [results/README.md](results/README.md). The commands that produced every run are in the [handoff](docs/HANDOFF.md). Rerunning the campaign or the report is done from the Git tag `hormathos-v5-evidence` (the same commit as `hexis31-v5-evidence`), which fixes the code that produced the published evidence.
+The SHA-256 of each input file is in [data/raw/PROVENANCE.md](data/raw/PROVENANCE.md). To verify the complete campaign, download the archives of the [GitHub Release](https://github.com/leonardotornabene/HORMATHOS/releases/tag/hormathos-v5-evidence) and follow [results/README.md](results/README.md). The commands that produced every run are in the [handoff](docs/HANDOFF.md). Rerunning the campaign or the report is done from the Git tag `hormathos-v5-evidence`, which fixes the code that produced the published evidence.
 
 ## Licences
 
@@ -88,6 +89,6 @@ The SHA-256 of each input file is in [data/raw/PROVENANCE.md](data/raw/PROVENANC
 |---|---|
 | Code and configuration, including check scripts | MIT, [LICENSE](LICENSE) |
 | Documents, the deposited plan and logs | CC BY 4.0, attribution to Leonardo Tornabene |
-| Everything derived from the corpus: encoded corpus, tables, figures, ledgers, position vectors | CC BY-NC-SA 2.5, as the source: UD Ancient Greek Perseus r2.18 and AGDT/Perseus |
+| Everything derived from the corpus: encoded corpus, tables, figures, records of the training samples, losses at each scored position | CC BY-NC-SA 2.5, as the source: UD Ancient Greek Perseus r2.18 and the Ancient Greek Dependency Treebank (AGDT/Perseus) |
 
 The licence decisions are recorded in the [decision log](docs/02_DECISION_LOG.md), entries V3-002 and V3-007; where a file mixes categories, each portion keeps its own licence. The [bibliography](docs/BIBLIOGRAPHY.md) lists the project's sources.

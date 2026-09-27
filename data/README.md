@@ -20,7 +20,7 @@ The files in `raw/` are never modified, and the code refuses to write any output
 
 ## Reading `raw/PROVENANCE.md`
 
-`PROVENANCE.md` is a record, kept as it was written at acquisition. It also lists a Latin treebank, from an earlier design that compared Greek and Latin. That comparison was retired, and the Latin files enter nothing in the active study. Its references (Spec §2.5, D28, D45) point to documents of that earlier design, now in [`archive/`](../archive/). `provenance_v31.json` records the hash of `PROVENANCE.md`, so the record cannot change unnoticed.
+`PROVENANCE.md` is a record, kept as it was written at acquisition. It also lists a Latin treebank, from an earlier design that compared Greek and Latin. That comparison was retired, and the Latin files enter nothing in the active study. Its references (Spec §2.5, D28, D45) point to documents of that earlier design, now in [`archive/`](../archive/README.md). `provenance_v31.json` records the hash of `PROVENANCE.md`, so the record cannot change unnoticed.
 
 ## Licence
 

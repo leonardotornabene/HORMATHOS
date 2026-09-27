@@ -1,6 +1,6 @@
 # HORMATHOS results
 
-The finished results of the HORMATHOS study, as published in the [decision log](../docs/02_DECISION_LOG.md), entry V3-007. The [statement of results and limitations](../docs/RESULTS.md) reads them and defines every term; this page says what each file is. Apart from the pages that describe the files (this one, the [figure gallery](figures/README.md) and the [guide to the run folders](hexis31/README.md)), every file here is byte for byte the one that the pipeline, a check or the figure script wrote; nothing was edited for publication.
+The finished results of the HORMATHOS study, published by entry V3-007 of the [decision log](../docs/02_DECISION_LOG.md). The [statement of results and limitations](../docs/RESULTS.md) reads them and defines every term; this page says what each file is. Apart from the pages that describe the files (this one, the [figure gallery](figures/README.md) and the [guide to the run folders](hexis31/README.md)), every file here is byte for byte the one that the pipeline, a check or the figure script wrote; nothing was edited for publication.
 
 The directory name `hexis31/` comes from HEXIS 3.1, the working title of the research plan when the data were produced; the manifests record these paths, so they are kept.
 
@@ -12,7 +12,7 @@ Scores are in bits per target, a target being a predicted annotation symbol. The
 
 | File | Content |
 |---|---|
-| [seed_summaries.csv](hexis31/v3-seed0-v3006/seed_summaries.csv) | mean, SD, minimum and maximum over seeds of every quantity, per setting, block, document and group: the main table |
+| [seed_summaries.csv](hexis31/v3-seed0-v3006/seed_summaries.csv) | mean, standard deviation (SD), minimum and maximum over seeds of every quantity, per setting, block, document and group: the main table |
 | [contrasts.csv](hexis31/v3-seed0-v3006/contrasts.csv) | hexameter and prose averages and their difference, per setting, seed and way of averaging |
 | [sensitivity_pairs.csv](hexis31/v3-seed0-v3006/sensitivity_pairs.csv) | each variant minus the main setting on the same seed |
 | [block_pairs.csv](hexis31/v3-seed0-v3006/block_pairs.csv), [document_scores.csv](hexis31/v3-seed0-v3006/document_scores.csv) | loss sums per held-out block and per document, original and shuffled, every seed |
@@ -43,7 +43,7 @@ The [GitHub Release `hormathos-v5-evidence`](https://github.com/leonardotornaben
 
 | Archive | SHA-256 | Content |
 |---|---|---|
-| `hormathos-campaign-v3006.tar.gz` (45 MB) | `3dadf6cecc303281897995b84c479721ce56e304859456f18dd9abb0164bec10` | `v1`, `v3-seed0-v3006` complete (490 pair records, 280 sample ledgers, 140 position vectors of the main setting) and its regeneration |
+| `hormathos-campaign-v3006.tar.gz` (45 MB) | `3dadf6cecc303281897995b84c479721ce56e304859456f18dd9abb0164bec10` | `v1`, `v3-seed0-v3006` complete (490 pair records, 280 sample ledgers — which sentences each training sample took — and 140 position vectors — the loss at every scored position of the main setting) and its regeneration |
 | `hormathos-superseded-runs.tar.gz` (17 MB) | `1a4fbf43b021dd442285927e8a76e687d905020220d2a29e9c4931f368a42cc3` | earlier runs, superseded by the two reviews before the campaign and never resumed: `v1-development`, `v1-reproduction`, `v2-pre-v3-audit-2026-09-24`, `v3-seed0`, `v3-seed0-r4-r6`, their regenerations and logs |
 
 To verify, from the repository root after `uv sync --frozen`:
@@ -58,4 +58,4 @@ uv run python -c "from hormathos.pipeline import scientific_run as s; print(len(
 
 ## Licence
 
-Everything here derived from the corpus — the encoded corpus, tables, figures, manifests, pair records, ledgers and position vectors — is under CC BY-NC-SA 2.5, the licence of its source, UD Ancient Greek Perseus r2.18 (commit `37837c7a3c592c9563f8c51cc63344b87247f8a5`) and AGDT/Perseus. Logs and this page are CC BY 4.0, except the corpus-derived values they quote; check scripts are MIT. The licence decisions are entries V3-002 and V3-007 of the [decision log](../docs/02_DECISION_LOG.md).
+Everything here derived from the corpus — the encoded corpus, tables, figures, manifests, pair records, ledgers and position vectors — is under CC BY-NC-SA 2.5, the licence of its source, UD Ancient Greek Perseus r2.18 (commit `37837c7a3c592c9563f8c51cc63344b87247f8a5`) and the Ancient Greek Dependency Treebank (AGDT/Perseus). Logs and this page are CC BY 4.0, except the corpus-derived values they quote; check scripts are MIT. The licence decisions are entries V3-002 and V3-007 of the [decision log](../docs/02_DECISION_LOG.md).

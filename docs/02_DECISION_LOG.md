@@ -349,3 +349,19 @@ The paths are those of `archive/` without the prefix; the originals are at `5f1e
 **Freeze perimeter.** `tests/test_v31_docs.py` changes, and `tests/test_v31_enforcement.py` changes only the name of the replaced test in its list of required behaviours; `docs/TEST_INVENTORY.md` describes the new checks. The test context of `master` changes in the hashes of these two files. The code identity and the run ID `6aa1b719…` are unchanged, and the evidence stays fixed at the tag `hormathos-v5-evidence`. `src/hormathos`, `conftest.py`, `config/`, `pyproject.toml` and `uv.lock` are unchanged. The Release, its assets and its tags are unchanged.
 
 **Licences**, by the categories of V3-002: the translations and the guide are documents, under CC BY 4.0, as their originals.
+
+## V3-013 — A last reading of the reader-facing texts, 2026-09-27
+
+**Status: ADOPTED.** Source of authorization: the owner's request of 27 September 2026 for a last review of the texts a reader meets — the README, the introductions of the folders and the results — so that none relies on an internal reference, a project code or an abbreviation left unexplained, and so that they reflect the guide of `archive/` and the translations of V3-012. The owner approved the proposed changes. The act applies the rule of V3-010; it modifies no byte of the deposit, of the acts V3-001 to V3-012, of the published runs or of the code, and authorizes no run.
+
+**Changes.** Wording only:
+
+- README: the table of where to start links the guide of `archive/`; the licence table names the training-sample records and the per-position losses in plain words and gives the Ancient Greek Dependency Treebank its full name; the reproduction paragraph drops the older name of the evidence tag, which this log keeps (V3-008).
+- `archive/README.md`: the reconciliation register and the checkpoints G0–G7 are said in plain words; the decisions read D01–D54 with the proposed D55, as the guide's table says; the closing sentence of the translations section, which read as if the translations too kept their bytes, now excepts them and names `README_at_5f1ec06.md`.
+- `docs/00_INDEX.md`: the phases V0–V5 and the contents of the archive in plain words; section 17.1 is named as a section of the plan; this act is listed.
+- `data/README.md` links the guide of `archive/` rather than the folder.
+- `results/README.md`, `results/figures/README.md`, `tests/README.md` and `docs/RESULTS.md`: the standard deviation, the sample ledgers, the position vectors, the marker `v31` and the Ancient Greek Dependency Treebank are explained at their first use. No numeric cell of `docs/RESULTS.md` changes.
+
+**Freeze perimeter and Release.** `src/hormathos`, the `.py` files of `tests/`, `conftest.py`, `config/`, `pyproject.toml` and `uv.lock` are unchanged; `tests/README.md` is read by no identity (V3-011). The code identity and the run ID `6aa1b719…` are unchanged. The Release `hormathos-v5-evidence`, its assets and its tags are unchanged.
+
+**Licences**, by the categories of V3-002: the changed pages are documents, under CC BY 4.0, except the corpus-derived values they quote.
