@@ -1,6 +1,6 @@
 > **English translation; the Italian original governs** (V3-012).
 > Original: `docs/archive_v2_0_pdf/00_LEGGIMI_INDICE.pdf` at commit `5f1ec06` (tag `archive/pre-realign`), a PDF of 3 pages kept at this path until V3-012; SHA-256 `9bee6b2d7568e8c1a2f65e2c758715928df046662833a356ca54b7585524a422`.
-> Translated on 2026-09-27 from the text of the PDF. Headings, table and lists are rebuilt from that text, with the emphasis of the later Markdown version of the same index where the wording coincides; the running page footer («HEXIS — Indice del pacchetto operativo pag. N / 3») is omitted. Values and identifiers follow the original; numbers use English notation. The informal second person of the original, addressed to the author, is kept. Any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
+> Translated on 2026-09-27 from the text of the PDF. Headings, table and lists are rebuilt from that text, with the emphasis of the later Markdown version of the same index where the wording coincides; the running page footer identifying HEXIS, the operational package index and its page number is omitted. Values and identifiers follow the original; numbers use English notation. The informal second person of the original, addressed to the author, is kept. Any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
 
 # PROJECT HEXIS — INDEX OF THE OPERATIONAL PACKAGE
 

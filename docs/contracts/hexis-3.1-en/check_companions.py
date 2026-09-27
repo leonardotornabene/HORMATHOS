@@ -11,14 +11,17 @@ def section(text, spec):
     start, end = spec
     return text[text.index(start):text.index(end)]
 
-def numbers(text, italian):
+def numbers(text):
     text = re.sub(r'`[^`]*`', ' ', text)                      # identifiers, hashes, paths
     text = re.sub(r'\]\([^)]*\)', ']', text)                  # link targets
     text = re.sub(r'\b[0-9a-f]{16,}\b', ' ', text)
     text = re.sub(r'§§?\s?[\d.,–]+', ' ', text)                # section references keep their notation
     text = text.replace('[0,1]', ' ').replace('(0,1)', ' ').replace('{,}', ',')     # LaTeX decimal comma                          # interval notation, identical in both
+    return Counter(re.findall(r'\d[\d.,]*\d|\d', text))
+
+def normalized_numbers(tokens, italian):
     out = []
-    for tok in re.findall(r'\d[\d.,]*\d|\d', text):
+    for tok in tokens.elements():
         if italian:
             tok = re.sub(r'\.(?=\d{3}(\D|$))', '', tok).replace(',', '.')
         else:
@@ -56,7 +59,10 @@ for original, translation, *spec in pairs:
     same = [b for b in ob if b in tb]                       # code reproduced verbatim: compared as bytes, not as numbers
     oo, bb = o, body
     for b in same: oo, bb = oo.replace(b, ' '), bb.replace(b, ' ')
-    no, nt = numbers(oo, True), numbers(bb, False)
+    original_numbers, translated_numbers = numbers(oo), numbers(bb)
+    shared = original_numbers & translated_numbers  # the originals also use decimal points and C(n,k)
+    no = normalized_numbers(original_numbers - shared, True)
+    nt = normalized_numbers(translated_numbers - shared, False)
     missing = no - nt
     if missing: problems.append(f'numbers missing in translation: {dict(missing)}')
     status = 'OK ' if not problems else 'FAIL'
