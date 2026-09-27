@@ -12,9 +12,38 @@ ROOT = Path(__file__).resolve().parents[1]
 # The three V3-001 blocks are the acts of 16, 17 and 22 September: V3-002 supersedes
 # sentences of theirs, it never rewrites their bytes. The hash starts at the first
 # V3-001 heading: the file title is not an act and follows the project name (V3-003).
+# Since V3-012 the log holds their English translation; the Italian originals, which
+# govern, keep these hashes at the tag ORIGINALS_TAG.
 V3_001_SHA256 = '8ee0f130ac59085862c940c0804fc25733a7a12f9e83bb0abf95c18c9fba8864'
+V3_002_SHA256 = '094a686e52841202b7185d383f48f1e8619e8ae11db934ea61a6966b7d01c5ed'
+ORIGINALS_TAG = 'hormathos-v5-evidence'
 LOCK_SHA256 = '33db43b00bcb21ab12aedf6dcc4257764770bff0115dc0d1dfab6e5ea89876bf'
 REALIGNMENT_BASE = '5f1ec06afa192c8d0f006d7f39cdb97df72c2983'
+# V3-012: the archived Italian texts are read in English, each at the path of its original
+# unless named otherwise here (archived path -> path at the base). Their originals stay at
+# the base, tagged archive/pre-realign; each translation names their SHA-256 in its header.
+# ARCHIVE_GUIDE is the only file of the archive that has no original.
+ARCHIVE_GUIDE = 'archive/README.md'
+ARCHIVE_TRANSLATIONS = {
+    'archive/README_at_5f1ec06.md': 'README.md',
+}
+
+
+def _git(*argv, stdin=None, text=True):
+    return subprocess.run(['git', *argv], cwd=ROOT, input=stdin, check=True,
+                          capture_output=True, text=text).stdout
+
+
+def _declared_original_sha256_in(text):
+    """The SHA-256 a translation names for its original, in its opening header."""
+    import re
+    found = re.search(r'SHA-256[^`]{0,40}`([0-9a-f]{64})`', text[:1500])
+    assert found, text[:80]
+    return found.group(1)
+
+
+def _declared_original_sha256(path):
+    return _declared_original_sha256_in(path.read_text())
 
 
 def test_active_authority_and_instructions_are_aligned():
@@ -36,11 +65,22 @@ def test_active_authority_and_instructions_are_aligned():
     assert 'Stop for review before V3.' in (ROOT/'docs/HANDOFF.md').read_text()
 
 
-def test_the_v3_001_acts_are_never_rewritten():
-    log = (ROOT/'docs/02_DECISION_LOG.md').read_text()
-    acts = log[log.index('## V3-001 —'):log.index('## V3-002 —')]
-    assert hashlib.sha256(acts.encode()).hexdigest() == V3_001_SHA256
-    assert 'V3-002 — Riallineamento della repository' in log
+def test_the_v3_001_and_v3_002_originals_are_preserved_and_bound_to_their_translation():
+    """Retired on 2026-09-27 (V3-012): this test pinned the Italian V3-001 blocks in the log,
+    which now holds their English translation. The property that no byte of the acts is lost
+    moves to Git: at the tag the Italian blocks keep their hashes, and the English text of
+    each act in the log names the hash of its original."""
+    def acts(log):   # headings only: the notes of the translations quote them in backticks
+        start = {n: log.index(f'\n## V3-00{n} —') + 1 for n in (1, 2, 3)}
+        return {'V3-001': log[start[1]:start[2]], 'V3-002': log[start[2]:start[3]]}
+    original = _git('show', f'{ORIGINALS_TAG}:docs/02_DECISION_LOG.md')
+    assert 'V3-002 — Riallineamento della repository' in original
+    expected = {'V3-001': V3_001_SHA256, 'V3-002': V3_002_SHA256}
+    for act, text in acts(original).items():
+        assert hashlib.sha256(text.encode()).hexdigest() == expected[act], act
+    for act, text in acts((ROOT/'docs/02_DECISION_LOG.md').read_text()).items():
+        assert _declared_original_sha256_in(text) == expected[act], act
+        assert 'Riallineamento' not in text, act
 
 
 def test_the_package_is_hormathos_and_hexis_names_only_the_design():
@@ -90,7 +130,11 @@ def test_all_preserved_v21_documents_match_the_original_hash_inventory():
     records = json.loads((history/'SHA256SUMS.json').read_text())
     assert len(records) == 10
     for name, record in records.items():
-        assert hashlib.sha256((history/name).read_bytes()).hexdigest() == record['sha256'], name
+        path = history/name
+        if str(path.relative_to(ROOT)) in ARCHIVE_TRANSLATIONS:   # V3-012: read in English
+            assert _declared_original_sha256(path) == record['sha256'], name
+        else:
+            assert hashlib.sha256(path.read_bytes()).hexdigest() == record['sha256'], name
 
 
 def test_the_archive_is_a_record_and_never_a_dependency():
@@ -107,19 +151,26 @@ def test_the_archive_is_a_record_and_never_a_dependency():
 
 def test_every_archived_file_has_its_bytes_at_the_base():
     """Rule `archive/P` (V3-002): every archived file holds the bytes `P` had at the
-    base, so nothing new can sit in the archive under a historical name."""
-    def git(*argv, stdin=None):
-        return subprocess.run(['git', *argv], cwd=ROOT, input=stdin, check=True,
-                              capture_output=True, text=True).stdout
+    base, so nothing new can sit in the archive under a historical name. V3-012 admits
+    the guide and the declared English translations: each names in its header the SHA-256
+    of its original, whose bytes the base keeps, so no historical byte is lost."""
     base = {}
-    for entry in git('ls-tree', '-r', '-z', REALIGNMENT_BASE).split('\0'):
+    for entry in _git('ls-tree', '-r', '-z', REALIGNMENT_BASE).split('\0'):
         if entry:
             meta, path = entry.split('\t', 1)
             base[path] = meta.split()[2]
-    archived = [path for path in git('ls-files', '-z', 'archive').split('\0') if path]
-    blobs = git('hash-object', '--stdin-paths', stdin='\n'.join(archived)).split()
+    archived = [path for path in _git('ls-files', '-z', 'archive').split('\0') if path]
+    blobs = _git('hash-object', '--stdin-paths', stdin='\n'.join(archived)).split()
     assert archived and len(blobs) == len(archived)
+    assert ARCHIVE_GUIDE in archived and set(ARCHIVE_TRANSLATIONS) <= set(archived)
     for path, blob in zip(archived, blobs):
+        if path == ARCHIVE_GUIDE:
+            continue
+        if path in ARCHIVE_TRANSLATIONS:
+            original = _git('cat-file', 'blob', base[ARCHIVE_TRANSLATIONS[path]], text=False)
+            assert blob != base[ARCHIVE_TRANSLATIONS[path]], path
+            assert _declared_original_sha256(ROOT/path) == hashlib.sha256(original).hexdigest(), path
+            continue
         assert base.get(path.removeprefix('archive/')) == blob, path
 
 

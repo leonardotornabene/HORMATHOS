@@ -119,7 +119,7 @@ REQUIRED = {'test_gate_inventory_anchor.py': ['test_repository_gate_rejects_a_mi
                         'test_map_tokens_keeps_a_boolean_mask_on_an_empty_table',
                         'test_an_unknown_alphabet_variant_is_refused'],
  'test_v31_docs.py': ['test_active_authority_and_instructions_are_aligned',
-                      'test_the_v3_001_acts_are_never_rewritten',
+                      'test_the_v3_001_and_v3_002_originals_are_preserved_and_bound_to_their_translation',
                       'test_the_package_is_hormathos_and_hexis_names_only_the_design',
                       'test_the_deposit_and_the_lock_are_byte_preserved',
                       'test_the_sdist_ships_exactly_the_tracked_tree',

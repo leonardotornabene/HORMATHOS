@@ -7,7 +7,7 @@ This folder holds the research plan of HORMATHOS and its machine-readable contra
 | Folder | What it is | Authority |
 |---|---|---|
 | [`hexis-3.1/`](hexis-3.1/) | the deposit, in Italian, byte for byte as delivered | **normative**: it governs |
-| [`hexis-3.1-en/`](hexis-3.1-en/README.md) | English translations of its texts and of two Italian decision-log entries | non-normative: the original governs |
+| [`hexis-3.1-en/`](hexis-3.1-en/README.md) | English translations of its texts | non-normative: the original governs |
 
 The plan's text governs meaning; its JSON files fix values. [`../V3-001-deposit.json`](../V3-001-deposit.json) records the SHA-256 of every deposited file. A test recomputes them all. The pipeline refuses to run if the folder of contracts it reads holds any file more or any file less than its checksums list. For this reason nothing new is ever placed inside `hexis-3.1/`, not even an introduction, and this page describes it from outside.
 
@@ -25,5 +25,5 @@ The plan's text governs meaning; its JSON files fix values. [`../V3-001-deposit.
 ## Where to go next
 
 - To read the plan, use the [English companion](hexis-3.1-en/HEXIS_piano_definitivo_v3.1_2026-09-15.md).
-- For how the plan was adopted and applied, see the [decision log](../02_DECISION_LOG.md), entry V3-001, and its [English companion](hexis-3.1-en/decision-log/V3-001.md).
+- For how the plan was adopted and applied, see the [decision log](../02_DECISION_LOG.md), entry V3-001.
 - For what the plan's measures turned out to be, see the [statement of results](../RESULTS.md).

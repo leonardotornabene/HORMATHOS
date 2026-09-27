@@ -46,7 +46,7 @@ This is a descriptive contrast in a finite corpus, not an attribution to metre. 
 
 The work began with a question about Homeric composition and the possibilities of information theory. It then considered a comparison between hexameter and prose, first also in Latin. Limited comparable annotated data, uneven coverage of authors and works, and too few independent units made broad claims about composition or genre difficult to support. The present design therefore asks a narrower question: how large and how consistent is the predictive advantage of attested order across the texts available, and how sensitive is it to reasonable choices in the analysis? Hexameter and prose remain a descriptive comparison within that study.
 
-The plan was written, reviewed and deposited on 15 September 2026, under the working title HEXIS 3.1, before the final campaign was run; results of earlier pilots were already known to the author, a limitation the statement of results records. The code implements the deposited plan, and every departure from it is declared in the decision log. The project was later named **HORMATHOS**, the name it carries throughout; HEXIS survives only in the deposit, in the identifiers and paths that it and the published evidence fix, and in historical records. Earlier approaches, including an abandoned design based on statistical tests, are kept unchanged in [archive/](archive/). The [decision log](docs/02_DECISION_LOG.md) records every step as a numbered entry: V3-001 adopts the plan, V3-002 reorganizes the repository around it and sets the licences, V3-003 gives the project its name, and the later entries close the reviews before the campaign, publish the results and prepare them for readers.
+The plan was written, reviewed and deposited on 15 September 2026, under the working title HEXIS 3.1, before the final campaign was run; results of earlier pilots were already known to the author, a limitation the statement of results records. The code implements the deposited plan, and every departure from it is declared in the decision log. The project was later named **HORMATHOS**, the name it carries throughout; HEXIS survives only in the deposit, in the identifiers and paths that it and the published evidence fix, and in historical records. Earlier approaches, including an abandoned design based on statistical tests, are kept in [archive/](archive/README.md), with a guide to what each part was. The [decision log](docs/02_DECISION_LOG.md) records every step as a numbered entry: V3-001 adopts the plan, V3-002 reorganizes the repository around it and sets the licences, V3-003 gives the project its name, and the later entries close the reviews before the campaign, publish the results and prepare them for readers.
 
 ## How this project was made
 
@@ -54,7 +54,7 @@ HORMATHOS is an independent project by Leonardo Tornabene, a student, carried ou
 
 ## Repository layout
 
-Every folder except `archive/` opens with a short page that says what it holds, why it is there and where to start.
+Every folder opens with a short page that says what it holds, why it is there and where to start.
 
 | Path | What it is |
 |---|---|
@@ -65,7 +65,7 @@ Every folder except `archive/` opens with a short page that says what it holds, 
 | [`tests/`](tests/README.md) | 431 acceptance tests, all run with no skip; map in the [test inventory](docs/TEST_INVENTORY.md) |
 | [`config/`](config/README.md) | the settings of the deposited plan, as YAML, and the registry of documents |
 | [`data/`](data/README.md) | provenance of the pinned corpus; the raw files are not redistributed |
-| [`archive/`](archive/) | earlier designs and code, byte for byte as they were at commit `5f1ec06`; a record, not part of the active project. Nothing can be added to it, so opening it shows the project's old front page from that time, not a guide; [docs/](docs/README.md#not-here-archive) explains |
+| [`archive/`](archive/README.md) | earlier designs, code and records, as they were at commit `5f1ec06`; a record, not part of the active project. Its Italian texts are read in English translation, with the originals kept in Git |
 | `CLAUDE.md`, `AGENTS.md` | instructions for the AI coding assistants (see above) |
 | `pyproject.toml`, `uv.lock`, `conftest.py` | Python 3.12 environment, locked dependencies, test enforcement |
 

@@ -14,9 +14,11 @@ results/hexis31/v3-seed0-v3006; results and limits are stated in docs/RESULTS.md
 V3-007 published them: the readable layer in results/, the complete runs in the
 GitHub Release hormathos-v5-evidence; results/hexis31 is otherwise gitignored.
 V3-002 realigned the repository on 2026-09-22: the active tree is 3.1 only and
-every historical material is preserved byte for byte under archive/, at the
-path it had at 5f1ec06. archive/ is a record: never imported, never collected,
-outside the code identity; it runs at that commit, not here. Retired design
+every historical material is preserved under archive/, at the path it had at
+5f1ec06, byte for byte or, since V3-012, as the English translation of an Italian
+original kept at that commit. archive/ has one guide, README.md, and is a
+record: never imported, never collected, outside the code identity; it runs at
+that commit, not here. Retired design
 elements — v2.1 inference, Latin, gates G0–G7, permutation constants,
 sign-stability, D01–D55 — are listed in V3-001 and must never be reintroduced.
 
@@ -25,9 +27,10 @@ every reader-facing text and to the release. HEXIS 3.1 is only the working title
 of the deposit: hexis survives in the deposit and its companions, the contract
 identifiers, the distribution name that the contract-fixed uv.lock records,
 results/hexis31, archive/ and the records that quote them. The package is
-src/hormathos. Every artifact is in English; the
-Italian originals of the deposit and of V3-001 and V3-002 govern and are never
-rewritten.
+src/hormathos. Every artifact is in English. Italian originals govern and are
+never rewritten: the deposit stays byte for byte in the tree; V3-001, V3-002 and
+the Italian texts of archive/ are read in English since V3-012, each translation
+naming the SHA-256 of its original, which Git keeps at a published tag.
 
 Stop for review before any new run or publication; no real fit beyond V4, the
 last one authorized (V3-006). The freeze perimeter is code identity over all of src/hormathos plus

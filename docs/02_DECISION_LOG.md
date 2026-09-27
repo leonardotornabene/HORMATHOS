@@ -1,137 +1,143 @@
 # Active Decision Log — HORMATHOS (deposited design 3.1)
 
-V3-001 and V3-002 are kept in their Italian originals, which govern and are never rewritten; V3-003 and every later entry are in English.
+V3-001 and V3-002 were written in Italian. Since V3-012 this log holds their English translation; their Italian originals govern and are preserved byte for byte at the tag `hormathos-v5-evidence`, each identified by the SHA-256 at the head of its translation. V3-003 and every later entry were written in English.
 
-## V3-001 — Adozione della v3.1 e prima tranche V0–V1
+## V3-001 — Adoption of v3.1 and first tranche V0–V1
 
-**Data del deposito: 2026-09-16. Stato: ADOTTATA per le nuove esecuzioni.** Fonte di autorizzazione: richiesta dell'utente nella sessione corrente di implementare il piano definitivo V0–V1. Non si attribuiscono a questa richiesta autorizzazioni pregresse o attività V2–V5.
+> **English translation; the Italian original governs** (V3-012). The original is the three V3-001 blocks, from the first `## V3-001 —` heading up to, excluding, `## V3-002 —`, of `docs/02_DECISION_LOG.md` at the tag `hormathos-v5-evidence`, preserved byte for byte; SHA-256 of that UTF-8 text `8ee0f130ac59085862c940c0804fc25733a7a12f9e83bb0abf95c18c9fba8864`. Translated on 2026-09-25 as a companion (V3-003) and moved into this log on 2026-09-27. Structure, values and identifiers follow the original; numbers use English notation; any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
 
-Il [piano v3.1](contracts/hexis-3.1/HEXIS_piano_definitivo_v3.1_2026-09-15.md) e i contratti depositati costituiscono l'unica autorità attiva. Il [record esterno](V3-001-deposit.json) identifica tutti i byte; gli stati originari `FINAL_PLAN_NOT_APPLIED` e `V0_deposit: null` nei materiali restano intatti e descrivono la consegna precedente. L'atto presente ne adotta il contenuto senza modificare ciò che i digest identificano. Il commit di deposito sarà riferito dal manifest successivo, senza autoriferimento.
+**Date of the deposit: 2026-09-16. Status: ADOPTED for the new executions.** Source of authorization: the user's request in the current session to implement the definitive plan V0–V1. No earlier authorizations or V2–V5 activities are attributed to this request.
 
-Per la v3.1 sono **non applicabili**: inferenza P1/P2, latino, O7 come blocco operativo, costanti permutazionali, G0–G7 e relativo ordine, sensitività precedenti, sign-stability, selettore Rissanen/penalità, sequenze con SEP/#, chunk e modelli di riferimento. Sono sostituiti dai §§3–14 della v3.1: greco, sette blocchi, CTW congelato, due bracci, sei celle, target j≥4, RNG SHA-256, checklist V0–V5. Non si dichiara O7 risolto né G2 superato nel progetto v2.1.
+The [v3.1 plan](contracts/hexis-3.1/HEXIS_piano_definitivo_v3.1_2026-09-15.md) and the deposited contracts constitute the only active authority. The [external record](V3-001-deposit.json) identifies all the bytes; the original statuses `FINAL_PLAN_NOT_APPLIED` and `V0_deposit: null` in the materials remain intact and describe the earlier delivery. The present act adopts their content without modifying what the digests identify. The deposit commit will be referenced by the subsequent manifest, without self-reference.
 
-Restano: bit/log base 2, test prima del codice, controlli rigorosi e determinismo, raw immutabili, nessun import da candidates, core senza etichette/annotazione separata, nessuna nuova dipendenza o fonte bibliografica implicita. Le nuove soglie A/B sono diagnostiche. I 17 skip storici non costituiscono accettazione attiva: gli obblighi futuri sono esplicitamente PENDING nell'[inventario](TEST_INVENTORY.md).
+For v3.1 the following are **not applicable**: P1/P2 inference, Latin, O7 as an operational block, permutation constants, G0–G7 and their order, earlier sensitivities, sign-stability, Rissanen selector/penalties, sequences with SEP/#, chunks and reference models. They are replaced by §§3–14 of v3.1: Greek, seven blocks, frozen CTW, two arms, six cells, targets j≥4, SHA-256 RNG, V0–V5 checklist. O7 is not declared resolved nor G2 passed in the v2.1 project.
 
-Storia epistemica: sono stati osservati pilot reali; questo è un protocollo prospettico dopo sviluppo, non una preregistrazione antecedente ai dati. La copertura verificata e i limiti sono nel §2 del piano e nel verdetto depositato. Il resoconto `contracts/hexis-3.1/HEXIS_v3_allegati/authorization_and_experiments.json` è fonte delle autorizzazioni pregresse **con la verificabilità lì dichiarata**: non è un consenso originale indipendentemente verificato; non si ricostruiscono date/orari mancanti. I 25 esiti sintetici archiviati sono evidenze storiche, non accettazione del futuro CTW canonico. Nessun nuovo fit reale è autorizzato da questa tranche.
+What remains: bits/log base 2, tests before code, strict checks and determinism, immutable raw files, no import from candidates, label-free core/separate annotation, no new dependency or implicit bibliographic source. The new A/B thresholds are diagnostics. The 17 historical skips do not constitute active acceptance: the future obligations are explicitly PENDING in the [inventory](TEST_INVENTORY.md).
 
-D01–D54 sono conservate integralmente qui sotto. [D55](g1_D55_proposal.md) resta PROPOSED, applicata a nulla nella v2.1; le [ratifiche tecniche G1](g1_ratification_record.md) conservano esattamente gli stati originari. Il proposal PDF e README di backup sono storici; la riscrittura del proposal e la pubblicazione rimangono separate.
+Epistemic history: real pilots were observed; this is a prospective protocol after development, not a preregistration preceding the data. The verified coverage and the limits are in §2 of the plan and in the deposited verdict. The account `contracts/hexis-3.1/HEXIS_v3_allegati/authorization_and_experiments.json` is the source of the earlier authorizations **with the verifiability declared there**: it is not an independently verified original consent; missing dates/times are not reconstructed. The 25 archived synthetic outcomes are historical evidence, not acceptance of the future canonical CTW. No new real fit is authorized by this tranche.
 
----
+D01–D54 are kept in full below. [D55](g1_D55_proposal.md) remains PROPOSED, applied to nothing in v2.1; the [G1 technical ratifications](g1_ratification_record.md) keep exactly their original statuses. The PDF proposal and the backup README are historical; the rewriting of the proposal and the publication remain separate.
 
-## V3-001 — Nota di esecuzione V2, 2026-09-17
-
-La richiesta corrente dell'utente autorizza la ripresa e il completamento del piano
-V2 sul ramo `codex/hexis31-v0-v1`, con revisione integrale successiva e arresto prima
-di V3. Questa fonte è distinta dalla richiesta V0–V1 del deposito: non le si
-attribuiscono retroattivamente nuove autorizzazioni. Nessun fit reale, pubblicazione
-o cambiamento dei byte normativi è incluso nella ripresa.
-
-Il §11.1 è applicato conservando i nomi pubblici `pooled_score_core` e
-`annotate_scores` con API per gli slot accoppiati e per l'annotazione del registro.
-Le firme a cinque/tre argomenti del protocollo v2.1 sono sostituite, insieme ai
-relativi attesi di firma; resta verificato il vincolo valido di indipendenza dalle
-etichette, ora anche comportamentalmente. Questo adeguamento tecnico attua
-V3-001 e non ratifica G0/D52 retroattivamente. Evidenze e limite V3–V5
-nell'[handoff](HANDOFF.md) e nell'[inventario](TEST_INVENTORY.md).
+*[Translator's note: since V3-002 (22 September 2026), D01–D54, D55 and the G1 ratifications are preserved under `archive/docs/`, so the relative links above no longer resolve in the active tree; the original is reproduced as written.]*
 
 ---
 
-## V3-001 — Nota di esecuzione pre-V3, 2026-09-22
+## V3-001 — Execution note V2, 2026-09-17
 
-La revisione integrale chiesta dall'utente prima di V3 ha ricevuto quattro decisioni esplicite
-(D1–D4, [handoff](HANDOFF.md)). Qui si registra la sola deviazione dal testo del contratto.
+The user's current request authorizes the resumption and completion of the V2 plan
+on the branch `codex/hexis31-v0-v1`, with a subsequent complete review and a stop before
+V3. This source is distinct from the V0–V1 request of the deposit: no new authorizations
+are retroactively attributed to it. No real fit, publication or change of the normative
+bytes is included in the resumption.
 
-**CLI (§14.1).** Le righe del §14.1 sono comandi di principio. Gli entry point implementati
-richiedono in più destinazioni esplicite: `--data-root`/`--output-dir` per audit e codifica;
-`--corpus-dir`/`--output-dir` per `run_descriptive`, `run_report` e per la pubblicazione delle
-evidenze con `run_tree_validation`; `--regenerated-dir` per il report scientifico (§12.2). Accettano
-inoltre `--seed 0`, `--resume` e `--fixture`. Motivo: il §11.7 vieta sovrascritture implicite e
-richiede pubblicazione atomica in una destinazione nuova o in una ripresa verificata, quindi nessuna
-destinazione è dedotta. Nessun parametro scientifico passa dalla CLI: celle, semi e pesi restano
-quelli della proiezione depositata. Nessuna clausola, atteso o byte contrattuale è modificato.
+§11.1 is applied keeping the public names `pooled_score_core` and
+`annotate_scores` with APIs for the paired slots and for the annotation of the registry.
+The five/three-argument signatures of the v2.1 protocol are replaced, together with their
+expected signatures; the valid constraint of independence from the labels remains
+verified, now behaviourally too. This technical adjustment implements
+V3-001 and does not retroactively ratify G0/D52. Evidence and the V3–V5 limit
+in the [handoff](HANDOFF.md) and in the [inventory](TEST_INVENTORY.md).
 
 ---
 
-## V3-002 — Riallineamento della repository e atto di pubblicazione, 2026-09-22
+## V3-001 — Execution note pre-V3, 2026-09-22
 
-**Stato: ADOTTATA; atto di pubblicazione efficace dal 2026-09-23 con il push del ramo `codex/hexis31-realign` a `2ebb3464b871c1f831d0608edba052ccb4b92be9` e dei tag `archive/pre-realign` e `archive/v2.1`; seguono il merge in `master` e la cancellazione di `g1/pre-audit` (E5).** Fonte di autorizzazione: richiesta dell'utente del 22 settembre 2026 di allineare integralmente la repository al piano v3.1 prima della code review e di V3, con le decisioni E1–E8 e N1–N4 riportate sotto. L'atto non modifica alcun byte del deposito né i tre blocchi V3-001 sopra, che restano gli atti del 16, 17 e 22 settembre. Base: `5f1ec06afa192c8d0f006d7f39cdb97df72c2983`. Storia v2.1 già pubblica: `852644b6917790877c7b2ca5df2e76b17829d87c`. I tag annotati `archive/pre-realign` e `archive/v2.1` puntano a questi due commit; le ancore normative sono gli SHA, non i nomi dei tag.
+The complete review requested by the user before V3 received four explicit decisions
+(D1–D4, [handoff](HANDOFF.md)). Only the deviation from the text of the contract is recorded here.
 
-**Archivio (§13.1 p.4–5, §17.3).** Tutto ciò che non appartiene al percorso 3.1 esce dall'albero attivo ed entra in `archive/`, con questa regola: il file che a `5f1ec06` stava in `P` sta ora in `archive/P`, con gli stessi byte. `archive/` non viene importato, non viene raccolto da pytest, non entra nell'identità del codice (`src/hexis`) né nel contesto delle evidenze V2 (`tests/*.py`). È un registro, non un albero eseguibile: ogni voce si esegue a `5f1ec06`, dove il suo codice è vivo. Due test attivi lo vincolano: nessun suo file è raccolto, nemmeno da `pytest .`, e ogni suo file ha il blob che aveva alla base. Stato delle voci:
+**CLI (§14.1).** The lines of §14.1 are commands in principle. The implemented entry points
+additionally require explicit destinations: `--data-root`/`--output-dir` for audit and encoding;
+`--corpus-dir`/`--output-dir` for `run_descriptive`, `run_report` and for publishing the
+evidence with `run_tree_validation`; `--regenerated-dir` for the scientific report (§12.2). They
+also accept `--seed 0`, `--resume` and `--fixture`. Reason: §11.7 forbids implicit overwrites and
+requires atomic publication in a new destination or in a verified resumption, so no
+destination is inferred. No scientific parameter passes through the CLI: cells, seeds and weights remain
+those of the deposited projection. No clause, expected value or contractual byte is modified.
 
-| Voce | Posizione | Stato |
+---
+
+## V3-002 — Realignment of the repository and publication act, 2026-09-22
+
+> **English translation; the Italian original governs** (V3-012). The original is the V3-002 act, from the heading `## V3-002 —` up to, excluding, `## V3-003 —`, of `docs/02_DECISION_LOG.md` at the tag `hormathos-v5-evidence`, preserved byte for byte; SHA-256 of that UTF-8 text `094a686e52841202b7185d383f48f1e8619e8ae11db934ea61a6966b7d01c5ed`. Translated on 2026-09-25 as a companion (V3-003) and moved into this log on 2026-09-27. Structure, values and identifiers follow the original; numbers use English notation; any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
+
+**Status: ADOPTED; publication act effective from 2026-09-23 with the push of the branch `codex/hexis31-realign` at `2ebb3464b871c1f831d0608edba052ccb4b92be9` and of the tags `archive/pre-realign` and `archive/v2.1`; the merge into `master` and the deletion of `g1/pre-audit` (E5) follow.** Source of authorization: the user's request of 22 September 2026 to align the repository fully with the v3.1 plan before the code review and V3, with the decisions E1–E8 and N1–N4 reported below. The act modifies no byte of the deposit nor the three V3-001 blocks above, which remain the acts of 16, 17 and 22 September. Base: `5f1ec06afa192c8d0f006d7f39cdb97df72c2983`. v2.1 history already public: `852644b6917790877c7b2ca5df2e76b17829d87c`. The annotated tags `archive/pre-realign` and `archive/v2.1` point to these two commits; the normative anchors are the SHAs, not the tag names.
+
+**Archive (§13.1 items 4–5, §17.3).** Everything that does not belong to the 3.1 path leaves the active tree and enters `archive/`, with this rule: the file that at `5f1ec06` was at `P` is now at `archive/P`, with the same bytes. `archive/` is not imported, is not collected by pytest, does not enter the identity of the code (`src/hexis`) nor the context of the V2 evidence (`tests/*.py`). It is a record, not an executable tree: each item is executed at `5f1ec06`, where its code is alive. Two active tests bind it: none of its files is collected, not even by `pytest .`, and each of its files has the blob it had at the base. Status of the items:
+
+| Item | Location | Status |
 |---|---|---|
-| D01–D54, specifica, roadmap, handoff e istruzioni v2.1 | `archive/docs/history/v2.1/` | FROZEN per la v2.1; nessuna autorità per nuove esecuzioni; byte verificati dal loro `SHA256SUMS.json` |
-| D55 | `archive/docs/g1_D55_proposal.md` | PROPOSED, applicata a nulla |
-| Ratifiche tecniche G1 e proposta di registro | `archive/docs/g1_*` | Stati originari; non ratificano il corpus né l'analisi 3.1 |
-| `candidates/` | `archive/candidates/` | In quarantena (D47); nessun import |
-| Utility statistiche e loro test (§13.2) | `archive/src/hexis/stats/`, `archive/tests/` | Storiche, funzionanti a `5f1ec06`; nessun import nella pipeline |
-| Registro, sequenze, blocchi, lessico v2.1, `legacy_audit`, cinque stadi ritirati | `archive/src/hexis/…` | Ritirati; sostituiti da `corpus.py`, `sampling.py`, `corpus_run.py`, `run_descriptive.py` |
-| Test v2.1, G0, G1 e scaffold, compresi i 17 skip | `archive/tests/` | Storici; destinazione di ogni test nella mappa di [TEST_INVENTORY](TEST_INVENTORY.md) |
-| Proposal PDF v2, README di backup, PDF v2.0, audit, piani di implementazione | `archive/` | Superati; il proposal 3.1 (§17.1) resta da scrivere |
-| Tabelle e log pre-audit G1 | `archive/results/` | Non canonici; già pubblici dal push di `852644b` |
-| Configurazione v2.1 | `archive/config/history/v2.1/` | Storica |
-| Handoff, inventario e registro di riconciliazione a `5f1ec06` | `archive/docs/` | Resoconto dettagliato V0–V2 citato dalle note V3-001 |
-| README a `5f1ec06` | `archive/README.md` | Storico; lo stato delle voci è in questa tabella |
+| D01–D54, specification, roadmap, handoff and v2.1 instructions | `archive/docs/history/v2.1/` | FROZEN for v2.1; no authority for new executions; bytes verified by their `SHA256SUMS.json` |
+| D55 | `archive/docs/g1_D55_proposal.md` | PROPOSED, applied to nothing |
+| G1 technical ratifications and registry proposal | `archive/docs/g1_*` | Original statuses; they ratify neither the corpus nor the 3.1 analysis |
+| `candidates/` | `archive/candidates/` | Quarantined (D47); no import |
+| Statistical utilities and their tests (§13.2) | `archive/src/hexis/stats/`, `archive/tests/` | Historical, working at `5f1ec06`; no import in the pipeline |
+| Registry, sequences, blocks, v2.1 lexicon, `legacy_audit`, five retired stages | `archive/src/hexis/…` | Retired; replaced by `corpus.py`, `sampling.py`, `corpus_run.py`, `run_descriptive.py` |
+| v2.1, G0, G1 and scaffold tests, including the 17 skips | `archive/tests/` | Historical; destination of each test in the map of [TEST_INVENTORY](TEST_INVENTORY.md) |
+| PDF proposal v2, backup README, PDF v2.0, audits, implementation plans | `archive/` | Superseded; the 3.1 proposal (§17.1) is still to be written |
+| G1 pre-audit tables and logs | `archive/results/` | Not canonical; already public since the push of `852644b` |
+| v2.1 configuration | `archive/config/history/v2.1/` | Historical |
+| Handoff, inventory and reconciliation register at `5f1ec06` | `archive/docs/` | Detailed V0–V2 account cited by the V3-001 notes |
+| README at `5f1ec06` | `archive/README.md` | Historical; the status of the items is in this table |
 
-**Supersessioni puntuali di V3-001 (i suoi byte non cambiano).** «D01–D54 sono conservate integralmente qui sotto» va letto come conservate integralmente in `archive/docs/history/v2.1/02_DECISION_LOG.md`, che è byte per byte l'appendice tolta da questo log. I link a `g1_D55_proposal.md`, `g1_ratification_record.md`, e le note V3-001 sulle evidenze in HANDOFF e nell'inventario, si risolvono con la regola `archive/P`. «I 17 skip storici…» ora ha un esito: gli skip sono archiviati con i loro file, e nessun test attivo è skip. «Nessun import da candidates» resta in vigore. «Qui si registra la sola deviazione dal testo del contratto», nella nota pre-V3, va letto insieme alle deviazioni 4 e 5 sotto.
+**Point supersessions of V3-001 (its bytes do not change).** «D01–D54 are kept in full below» is to be read as kept in full in `archive/docs/history/v2.1/02_DECISION_LOG.md`, which is byte for byte the appendix removed from this log. The links to `g1_D55_proposal.md`, `g1_ratification_record.md`, and the V3-001 notes on the evidence in HANDOFF and in the inventory, resolve with the `archive/P` rule. «The 17 historical skips…» now has an outcome: the skips are archived with their files, and no active test is a skip. «No import from candidates» remains in force. «Only the deviation from the text of the contract is recorded here», in the pre-V3 note, is to be read together with deviations 4 and 5 below.
 
-**Deviazioni dichiarate.**
-1. **§13.2, percorsi.** La mappa indica `registry.py`, `sequences.py` e `stats/` come sedi del lavoro. Le funzioni 3.1 corrispondenti vivono da V1–V2 in `corpus.py` e `sampling.py`. Le utility statistiche sono conservate come storiche in archivio invece che in `src/hexis/stats/`, e i loro test non si eseguono nell'albero attivo.
-2. **Codice v2.1 nei moduli vivi.** Vengono rimossi:
-   - in `alphabet.py`: gli ID per frequenza, l'inventario, il freeze e l'audit A/B v2.1, la colonna `available_past` di `map_tokens` (quella 3.1 è in `coordinates`);
-   - in `config.py`: il loader, il merge e le forme G1 v2.1, `config_hash`, e `derive_seed` basato su CRC32 (il contratto usa SHA-256);
-   - in `scores.py`: i tre stub e l'alias `score_streams`, perché il nome del contratto è `pooled_score_core` (§11.1);
-   - in `manifest.py`: il writer del manifest e dei sidecar v2.1.
+**Declared deviations.**
+1. **§13.2, paths.** The map indicates `registry.py`, `sequences.py` and `stats/` as the places of the work. The corresponding 3.1 functions have lived since V1–V2 in `corpus.py` and `sampling.py`. The statistical utilities are kept as historical in the archive instead of in `src/hexis/stats/`, and their tests are not executed in the active tree.
+2. **v2.1 code in the live modules.** Removed are:
+   - in `alphabet.py`: the frequency IDs, the inventory, the freeze and the v2.1 A/B audit, the `available_past` column of `map_tokens` (the 3.1 one is in `coordinates`);
+   - in `config.py`: the loader, the merge and the v2.1 G1 forms, `config_hash`, and `derive_seed` based on CRC32 (the contract uses SHA-256);
+   - in `scores.py`: the three stubs and the alias `score_streams`, because the name of the contract is `pooled_score_core` (§11.1);
+   - in `manifest.py`: the writer of the v2.1 manifest and sidecars.
 
-   Gli stadi ritirati non esistono più: è un vincolo più forte del rifiuto di eseguirli (§13.2, «ritirare CLI»). `check_output_locations`, `staged_inputs` e `verify_inputs_unchanged`, con le loro dipendenze `_conllu_paths` e `CANONICAL_DATA_ROOT`, passano da `legacy_audit` a `corpus_run`. Il confronto con `ast.dump` dà identici `check_output_locations`, `staged_inputs` e `_conllu_paths`, con due differenze dichiarate. Il messaggio di rifiuto di `verify_inputs_unchanged` cita il §11.7 al posto di «§6.4, D46», riferimento ritirato; logica, condizioni e tipo d'eccezione sono invariati. `CANONICAL_DATA_ROOT` è la radice `data/raw` della repository e non più un percorso relativo alla directory corrente (code review del 23 settembre), e il controllo equivalente che `check_destination` ripeteva è tolto.
-3. **Freeze pre-V3.** Il congelamento dichiarato il 22 settembre copriva `src/hexis`, i test, `conftest.py`, `pyproject.toml`, la configurazione e il lock. Viene riaperto qui, prima di qualunque pubblicazione V2 o V3: sotto `results/hexis31/` esistono solo i run V1. L'attestazione di `0dc69b5` (351 v31; 672 passed più 17 skip) resta prova di quel commit. L'accettazione V2 si riattesta sul commit del riallineamento. Il corpus `results/hexis31/v1` resta il corpus di V3: la sua identità è per contenuto, `validate_run` non vincola il codice, e il riallineamento deve riprodurne byte per byte i nove artefatti. Configurazione, lock, deposito e raw restano invariati.
-4. **§11.2, ledger.** Il piano nomina un `sample_ledger.json` che contiene anche q. Il ledger è pubblicato come un file per campione distinto, `sample_ledger__<sha256>.json`, citato per hash da ogni coppia che lo usa; q sta nel record della coppia e si ricava esattamente dalle righe, come somma di `end − start` per contributore. Un file unico andrebbe riscritto a ogni coppia pubblicata, mentre il §11.7 vuole immutabili gli artefatti pubblicati.
-5. **§9.1, picco RSS.** Il `peak_rss` di ogni modello è il massimo raggiunto dal processo fino a quel modello (`resource.getrusage(RUSAGE_SELF).ru_maxrss`), non il picco del modello isolato: in una campagna sequenziale è un limite superiore. Ogni record lo dichiara in `rss_method`.
+   The retired stages no longer exist: it is a stronger constraint than refusing to execute them (§13.2, «retire CLIs»). `check_output_locations`, `staged_inputs` and `verify_inputs_unchanged`, with their dependencies `_conllu_paths` and `CANONICAL_DATA_ROOT`, move from `legacy_audit` to `corpus_run`. The comparison with `ast.dump` gives identical `check_output_locations`, `staged_inputs` and `_conllu_paths`, with two declared differences. The refusal message of `verify_inputs_unchanged` cites §11.7 instead of «§6.4, D46», a retired reference; logic, conditions and exception type are unchanged. `CANONICAL_DATA_ROOT` is the `data/raw` root of the repository and no longer a path relative to the current directory (code review of 23 September), and the equivalent check that `check_destination` repeated is removed.
+3. **Pre-V3 freeze.** The freeze declared on 22 September covered `src/hexis`, the tests, `conftest.py`, `pyproject.toml`, the configuration and the lock. It is reopened here, before any V2 or V3 publication: under `results/hexis31/` only the V1 runs exist. The attestation of `0dc69b5` (351 v31; 672 passed plus 17 skips) remains evidence for that commit. The V2 acceptance is re-attested on the commit of the realignment. The corpus `results/hexis31/v1` remains the V3 corpus: its identity is by content, `validate_run` does not bind the code, and the realignment must reproduce its nine artifacts byte for byte. Configuration, lock, deposit and raw files remain unchanged.
+4. **§11.2, ledger.** The plan names a `sample_ledger.json` that also contains q. The ledger is published as one file per distinct sample, `sample_ledger__<sha256>.json`, cited by hash by every pair that uses it; q is in the record of the pair and is derived exactly from the rows, as the sum of `end − start` per contributor. A single file would have to be rewritten at every published pair, while §11.7 wants the published artifacts immutable.
+5. **§9.1, peak RSS.** The `peak_rss` of each model is the maximum reached by the process up to that model (`resource.getrusage(RUSAGE_SELF).ru_maxrss`), not the peak of the isolated model: in a sequential campaign it is an upper bound. Each record declares it in `rss_method`.
 
-Le deviazioni 4 e 5 sono attuate da V2 e finora erano descritte soltanto nell'handoff, nell'inventario e nel registro di riconciliazione ora in `archive/docs/`, che non sono un'autorità.
+Deviations 4 and 5 are implemented since V2 and so far were described only in the handoff, in the inventory and in the reconciliation register now in `archive/docs/`, which are not an authority.
 
-**Deposito.** Il commit V0 `e98fb8e` aveva depositato 64 file, tra cui `hexis-verifica/.DS_Store` (6.148 byte, sha256 `18cc90e9ff3e6473b1790a06f5bbf5afb3be60f5359284118c94b4f8383df96b`, contenente soltanto i nomi dei file della cartella). Non compariva nel `SHA256SUMS.json` del pacchetto. Il commit V1 `7afdd3a` lo ha rimosso insieme alla sua riga nel record, senza documentarlo. Lo si registra qui. I 63 digest restanti sono invariati.
+**Deposit.** The V0 commit `e98fb8e` had deposited 64 files, among them `hexis-verifica/.DS_Store` (6,148 bytes, sha256 `18cc90e9ff3e6473b1790a06f5bbf5afb3be60f5359284118c94b4f8383df96b`, containing only the names of the files of the folder). It did not appear in the `SHA256SUMS.json` of the package. The V1 commit `7afdd3a` removed it together with its line in the record, without documenting it. It is recorded here. The remaining 63 digests are unchanged.
 
-**Decisioni del proprietario del 22 settembre 2026 (D1–D4, già in HANDOFF).**
-- D1: nessun push pubblico senza un atto di pubblicazione. È superata dall'atto sotto, che diventa efficace solo al push.
-- D2: il validatore rigenera ledger, conteggi di shuffle e provenienza C0.
-- D3: la deviazione della CLI è registrata nella nota V3-001.
-- D4: le figure sono state corrette.
+**Owner decisions of 22 September 2026 (D1–D4, already in HANDOFF).**
+- D1: no public push without a publication act. It is superseded by the act below, which becomes effective only at the push.
+- D2: the validator regenerates ledgers, shuffle counts and C0 provenance.
+- D3: the CLI deviation is recorded in the V3-001 note.
+- D4: the figures have been corrected.
 
-D2–D4 restano attuate da `0dc69b5`.
+D2–D4 remain implemented by `0dc69b5`.
 
-**Atto di pubblicazione (§17.3).**
-- *Perimetro.* Tutti gli oggetti raggiungibili dal ramo e dai tag pubblicati che non sono già su `origin`: la storia successiva a `852644b`, non soltanto l'albero finale. Quanto sta fino a `852644b` compreso è pubblico dal push di `g1/pre-audit`.
-- *Codice e configurazione* (`src/`, `tests/`, `conftest.py`, `pyproject.toml`, `uv.lock`, `config/`, e il codice e la configurazione conservati sotto `archive/`): licenza MIT, [LICENSE](../LICENSE), che in testa rinvia a questo atto per tutto ciò che non è codice.
-- *Documenti e deposito contrattuale*: i documenti del progetto, compresi quelli sotto `archive/` e i PDF; i metadati `data/provenance_v31.json` e `data/raw/PROVENANCE.md`; il deposito contrattuale come un'unica opera — testi, JSON, script e archivi ZIP — pubblicato byte per byte come depositato: **CC BY 4.0**, con attribuzione a Leonardo Tornabene. Sono opera dell'autore e devono restare citabili in revisione. La licenza del codice non si estende né ai documenti né ai dati.
-- *Derivati del corpus UD Ancient Greek Perseus r2.18* (CC BY-NC-SA 2.5):
-  - (a) **simboli per posizione:** `ctw_validation/pilot_positions_example.npz`, sha256 `738f0ccbe395a562cd47435f984474d6c2206dcac7757a38eb4b0c5575e89fec`, con 46.634 posizioni del pilot storico (`loss`, `root_loss`, `weighted_depth`, `matched_depth`, `unseen_weight`, `past`);
-  - (b) **coordinate:** i 70 `ctw_validation/ledger_<cella>_B<k>.json`, con `sent_id` e intervalli dei campioni dei pilot, e le citazioni puntuali di `sent_id` in `hexis-verifica/evidenze/corpus_audit.json` e `audit_corpus.md`;
-  - (c) **aggregati:** risultati dei pilot, conteggi, inventari e alfabeti dei contratti, conteggi fissati nei test, tabelle pre-audit G1 in `archive/results/`.
+**Publication act (§17.3).**
+- *Perimeter.* All objects reachable from the published branch and tags that are not already on `origin`: the history after `852644b`, not only the final tree. What lies up to and including `852644b` is public since the push of `g1/pre-audit`.
+- *Code and configuration* (`src/`, `tests/`, `conftest.py`, `pyproject.toml`, `uv.lock`, `config/`, and the code and configuration kept under `archive/`): MIT licence, [LICENSE](../LICENSE), which at its head refers to this act for everything that is not code.
+- *Documents and contractual deposit*: the documents of the project, including those under `archive/` and the PDFs; the metadata `data/provenance_v31.json` and `data/raw/PROVENANCE.md`; the contractual deposit as a single work — texts, JSON, scripts and ZIP archives — published byte for byte as deposited: **CC BY 4.0**, with attribution to Leonardo Tornabene. They are the author's work and must remain citable in review. The licence of the code extends neither to the documents nor to the data.
+- *Derivatives of the corpus UD Ancient Greek Perseus r2.18* (CC BY-NC-SA 2.5):
+  - (a) **per-position symbols:** `ctw_validation/pilot_positions_example.npz`, sha256 `738f0ccbe395a562cd47435f984474d6c2206dcac7757a38eb4b0c5575e89fec`, with 46,634 positions of the historical pilot (`loss`, `root_loss`, `weighted_depth`, `matched_depth`, `unseen_weight`, `past`);
+  - (b) **coordinates:** the 70 `ctw_validation/ledger_<cella>_B<k>.json`, with `sent_id` and intervals of the samples of the pilots, and the point citations of `sent_id` in `hexis-verifica/evidenze/corpus_audit.json` and `audit_corpus.md`;
+  - (c) **aggregates:** results of the pilots, counts, inventories and alphabets of the contracts, counts fixed in the tests, G1 pre-audit tables in `archive/results/`.
 
-  I file (a) e (b) stanno in `HEXIS_v3_allegati/verifiche_CTW_precedenti.zip`, sha256 `85fce2a6462fd741b2cc5616aa85863ef4c25235a84b463da1e6c6e6e35f6198` (in `V3-001-deposit.json`). Lo stesso ZIP compare altre tre volte, identico, dentro gli ZIP del deposito. Il digest di ciascun file è in `ctw_validation/FILE_HASHES.json`, cioè fra i 103 digest interni verificati da V3-001 e ricontrollati il 22 settembre. Licenza dei derivati del corpus, categorie (a), (b) e (c): **CC BY-NC-SA 2.5**, la stessa della fonte, con attribuzione a UD Ancient Greek Perseus r2.18 al commit `37837c7a3c592c9563f8c51cc63344b87247f8a5` e ad AGDT/Perseus. Non è una scelta fra licenze possibili: ShareAlike impone a un adattamento la licenza della fonte e NonCommercial vieta l'uso che una licenza permissiva concederebbe, quindi dichiarare MIT su questi file sarebbe una promessa che l'autore non è in condizione di mantenere.
-- *Precedenza per porzioni.* Un derivato del corpus conserva CC BY-NC-SA 2.5 anche dentro un file di un'altra categoria: inventari e alfabeti nei JSON del contratto, conteggi fissati nei test, file (a) e (b) dentro gli ZIP del deposito. Quelle porzioni seguono la licenza del corpus; il resto del file segue la propria. Nessun byte è sotto due licenze.
-- *Clausola residua.* Ogni file del perimetro non nominato sopra, nell'albero o nella storia, segue la categoria della sua natura: codice o configurazione MIT, documento o metadato CC BY 4.0, derivato del corpus CC BY-NC-SA 2.5.
-- *Non pubblicati:* i raw (`data/raw` resta ignorato; `PROVENANCE.md` contiene soltanto hash e metadati d'acquisizione) e i run locali `results/hexis31/`.
-- *Portata nel tempo:* l'atto copre soltanto ciò che esiste oggi. I vettori per posizione di C0 della campagna V4–V5, quando esisteranno, non sono compresi e richiedono un atto proprio.
-- *Efficacia:* al primo push; dopo la pubblicazione non si ritira. La verifica con la sede editoriale prevista qui non ha destinatario: al 23 settembre 2026 la sede non è determinabile e la destinazione probabile è un archivio di preprint. Si pubblica quindi senza sede. I derivati del corpus restano in questo repository, o in un suo deposito con DOI, sotto la loro licenza; un testo futuro li cita per link e non li include fra i propri file. La licenza di quel testo è una decisione futura (*Portata nel tempo*).
+  Files (a) and (b) are in `HEXIS_v3_allegati/verifiche_CTW_precedenti.zip`, sha256 `85fce2a6462fd741b2cc5616aa85863ef4c25235a84b463da1e6c6e6e35f6198` (in `V3-001-deposit.json`). The same ZIP appears three more times, identical, inside the ZIPs of the deposit. The digest of each file is in `ctw_validation/FILE_HASHES.json`, that is among the 103 internal digests verified by V3-001 and rechecked on 22 September. Licence of the corpus derivatives, categories (a), (b) and (c): **CC BY-NC-SA 2.5**, the same as the source, with attribution to UD Ancient Greek Perseus r2.18 at commit `37837c7a3c592c9563f8c51cc63344b87247f8a5` and to AGDT/Perseus. It is not a choice among possible licences: ShareAlike imposes the licence of the source on an adaptation and NonCommercial forbids the use that a permissive licence would grant, so declaring MIT on these files would be a promise that the author is not in a position to keep.
+- *Precedence by portions.* A corpus derivative keeps CC BY-NC-SA 2.5 also inside a file of another category: inventories and alphabets in the JSON of the contract, counts fixed in the tests, files (a) and (b) inside the ZIPs of the deposit. Those portions follow the licence of the corpus; the rest of the file follows its own. No byte is under two licences.
+- *Residual clause.* Every file of the perimeter not named above, in the tree or in the history, follows the category of its nature: code or configuration MIT, document or metadata CC BY 4.0, corpus derivative CC BY-NC-SA 2.5.
+- *Not published:* the raw files (`data/raw` remains ignored; `PROVENANCE.md` contains only hashes and acquisition metadata) and the local runs `results/hexis31/`.
+- *Scope in time:* the act covers only what exists today. The C0 per-position vectors of the V4–V5 campaign, when they exist, are not included and require an act of their own.
+- *Effect:* at the first push; after publication it is not withdrawn. The check with the editorial venue foreseen here has no addressee: on 23 September 2026 the venue cannot be determined and the probable destination is a preprint archive. Publication therefore happens without a venue. The corpus derivatives remain in this repository, or in a deposit of it with a DOI, under their licence; a future text cites them by link and does not include them among its own files. The licence of that text is a future decision (*Scope in time*).
 
-**Decisioni.**
-- E1: il deposito resta intatto.
-- E2: licenze decise il 22 settembre 2026 — MIT per il codice, CC BY 4.0 per i documenti dell'autore, CC BY-NC-SA 2.5 per i derivati del corpus. Precedenza per porzioni, clausola residua e nota d'ambito in LICENSE decise il 23 settembre 2026, dopo la code review.
-- E3: pubblicazione di tutto, per nome.
-- E4: il PDF v2 va in archivio senza sostituto.
-- E5: il ramo remoto `g1/pre-audit` si cancella dopo il merge, verificata l'ascendenza.
-- E6: l'appendice D01–D54 esce dal log.
-- E7: handoff e inventario sono riscritti come stato attuale.
-- E8: ogni test raccolto è v31.
-- E9: pubblicazione senza sede editoriale determinata (23 settembre 2026); i derivati del corpus si citano per link.
-- N1: il workspace di verifica sta fuori dalla repository.
-- N2: differenziale di copertura con la sola libreria standard.
-- N3: una riga-guardia sugli elementi ritirati nelle istruzioni.
-- N4: regola `archive/P`.
-- Resta tracciato `data/raw/PROVENANCE.md`.
-- Il merge in master avverrà con merge commit, senza squash o rebase.
+**Decisions.**
+- E1: the deposit remains intact.
+- E2: licences decided on 22 September 2026 — MIT for the code, CC BY 4.0 for the author's documents, CC BY-NC-SA 2.5 for the corpus derivatives. Precedence by portions, residual clause and scope note in LICENSE decided on 23 September 2026, after the code review.
+- E3: publication of everything, by name.
+- E4: the v2 PDF goes into the archive without a replacement.
+- E5: the remote branch `g1/pre-audit` is deleted after the merge, once its ancestry is verified.
+- E6: the appendix D01–D54 leaves the log.
+- E7: handoff and inventory are rewritten as the current state.
+- E8: every collected test is v31.
+- E9: publication without a determined editorial venue (23 September 2026); the corpus derivatives are cited by link.
+- N1: the verification workspace lies outside the repository.
+- N2: coverage differential with the standard library only.
+- N3: one guard line on the retired elements in the instructions.
+- N4: `archive/P` rule.
+- `data/raw/PROVENANCE.md` remains tracked.
+- The merge into master will happen with a merge commit, without squash or rebase.
 
 ---
 
@@ -308,3 +314,38 @@ Every run extracted from the two archives passes `validate_run`.
 As after V3-007, the code identity and the run ID `6aa1b719…` are unchanged. The test context of `master` changes only in the hash of `pyproject.toml`, and the evidence stays fixed at the tag `hormathos-v5-evidence`. `src/hormathos`, the `.py` files of `tests/`, `conftest.py`, the configuration files and `uv.lock` are unchanged. The Release, its assets and its tags are unchanged.
 
 **Licences**, by the categories of V3-002 and V3-007: the new pages are documents, under CC BY 4.0.
+
+## V3-012 — A guide for the archive and English in place of Italian, 2026-09-27
+
+**Status: ADOPTED.** Source of authorization: the owner's requests of 26 September 2026 that `archive/` open with a guide like every other folder, and that the Italian texts of the repository be replaced by their English translation. The owner approved the plan and ruled that the deposit stays as it is and that the Git history is not rewritten. The act modifies no byte of the deposit, of the published runs or of the code, and authorizes no run.
+
+**Principle.** An Italian original keeps governing, and its bytes are never lost, but since this act it need not sit in the tree. Each replaced text is kept byte for byte in Git at a published tag. Its English translation, placed where the text stood, opens with a header that names the original, where Git keeps it and its SHA-256, and `tests/test_v31_docs.py` checks each header against those bytes. For the texts listed below, this supersedes:
+
+- the rule of V3-002 that every file of `archive/` holds the bytes its path had at `5f1ec06`, and the row of its table that places the README of `5f1ec06` at `archive/README.md`;
+- the sentences of V3-003 and of the standing instructions that keep V3-001 and V3-002 in the log in their Italian originals;
+- the statement of V3-011 that `archive/` cannot hold an introduction.
+
+**Decision log.** The three V3-001 blocks and the V3-002 act are given in English. The text is the companion translation of V3-003, unchanged except its header, which becomes a note under the first heading of each act. The Italian originals are at the tag `hormathos-v5-evidence`, with SHA-256 `8ee0f130ac59085862c940c0804fc25733a7a12f9e83bb0abf95c18c9fba8864` and `094a686e52841202b7185d383f48f1e8619e8ae11db934ea61a6966b7d01c5ed`, identical to the log before this act. The separate companions in `docs/contracts/hexis-3.1-en/decision-log/` are removed with their two pairs in `pairs_all.json`. The test that pinned the Italian V3-001 bytes is retired with its reason and replaced by one that checks two things: at the tag, both hashes and the Italian heading of V3-002; in the log, that each English act names the hash of its original. The log's preamble says so.
+
+**Archive.** `archive/README.md` becomes a guide to the folder: what each part was, what was abandoned, how to run it at `5f1ec06`, and how the translations work. The old front page, `README.md` at `5f1ec06` (SHA-256 `41c79416…`), moves in translation to `archive/README_at_5f1ec06.md`. The other Italian texts are translated in place, a PDF becoming a Markdown file with the same name. With the first 12 hex digits of each original's SHA-256:
+
+- `docs/HANDOFF.md` (`6cf7a46d7d0f`), `docs/TEST_INVENTORY.md` (`01684571b4c3`), `docs/V2_RECONCILIATION.md` (`028f8f4832c4`), `docs/g1_ratification_record.md` (`6a825db2e658`);
+- `docs/audit/CHANGELOG_RIALLINEAMENTO_v2_1.md` (`e3974f14af66`), `docs/audit/RESTAURO_01_MASTER_SPEC.md` (`1cd156432f06`) and `docs/audit/AUDIT_EDITS_v2_1.json` (`d76cc2164b98`). In the JSON only the Italian string values are translated; the keys, order and other values are unchanged;
+- `docs/history/v2.1/00_LEGGIMI_INDICE.md` (`f144ec184836`), `03_ROADMAP_OPERATIVA_IT.md` (`4b9e215083f6`) and `INDEX.md` (`7713c0f6b874`). For the first two, the test also checks the header against `SHA256SUMS.json` of that folder, which is unchanged;
+- `HEXIS_research_proposal.pdf` (`9b199ee75985`), `docs/archive_v2_0_pdf/00_LEGGIMI_INDICE.pdf` (`9bee6b2d7568`) and `03_ROADMAP_OPERATIVA_IT.pdf` (`0dde74cebb3f`), as `.md`.
+
+The paths are those of `archive/` without the prefix; the originals are at `5f1ec06`, tag `archive/pre-realign`. The test admits exactly these translations, closed in `ARCHIVE_TRANSLATIONS`, and the guide. Every other file of `archive/` keeps the bytes of its path at `5f1ec06`. The English files of the archive that quote a few Italian words, the code and the tests are unchanged.
+
+**What stays Italian.**
+
+- The deposit in `docs/contracts/hexis-3.1/`, which the code and the published runs verify byte for byte. Its English translations reproduce unchanged the code they quote from its scripts, Italian messages included, with a translator's note.
+- File names and identifiers that the contracts fix or that records cite, such as `LEGGIMI.md`, `corpus_atteso_v3.1.json` or `03_ROADMAP_OPERATIVA_IT.md`.
+- The Italian heading of V3-002, which the test reads at the tag.
+- The Git history: rewriting five old commit messages would change every later commit and break the tags and the Release.
+- The drafts in `docs/proposal/`, which are not tracked and not part of the repository.
+
+**Tranches.** A: the guide, the translated front page, the decision log, the tests, the standing instructions and the reader-facing pages (README, `docs/README.md`, `docs/00_INDEX.md`, `docs/01_MASTER_SPEC.md`, the two pages of `docs/contracts/`). B: the four texts of `archive/docs/`. C: the audit, v2.1 and the PDFs. Each tranche extends `ARCHIVE_TRANSLATIONS` and passes the full acceptance.
+
+**Freeze perimeter.** `tests/test_v31_docs.py` changes, and `tests/test_v31_enforcement.py` changes only the name of the replaced test in its list of required behaviours; `docs/TEST_INVENTORY.md` describes the new checks. The test context of `master` changes in the hashes of these two files. The code identity and the run ID `6aa1b719…` are unchanged, and the evidence stays fixed at the tag `hormathos-v5-evidence`. `src/hormathos`, `conftest.py`, `config/`, `pyproject.toml` and `uv.lock` are unchanged. The Release, its assets and its tags are unchanged.
+
+**Licences**, by the categories of V3-002: the translations and the guide are documents, under CC BY 4.0, as their originals.

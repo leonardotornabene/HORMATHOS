@@ -23,8 +23,13 @@ This folder holds the texts that explain HORMATHOS: what it found, the rules it 
 
 ## Language and fixed texts
 
-Every document is in English, except three texts written in Italian that govern: the deposited plan, and the decision-log entries V3-001 and V3-002. They are never rewritten. Their English companions are in [`contracts/hexis-3.1-en/`](contracts/hexis-3.1-en/README.md). Decisions are never edited once taken: a later entry supersedes an earlier one and says so.
+Every document is in English. Two texts were written in Italian, and their Italian originals govern:
+
+- the deposited plan, which stays byte for byte in [`contracts/hexis-3.1/`](contracts/README.md), with English translations beside it in [`contracts/hexis-3.1-en/`](contracts/hexis-3.1-en/README.md);
+- the decision-log entries V3-001 and V3-002, which the log gives in English. Their Italian originals are kept byte for byte in Git, at the tag `hormathos-v5-evidence`, and each translation names their SHA-256.
+
+Decisions are never edited once taken: a later entry supersedes an earlier one and says so.
 
 ## Not here: `archive/`
 
-The [`archive/`](../archive/) folder holds earlier designs and code, byte for byte as they were at commit `5f1ec06`, before the repository was realigned to the plan. Nothing can be added to it, so it has no introduction of its own. Opening it shows `archive/README.md`, which is the project's old front page from that time, not a guide to the folder. The decision-log entry V3-002 lists what the archive holds and why it is kept.
+The [`archive/`](../archive/README.md) folder holds earlier designs, code and records, as they were at commit `5f1ec06`, before the repository was realigned to the plan. Its own guide says what each part was and why it is kept.
