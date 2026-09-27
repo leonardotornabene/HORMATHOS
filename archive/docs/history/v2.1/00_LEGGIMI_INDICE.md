@@ -1,99 +1,103 @@
-# PROGETTO HEXIS — INDICE DEL PACCHETTO OPERATIVO
+> **English translation; the Italian original governs** (V3-012).
+> Original: `docs/history/v2.1/00_LEGGIMI_INDICE.md` at commit `5f1ec06` (tag `archive/pre-realign`), kept at this path until V3-012; SHA-256 `f144ec184836a84bdaa67648df4bc16032287e8d2b217ff419dee600b2e85020`; the same bytes are listed in this folder's `SHA256SUMS.json`.
+> Translated on 2026-09-27. Structure, values and identifiers follow the original, including Italian file names; numbers use English notation. The informal second person of the original, addressed to the author, is kept. Any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
 
-**Hexameter Information Signature** — Organizzazione morfosintattica sotto vincolo metrico, misurata con un unico strumento: il context tree MDL alla Rissanen. **Versione 2.1 — 21 luglio 2026.** Sostituisce la v2.0 (6 luglio 2026); la v1.0 (5 luglio 2026) è superata e non è depositata in questo repository (O9, risolto 13 agosto 2026).
+# PROJECT HEXIS — INDEX OF THE OPERATIONAL PACKAGE
 
-## Che cosa è cambiato nella v2.0 (in una frase)
+**Hexameter Information Signature** — Morphosyntactic organization under metrical constraint, measured with a single instrument: the MDL context tree à la Rissanen. **Version 2.1 — 21 July 2026.** It replaces v2.0 (6 July 2026); v1.0 (5 July 2026) is superseded and is not deposited in this repository (O9, resolved 13 August 2026).
 
-Il progetto è stato consolidato attorno a **un solo strumento statistico**: la batteria di misure separate della v1.0 (entropia per chunk, JSD confermativa, entropia condizionata, informazione mutua con baseline di shuffle) è ritirata come apparato confermativo, perché quelle grandezze sono *troncature lisciate del context tree stesso*; restano come diagnostiche interne. Le ipotesi diventano **tre letture di un unico modello**: radice (distribuzionale), guadagno di contesto (sequenziale, statistica P2), transfer inter-regime (predittiva, statistica P1). La JSD sopravvive come appendice facoltativa (v2.1: elevata a lettura descrittiva prevista, D41). Decisioni di governo: **D32–D39** nel Decision Log. Il cambiamento è avvenuto **prima di qualunque calcolo sui dati reali**, e lo dichiareremo nel preprint.
+## What changed in v2.0 (in one sentence)
 
-## Che cosa è cambiato nella v2.1 (21 luglio 2026)
+The project was consolidated around **a single statistical instrument**: the battery of separate measures of v1.0 (per-chunk entropy, confirmatory JSD, conditional entropy, mutual information with shuffle baseline) is retired as confirmatory apparatus, because those quantities are *smoothed truncations of the context tree itself*; they remain as internal diagnostics. The hypotheses become **three readings of a single model**: root (distributional), context gain (sequential, statistic P2), inter-regime transfer (predictive, statistic P1). The JSD survives as an optional appendix (v2.1: raised to a planned descriptive reading, D41). Governing decisions: **D32–D39** in the Decision Log. The change happened **before any computation on the real data**, and we will declare it in the preprint.
 
-Sincronizzazione del pacchetto operativo con la **proposta finale** e chiusura dei nodi procedurali; tutte decisioni pre-dati (**D40–D51** nel Decision Log): crosswalk vincolante fra le ipotesi della proposta finale e le statistiche (H1 = P2, H2 = P1 + S1, H3 = L1; premessa distribuzionale = radice + R1; D40, verificato sul testo finale); la JSD (R1) diventa lettura distribuzionale descrittiva prevista, senza α né test, con caveat di dipendenza dalla taglia (D41); il piano di sensibilità è partizionato in robustezza parametrica e analisi di rappresentazione (D42); ogni soglia esatta dichiara la propria lateralità e il piano-autore diventa descrittivo senza α (D43); la validità del sign-flip di P1 è una **questione aperta e bloccante** (O7), da risolvere con uno studio di calibrazione su dati sintetici — per questo **il Gate G2 è riposizionato dopo G3** (D44(vii); ordine v2.1: G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7; invariante intatto: prima di G2 solo sintetici, primi fit reali a G4); G0 non richiede più la profilazione (O6 → G3) e l'acquisizione dei treebank può procedere in parallelo a G0 (D45); politica dei manifest chiarita — un manifest centrale per run più un sidecar minimo per artefatto (D46); `hexis_ctree` v0.1.0 in quarantena come candidato non canonico, con l'emendamento D18-A1 depositato come proposta (D47); la Master Spec è riemessa con il restauro documentato dei blocchi normativi danneggiati in fase di generazione PDF (D48; tabella completa prima/dopo in `RESTAURO_01_MASTER_SPEC.md`); nuova lettura descrittiva `G_own` per disambiguare la sede della firma (D49); regola GATE-A × C0: la configurazione primaria non si duplica (D50); ambito di T* ristretto al contrasto primario, con il costo di potenza della taglia uniforme dichiarato (D51). Tre nodi restano deliberatamente differiti (DN-1/2/3, determinanti a G2). Registro bibliografico: crosswalk con la numerazione finale e voce 26 (Greco et al. 2023) aggiunta e verificata su fonte primaria.
+## What changed in v2.1 (21 July 2026)
 
-## I cinque documenti
+Synchronization of the operational package with the **final proposal** and closure of the procedural nodes; all pre-data decisions (**D40–D51** in the Decision Log): binding crosswalk between the hypotheses of the final proposal and the statistics (H1 = P2, H2 = P1 + S1, H3 = L1; distributional premise = root + R1; D40, verified on the final text); the JSD (R1) becomes a planned descriptive distributional reading, without α or test, with a caveat of dependence on size (D41); the sensitivity plan is partitioned into parametric robustness and analyses of representation (D42); every exact threshold declares its own sidedness and the author plan becomes descriptive without α (D43); the validity of the sign-flip of P1 is an **open and blocking question** (O7), to be resolved with a calibration study on synthetic data — for this reason **Gate G2 is repositioned after G3** (D44(vii); v2.1 order: G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7; invariant intact: before G2 only synthetic data, first real fits at G4); G0 no longer requires the profiling (O6 → G3) and the acquisition of the treebanks can proceed in parallel with G0 (D45); manifest policy clarified — one central manifest per run plus a minimal sidecar per artifact (D46); `hexis_ctree` v0.1.0 in quarantine as a non-canonical candidate, with the amendment D18-A1 deposited as a proposal (D47); the Master Spec is reissued with the documented restoration of the normative blocks damaged during PDF generation (D48; complete before/after table in `RESTAURO_01_MASTER_SPEC.md`); new descriptive reading `G_own` to disambiguate the seat of the signature (D49); GATE-A × C0 rule: the primary configuration is not duplicated (D50); scope of T* restricted to the primary contrast, with the power cost of the uniform size declared (D51). Three nodes remain deliberately deferred (DN-1/2/3, decisive at G2). Bibliographic register: crosswalk with the final numbering and entry 26 (Greco et al. 2023) added and verified on the primary source.
 
-| File | Lingua | Contenuto | Quando usarlo |
+## The five documents
+
+| File | Language | Content | When to use it |
 | --- | --- | --- | --- |
-| `00_LEGGIMI_INDICE.md` | IT | Questo indice | Ora |
-| `01_MASTER_SPEC.md` | EN | **Il documento centrale (v2.1, con tabella degli emendamenti in testa):** fatti di corpus verificati, pipeline, alfabeto, l'algoritmo integrale del context tree con pseudocodice normativo, i protocolli di fitting (riferimento / LODO di regime / LODO pooled label-free), le statistiche P1/P2/S1/R1/L1, l'inferenza esatta a livello di documento, architettura software, suite di test con verità analitiche, tabelle/figure, gate G0–G7 (ordine di esecuzione v2.1) | Da allegare in ogni sessione AI |
-| `02_DECISION_LOG.md` | EN | 54 decisioni: D01–D31 con stato aggiornato, D32–D39 (v2) per esteso, **D40–D51 (v2.1, sincronizzazione con la proposta finale)** per esteso, **D52–D54 (ratifica post-v2.1)** per esteso; open items O1–O8 (**O7 bloccante per G2/G5**), con O9 risolto; nodi differiti DN-1–DN-3 | Ogni volta che qualcosa deve cambiare: si emenda qui, mai in silenzio |
-| `03_ROADMAP_OPERATIVA_IT.md` | IT | Roadmap v2.1: 13 settimane nominali dentro la tua finestra di 12–15, con il context tree **anticipato alla Fase 2** e la Fase 1 divisa in **1a** (pipeline non-tree → G0) e **1b** (audit → G1; acquisizione in parallelo a G0, D45); criteri di accettazione allineati all'ordine v2.1 dei gate; checklist di comprensione, prompt-tipo; in appendice il **REGISTRO BIBLIOGRAFICO COMPLETO** (le fonti della proposta con crosswalk alla numerazione finale, Chomsky, Galves 2012, Chen 2024, i fondamenti VLMC, le risorse dati, e Greco et al. 2023 aggiunta in v2.1 — con stato di verifica e ruolo nel preprint) | La tua guida quotidiana; il registro serve alla Fase 7 |
-| `04_AI_HANDOFF_PROMPT.md` | EN | Bootstrap prompt v2.1 (regole del disegno a strumento unico + disciplina O7/D44), template `CLAUDE.md`, template di sessione, checklist di revisione | All'avvio di ogni sessione AI |
+| `00_LEGGIMI_INDICE.md` | IT | This index | Now |
+| `01_MASTER_SPEC.md` | EN | **The central document (v2.1, with the table of amendments at the top):** verified corpus facts, pipeline, alphabet, the complete algorithm of the context tree with normative pseudocode, the fitting protocols (reference / regime LODO / label-free pooled LODO), the statistics P1/P2/S1/R1/L1, exact inference at the document level, software architecture, test suite with analytical truths, tables/figures, gates G0–G7 (v2.1 execution order) | To attach in every AI session |
+| `02_DECISION_LOG.md` | EN | 54 decisions: D01–D31 with updated status, D32–D39 (v2) in full, **D40–D51 (v2.1, synchronization with the final proposal)** in full, **D52–D54 (post-v2.1 ratification)** in full; open items O1–O8 (**O7 blocking for G2/G5**), with O9 resolved; deferred nodes DN-1–DN-3 | Every time something must change: it is amended here, never silently |
+| `03_ROADMAP_OPERATIVA_IT.md` | IT | Roadmap v2.1: 13 nominal weeks within your window of 12–15, with the context tree **brought forward to Phase 2** and Phase 1 split into **1a** (non-tree pipeline → G0) and **1b** (audit → G1; acquisition in parallel with G0, D45); acceptance criteria aligned to the v2.1 order of the gates; comprehension checklist, template prompts; in the appendix the **COMPLETE BIBLIOGRAPHIC REGISTER** (the sources of the proposal with crosswalk to the final numbering, Chomsky, Galves 2012, Chen 2024, the VLMC foundations, the data resources, and Greco et al. 2023 added in v2.1 — with verification status and role in the preprint) | Your daily guide; the register serves Phase 7 |
+| `04_AI_HANDOFF_PROMPT.md` | EN | Bootstrap prompt v2.1 (rules of the single-instrument design + O7/D44 discipline), `CLAUDE.md` template, session template, review checklist | At the start of every AI session |
 
-## Documenti operativi e di lavoro (non normativi)
+## Operational and working documents (non-normative)
 
-I cinque documenti sopra sono il pacchetto normativo v2.1 e restano cinque. Questi
-non lo sono, ma un agente che non li conosce lavora al buio.
+The five documents above are the normative v2.1 package and remain five. These
+are not, but an agent that does not know them works in the dark.
 
-| File | Contenuto | Stato |
+| File | Content | Status |
 | --- | --- | --- |
-| `HANDOFF.md` | Attestazione dei gate: comandi, conteggi, commit su cui sono stati misurati | **Unica sede dell'evidenza**; non duplicare i conteggi altrove |
-| `implementation/specs/` | Contratti di implementazione ratificati — le firme lasciate libere dalla Spec (D54(v)) | Vincolanti: `2026-08-13-g0-api-contract.md` porta obblighi che bloccano il freeze di G1 |
-| `probe_conllu.md` | Sonda esplorativa sui file `.conllu` | Descrittivo |
-| `g1_D55_proposal.md` | Emendamento D55 + il checklist delle 27 ratifiche di G1 | **Contenuto scientifico PROPOSTO — applicato a nulla**; le sole voci tecniche 17–20 e 23–26 (§xiv) sono ratificate e applicate al ramo il 4 set 2026 |
-| `g1_registry_proposal.md` / `.yaml` | Le 30 righe del registro, con l'evidenza per riga | **PROPOSTO** (`_status: PROPOSED`: non produce un audit canonico) |
-| `g1_ratification_record.md` | Il registro dove i verdetti si depositano uno alla volta | Aperto: ratificate le voci tecniche 17–20 e 23–26; nessuna voce scientifica decisa |
-| `audit/` | Record pre-applicazione di emendamenti già eseguiti | ARCHIVIATO — non riapplicare |
+| `HANDOFF.md` | Attestation of the gates: commands, counts, commits on which they were measured | **Single seat of the evidence**; do not duplicate the counts elsewhere |
+| `implementation/specs/` | Ratified implementation contracts — the signatures left free by the Spec (D54(v)) | Binding: `2026-08-13-g0-api-contract.md` carries obligations that block the G1 freeze |
+| `probe_conllu.md` | Exploratory probe on the `.conllu` files | Descriptive |
+| `g1_D55_proposal.md` | Amendment D55 + the checklist of the 27 G1 ratifications | **Scientific content PROPOSED — applied to nothing**; only the technical items 17–20 and 23–26 (§xiv) are ratified and applied to the branch on 4 Sep 2026 |
+| `g1_registry_proposal.md` / `.yaml` | The 30 rows of the registry, with the evidence per row | **PROPOSED** (`_status: PROPOSED`: it does not produce a canonical audit) |
+| `g1_ratification_record.md` | The register where the verdicts are deposited one at a time | Open: technical items 17–20 and 23–26 ratified; no scientific item decided |
+| `audit/` | Pre-application record of amendments already executed | ARCHIVED — do not reapply |
 
-## Ordine di lettura consigliato
+## Recommended reading order
 
-1. Questo indice.
+1. This index.
 
-2. `03_ROADMAP_OPERATIVA_IT.md` per intero, inclusa la sezione "Le decisioni che definiscono il progetto" e l'appendice bibliografica.
+2. `03_ROADMAP_OPERATIVA_IT.md` in full, including the section "The decisions that define the project" and the bibliographic appendix.
 
-3. `01_MASTER_SPEC.md`: §1 (le tre letture e le statistiche P1/P2), §2 (fatti di corpus), §4 (lo strumento), §9 (gate). Il resto fase per fase.
+3. `01_MASTER_SPEC.md`: §1 (the three readings and the statistics P1/P2), §2 (corpus facts), §4 (the instrument), §9 (gates). The rest phase by phase.
 
-4. `02_DECISION_LOG.md`: leggi per esteso D32–D54; scorri le altre.
+4. `02_DECISION_LOG.md`: read D32–D54 in full; skim the others.
 
-## Le scoperte di verifica che restano fondanti (invariate dalla v1.0)
+## The verification findings that remain foundational (unchanged from v1.0)
 
-1. Il treebank greco contiene **12 tragedie** (Eschilo ×7, Sofocle ×5) e molta prosa post-classica → disegno a più regimi, con la tragedia come test di specificità.
+1. The Greek treebank contains **12 tragedies** (Aeschylus ×7, Sophocles ×5) and much post-classical prose → multi-regime design, with tragedy as a test of specificity.
 
-2. Il treebank latino contiene anche Girolamo (Vulgata, esclusa), Properzio, Fedro, Petronio, Svetonio, Augusto; **Cesare è assente**.
+2. The Latin treebank also contains Jerome (Vulgate, excluded), Propertius, Phaedrus, Petronius, Suetonius, Augustus; **Caesar is absent**.
 
-3. Release corrente **UD v2.18**; licenza **CC BY-NC-SA 2.5** (nessuna ridistribuzione dei dati nel repository). Novità di verifica della v2.0 (6 luglio 2026): citazioni **Galves et al. 2012** e **Chen et al. 2024** verificate su fonte primaria e inserite nel registro con obbligo di differenziazione nel related work. Novità di verifica della v2.1 (21 luglio 2026): **Greco et al. 2023** verificata su fonte primaria nei materiali di progetto e aggiunta al registro (voce 26); corrispondenza completa fra registro e bibliografia della proposta finale verificata sul testo.
+3. Current release **UD v2.18**; licence **CC BY-NC-SA 2.5** (no redistribution of the data in the repository). Verification news of v2.0 (6 July 2026): citations **Galves et al. 2012** and **Chen et al. 2024** verified on the primary source and entered in the register with an obligation of differentiation in the related work. Verification news of v2.1 (21 July 2026): **Greco et al. 2023** verified on the primary source in the project materials and added to the register (entry 26); complete correspondence between register and bibliography of the final proposal verified on the text.
 
-**Avvertenza (17 agosto 2026) — un puntatore, non un emendamento.** L'enumerazione
-G1 dei dati pinnati a r2.18 contraddice i punti 1 e 2 qui sopra: la release contiene
-**6 tragedie** (Sofocle ×5, Eschilo ×1), **3** autori di prosa post-classica, e
-**Cesare è presente** (`phi0448.phi001`, *De bello Gallico*). Analisi completa,
-entrambe le opzioni e ogni costante ricalcolata: `g1_D55_proposal.md` — **PROPOSTO,
-applicato a nulla**. Finché non è ratificato, i punti 1 e 2 restano il testo in
-vigore: trattali come il piano vincolante, mai come una descrizione di questo
-corpus, e non sostituirli in silenzio.
+**Warning (17 August 2026) — a pointer, not an amendment.** The G1
+enumeration of the data pinned at r2.18 contradicts points 1 and 2 above: the release contains
+**6 tragedies** (Sophocles ×5, Aeschylus ×1), **3** authors of post-classical prose, and
+**Caesar is present** (`phi0448.phi001`, *De bello Gallico*). Complete analysis,
+both options and every recomputed constant: `g1_D55_proposal.md` — **PROPOSED,
+applied to nothing**. Until it is ratified, points 1 and 2 remain the text in
+force: treat them as the binding plan, never as a description of this
+corpus, and do not replace them silently.
 
-## Regola d'oro del progetto (invariata)
+## Golden rule of the project (unchanged)
 
-Nessuna modifica silenziosa. Ogni cambiamento a metodologia, alfabeto, parametri o protocolli passa da un emendamento esplicito al `02_DECISION_LOG.md`. Le AI sono vincolate a questa regola dal file `04_AI_HANDOFF_PROMPT.md`.
+No silent change. Every change to methodology, alphabet, parameters or protocols goes through an explicit amendment to `02_DECISION_LOG.md`. The AIs are bound to this rule by the file `04_AI_HANDOFF_PROMPT.md`.
 
-## Stato del progetto
+## Project status
 
-- [x] Proposta di ricerca (documento di partenza)
+- [x] Research proposal (starting document)
 
-- [x] Verifica fatti di corpus su fonti primarie (5 lug 2026)
+- [x] Verification of corpus facts on primary sources (5 Jul 2026)
 
-- [x] Pacchetto operativo v1.0 (5 lug 2026, superato; non depositato in questo repository, O9)
+- [x] Operational package v1.0 (5 Jul 2026, superseded; not deposited in this repository, O9)
 
-- [x] Ristrutturazione a strumento unico + pacchetto v2.0 (6 lug 2026)
+- [x] Restructuring to a single instrument + package v2.0 (6 Jul 2026)
 
-- [x] **Sincronizzazione con la proposta finale + riallineamento v2.1 (21 lug 2026, questo)**
+- [x] **Synchronization with the final proposal + v2.1 realignment (21 Jul 2026, this one)**
 
-**Ordine di esecuzione v2.1 (D44(vii)): G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7.**
+**v2.1 execution order (D44(vii)): G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7.**
 
-- [x] Gate G0: chiuso il 14 ago 2026 dopo review pre-merge — contratto registry riallineato; set G0 verde con asserzioni reali + infrastruttura deterministica verificata (profilazione → G3; D45). Attestazione (comandi, conteggi, commit): `docs/HANDOFF.md`
+- [x] Gate G0: closed on 14 Aug 2026 after pre-merge review — registry contract realigned; G0 set green with real assertions + deterministic infrastructure verified (profiling → G3; D45). Attestation (commands, counts, commits): `docs/HANDOFF.md`
 
-- [ ] Gate G1: audit → registro, alfabeto e T* CONGELATI (con O2/O8 risolti)
+- [ ] Gate G1: audit → registry, alphabet and T* FROZEN (with O2/O8 resolved)
 
-- [ ] Gate G3: context tree validato sui quattro processi analitici + profilazione O6 + studio di calibrazione del null O7
+- [ ] Gate G3: context tree validated on the four analytical processes + O6 profiling + O7 null calibration study
 
-- [ ] Gate G2: piano confermativo congelato (OSF opzionale; richiede O7 risolto)
+- [ ] Gate G2: confirmatory plan frozen (OSF optional; requires O7 resolved)
 
-- [ ] Gate G4: modelli di riferimento + letture descrittive
+- [ ] Gate G4: reference models + descriptive readings
 
-- [ ] Gate G5: inferenza confermativa (P1, P2; S1) — richiede O7 risolto
+- [ ] Gate G5: confirmatory inference (P1, P2; S1) — requires O7 resolved
 
-- [ ] Gate G6: latino + sottocampioni appaiati
+- [ ] Gate G6: Latin + paired subsamples
 
-- [ ] Gate G7: piano di sensibilità (13 celle, partizione D42) → scrittura
+- [ ] Gate G7: sensitivity plan (13 cells, D42 partition) → writing
 
-- [ ] Preprint su arXiv (cs.CL)
+- [ ] Preprint on arXiv (cs.CL)

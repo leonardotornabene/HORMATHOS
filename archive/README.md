@@ -7,7 +7,7 @@ This folder keeps the earlier stages of the project: designs, code, tests, docum
 | Path | What it is | Status |
 |---|---|---|
 | `docs/history/v2.1/` | design **v2.1**, the design before the deposited plan: its specification, decision log (D01–D54), roadmap, handoff and instructions | frozen; its bytes are checked by its `SHA256SUMS.json` |
-| `docs/archive_v2_0_pdf/` | the same documents in version 2.0, as PDF | superseded by v2.1 |
+| `docs/archive_v2_0_pdf/` | the same documents in version 2.0, as PDF; the two written in Italian are given as English Markdown | superseded by v2.1 |
 | `docs/audit/` | the audit that restored and amended the v2.0 texts into v2.1: record of every edit, changelog, restored specification, proposal D52 | historical |
 | `docs/g1_*.md`, `docs/g1_registry_proposal.yaml` | records of the **G1** checkpoint of v2.1: technical ratifications, a proposed registry of documents, proposal D55 (never applied) | historical; they ratify neither the corpus nor the present analysis |
 | `docs/HANDOFF.md`, `docs/TEST_INVENTORY.md`, `docs/V2_RECONCILIATION.md` | the technical record, test map and reconciliation register as they stood on 22 September, covering the first phases of the present design | the detailed account that the active decision log cites |
@@ -16,7 +16,7 @@ This folder keeps the earlier stages of the project: designs, code, tests, docum
 | `candidates/` | an alternative implementation of the prediction model, kept in quarantine | never imported |
 | `config/history/v2.1/` | the v2.1 configuration | historical |
 | `results/` | tables and logs of the corpus audit of 4 September 2026, made under v2.1 | not part of the published results |
-| `HEXIS_research_proposal.pdf`, `README_backup.md`, `README_v1_backup.md` | the earlier research proposal and two older front pages | superseded |
+| [`HEXIS_research_proposal.md`](HEXIS_research_proposal.md), `README_backup.md`, `README_v1_backup.md` | the earlier research proposal and two older front pages | superseded |
 | [`README_at_5f1ec06.md`](README_at_5f1ec06.md) | the project's front page just before the realignment, when the project was still called HEXIS | historical |
 
 ## What was abandoned

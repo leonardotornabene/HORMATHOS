@@ -1,88 +1,89 @@
 {
+ "_translation": "English translation; the Italian original governs (V3-012). Original: `docs/audit/AUDIT_EDITS_v2_1.json` at commit `5f1ec06` (tag `archive/pre-realign`), kept at this path until V3-012; SHA-256 `d76cc2164b982f1b3bf70c33d39918903716d9250f9980f5cfb27fce1263cfab`. Translated on 2026-09-27. Only the Italian string values, in sections 00 and 03, are translated, together with their labels; keys, order and every other value follow the original, and the labels match those of CHANGELOG_RIALLINEAMENTO_v2_1.md. The old/new texts are translated consistently with the translations of 00_LEGGIMI_INDICE.md and 03_ROADMAP_OPERATIVA_IT.md but record the edits of 21 July 2026, not the later text of those files. This key is added by the translation.",
  "00": [
   {
-   "label": "header versione",
+   "label": "version header",
    "tag": "A",
    "decision": "v2.1",
-   "old": "**Versione 2.0 — 6 luglio 2026.** Sostituisce integralmente la v1.0 (5 luglio 2026), conservata in `archive_v1/`.",
-   "new": "**Versione 2.1 — 21 luglio 2026.** Sostituisce la v2.0 (6 luglio 2026); la v1.0 (5 luglio 2026) resta conservata in `archive_v1/`."
+   "old": "**Version 2.0 — 6 July 2026.** It replaces in full v1.0 (5 July 2026), kept in `archive_v1/`.",
+   "new": "**Version 2.1 — 21 July 2026.** It replaces v2.0 (6 July 2026); v1.0 (5 July 2026) remains kept in `archive_v1/`."
   },
   {
-   "label": "nota storica JSD",
+   "label": "JSD historical note",
    "tag": "A",
    "decision": "D41",
-   "old": "La JSD sopravvive come appendice facoltativa.",
-   "new": "La JSD sopravvive come appendice facoltativa (v2.1: elevata a lettura descrittiva prevista, D41)."
+   "old": "The JSD survives as an optional appendix.",
+   "new": "The JSD survives as an optional appendix (v2.1: raised to a planned descriptive reading, D41)."
   },
   {
-   "label": "sezione v2.1",
+   "label": "v2.1 section",
    "tag": "A",
    "decision": "v2.1",
-   "old": "## I cinque documenti",
-   "new": "## Che cosa è cambiato nella v2.1 (21 luglio 2026)\n\nSincronizzazione del pacchetto operativo con la **proposta finale** e chiusura dei nodi procedurali; tutte decisioni pre-dati (**D40–D51** nel Decision Log): crosswalk vincolante fra le ipotesi della proposta finale e le statistiche (H1 = P2, H2 = P1 + S1, H3 = L1; premessa distribuzionale = radice + R1; D40, verificato sul testo finale); la JSD (R1) diventa lettura distribuzionale descrittiva prevista, senza α né test, con caveat di dipendenza dalla taglia (D41); il piano di sensibilità è partizionato in robustezza parametrica e analisi di rappresentazione (D42); ogni soglia esatta dichiara la propria lateralità e il piano-autore diventa descrittivo senza α (D43); la validità del sign-flip di P1 è una **questione aperta e bloccante** (O7), da risolvere con uno studio di calibrazione su dati sintetici — per questo **il Gate G2 è riposizionato dopo G3** (D44(vii); ordine v2.1: G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7; invariante intatto: prima di G2 solo sintetici, primi fit reali a G4); G0 non richiede più la profilazione (O6 → G3) e l'acquisizione dei treebank può procedere in parallelo a G0 (D45); politica dei manifest chiarita — un manifest centrale per run più un sidecar minimo per artefatto (D46); `hexis_ctree` v0.1.0 in quarantena come candidato non canonico, con l'emendamento D18-A1 depositato come proposta (D47); la Master Spec è riemessa con il restauro documentato dei blocchi normativi danneggiati in fase di generazione PDF (D48; tabella completa prima/dopo in `RESTAURO_01_MASTER_SPEC.md`); nuova lettura descrittiva `G_own` per disambiguare la sede della firma (D49); regola GATE-A × C0: la configurazione primaria non si duplica (D50); ambito di T* ristretto al contrasto primario, con il costo di potenza della taglia uniforme dichiarato (D51). Tre nodi restano deliberatamente differiti (DN-1/2/3, determinanti a G2). Registro bibliografico: crosswalk con la numerazione finale e voce 26 (Greco et al. 2023) aggiunta e verificata su fonte primaria.\n\n## I cinque documenti"
+   "old": "## The five documents",
+   "new": "## What changed in v2.1 (21 July 2026)\n\nSynchronization of the operational package with the **final proposal** and closure of the procedural nodes; all pre-data decisions (**D40–D51** in the Decision Log): binding crosswalk between the hypotheses of the final proposal and the statistics (H1 = P2, H2 = P1 + S1, H3 = L1; distributional premise = root + R1; D40, verified on the final text); the JSD (R1) becomes a planned descriptive distributional reading, without α or test, with a caveat of dependence on size (D41); the sensitivity plan is partitioned into parametric robustness and analyses of representation (D42); every exact threshold declares its own sidedness and the author plan becomes descriptive without α (D43); the validity of the sign-flip of P1 is an **open and blocking question** (O7), to be resolved with a calibration study on synthetic data — for this reason **Gate G2 is repositioned after G3** (D44(vii); v2.1 order: G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7; invariant intact: before G2 only synthetic data, first real fits at G4); G0 no longer requires the profiling (O6 → G3) and the acquisition of the treebanks can proceed in parallel with G0 (D45); manifest policy clarified — one central manifest per run plus a minimal sidecar per artifact (D46); `hexis_ctree` v0.1.0 in quarantine as a non-canonical candidate, with the amendment D18-A1 deposited as a proposal (D47); the Master Spec is reissued with the documented restoration of the normative blocks damaged during PDF generation (D48; complete before/after table in `RESTAURO_01_MASTER_SPEC.md`); new descriptive reading `G_own` to disambiguate the seat of the signature (D49); GATE-A × C0 rule: the primary configuration is not duplicated (D50); scope of T* restricted to the primary contrast, with the power cost of the uniform size declared (D51). Three nodes remain deliberately deferred (DN-1/2/3, decisive at G2). Bibliographic register: crosswalk with the final numbering and entry 26 (Greco et al. 2023) added and verified on the primary source.\n\n## The five documents"
   },
   {
-   "label": "riga Spec",
+   "label": "Spec row",
    "tag": "A",
    "decision": "v2.1",
-   "old": "| `01_MASTER_SPEC.md` | EN | **Il documento centrale (v2.0):**",
-   "new": "| `01_MASTER_SPEC.md` | EN | **Il documento centrale (v2.1, con tabella degli emendamenti in testa):**"
+   "old": "| `01_MASTER_SPEC.md` | EN | **The central document (v2.0):**",
+   "new": "| `01_MASTER_SPEC.md` | EN | **The central document (v2.1, with the table of amendments at the top):**"
   },
   {
-   "label": "riga Spec gate",
+   "label": "Spec gate row",
    "tag": "A",
    "decision": "v2.1",
-   "old": "gate G0–G7 | Da allegare in ogni sessione AI |",
-   "new": "gate G0–G7 (ordine di esecuzione v2.1) | Da allegare in ogni sessione AI |"
+   "old": "gates G0–G7 | To attach in every AI session |",
+   "new": "gates G0–G7 (v2.1 execution order) | To attach in every AI session |"
   },
   {
-   "label": "riga Decision Log",
+   "label": "Decision Log row",
    "tag": "A",
    "decision": "v2.1",
-   "old": "| `02_DECISION_LOG.md` | EN | 39 decisioni: D01–D31 riportate con stato aggiornato (alcune superate da D32), le nuove D32–D39 per esteso, open items O1–O6 | Ogni volta che qualcosa deve cambiare: si emenda qui, mai in silenzio |",
-   "new": "| `02_DECISION_LOG.md` | EN | 51 decisioni: D01–D31 con stato aggiornato, D32–D39 (v2) per esteso, **D40–D51 (v2.1, sincronizzazione con la proposta finale)** per esteso; open items O1–O8 (**O7 bloccante per G2/G5**); nodi differiti DN-1–DN-3 | Ogni volta che qualcosa deve cambiare: si emenda qui, mai in silenzio |"
+   "old": "| `02_DECISION_LOG.md` | EN | 39 decisions: D01–D31 reported with updated status (some superseded by D32), the new D32–D39 in full, open items O1–O6 | Every time something must change: it is amended here, never silently |",
+   "new": "| `02_DECISION_LOG.md` | EN | 51 decisions: D01–D31 with updated status, D32–D39 (v2) in full, **D40–D51 (v2.1, synchronization with the final proposal)** in full; open items O1–O8 (**O7 blocking for G2/G5**); deferred nodes DN-1–DN-3 | Every time something must change: it is amended here, never silently |"
   },
   {
-   "label": "riga Roadmap",
+   "label": "Roadmap row",
    "tag": "A",
    "decision": "v2.1",
-   "old": "| `03_ROADMAP_OPERATIVA_IT.md` | IT | Roadmap v2.0: 13 settimane nominali dentro la tua finestra di 12–15, con il context tree **anticipato alla Fase 2** (il rischio maggiore si affronta subito); criteri di accettazione, checklist di comprensione, prompt-tipo; in appendice il **REGISTRO BIBLIOGRAFICO COMPLETO** (tutte le fonti: le 11 della proposta, Chomsky, Galves 2012, Chen 2024, i fondamenti VLMC, le risorse dati — con stato di verifica e ruolo nel preprint) | La tua guida quotidiana; il registro serve alla Fase 7 |",
-   "new": "| `03_ROADMAP_OPERATIVA_IT.md` | IT | Roadmap v2.1: 13 settimane nominali dentro la tua finestra di 12–15, con il context tree **anticipato alla Fase 2** e la Fase 1 divisa in **1a** (pipeline non-tree → G0) e **1b** (audit → G1; acquisizione in parallelo a G0, D45); criteri di accettazione allineati all'ordine v2.1 dei gate; checklist di comprensione, prompt-tipo; in appendice il **REGISTRO BIBLIOGRAFICO COMPLETO** (le fonti della proposta con crosswalk alla numerazione finale, Chomsky, Galves 2012, Chen 2024, i fondamenti VLMC, le risorse dati, e Greco et al. 2023 aggiunta in v2.1 — con stato di verifica e ruolo nel preprint) | La tua guida quotidiana; il registro serve alla Fase 7 |"
+   "old": "| `03_ROADMAP_OPERATIVA_IT.md` | IT | Roadmap v2.0: 13 nominal weeks within your window of 12–15, with the context tree **brought forward to Phase 2** (the greatest risk is faced immediately); acceptance criteria, comprehension checklist, template prompts; in the appendix the **COMPLETE BIBLIOGRAPHIC REGISTER** (all the sources: the 11 of the proposal, Chomsky, Galves 2012, Chen 2024, the VLMC foundations, the data resources — with verification status and role in the preprint) | Your daily guide; the register serves Phase 7 |",
+   "new": "| `03_ROADMAP_OPERATIVA_IT.md` | IT | Roadmap v2.1: 13 nominal weeks within your window of 12–15, with the context tree **brought forward to Phase 2** and Phase 1 split into **1a** (non-tree pipeline → G0) and **1b** (audit → G1; acquisition in parallel with G0, D45); acceptance criteria aligned to the v2.1 order of the gates; comprehension checklist, template prompts; in the appendix the **COMPLETE BIBLIOGRAPHIC REGISTER** (the sources of the proposal with crosswalk to the final numbering, Chomsky, Galves 2012, Chen 2024, the VLMC foundations, the data resources, and Greco et al. 2023 added in v2.1 — with verification status and role in the preprint) | Your daily guide; the register serves Phase 7 |"
   },
   {
-   "label": "riga Handoff",
+   "label": "Handoff row",
    "tag": "A",
    "decision": "v2.1",
-   "old": "| `04_AI_HANDOFF_PROMPT.md` | EN | Bootstrap prompt v2.0 (con le regole del disegno a strumento unico), template `CLAUDE.md`, template di sessione, checklist di revisione | All'avvio di ogni sessione AI |",
-   "new": "| `04_AI_HANDOFF_PROMPT.md` | EN | Bootstrap prompt v2.1 (regole del disegno a strumento unico + disciplina O7/D44), template `CLAUDE.md`, template di sessione, checklist di revisione | All'avvio di ogni sessione AI |"
+   "old": "| `04_AI_HANDOFF_PROMPT.md` | EN | Bootstrap prompt v2.0 (with the rules of the single-instrument design), `CLAUDE.md` template, session template, review checklist | At the start of every AI session |",
+   "new": "| `04_AI_HANDOFF_PROMPT.md` | EN | Bootstrap prompt v2.1 (rules of the single-instrument design + O7/D44 discipline), `CLAUDE.md` template, session template, review checklist | At the start of every AI session |"
   },
   {
-   "label": "ordine lettura",
+   "label": "reading order",
    "tag": "A",
    "decision": "v2.1",
-   "old": "4. `02_DECISION_LOG.md`: leggi per esteso D32–D39; scorri le altre.",
-   "new": "4. `02_DECISION_LOG.md`: leggi per esteso D32–D51; scorri le altre."
+   "old": "4. `02_DECISION_LOG.md`: read D32–D39 in full; skim the others.",
+   "new": "4. `02_DECISION_LOG.md`: read D32–D51 in full; skim the others."
   },
   {
-   "label": "verifiche fondanti",
+   "label": "foundational checks",
    "tag": "A",
    "decision": "v2.1",
-   "old": "Novità di verifica della v2.0 (6 luglio 2026): citazioni **Galves et al. 2012** e **Chen et al. 2024** verificate su fonte primaria e inserite nel registro con obbligo di differenziazione nel related work.",
-   "new": "Novità di verifica della v2.0 (6 luglio 2026): citazioni **Galves et al. 2012** e **Chen et al. 2024** verificate su fonte primaria e inserite nel registro con obbligo di differenziazione nel related work. Novità di verifica della v2.1 (21 luglio 2026): **Greco et al. 2023** verificata su fonte primaria nei materiali di progetto e aggiunta al registro (voce 26); corrispondenza completa fra registro e bibliografia della proposta finale verificata sul testo."
+   "old": "Verification news of v2.0 (6 July 2026): citations **Galves et al. 2012** and **Chen et al. 2024** verified on the primary source and entered in the register with an obligation of differentiation in the related work.",
+   "new": "Verification news of v2.0 (6 July 2026): citations **Galves et al. 2012** and **Chen et al. 2024** verified on the primary source and entered in the register with an obligation of differentiation in the related work. Verification news of v2.1 (21 July 2026): **Greco et al. 2023** verified on the primary source in the project materials and added to the register (entry 26); complete correspondence between register and bibliography of the final proposal verified on the text."
   },
   {
-   "label": "stato v2.1",
+   "label": "v2.1 status",
    "tag": "A",
    "decision": "v2.1",
-   "old": "- [x] **Ristrutturazione a strumento unico + pacchetto v2.0 (6 lug 2026, questo)**",
-   "new": "- [x] Ristrutturazione a strumento unico + pacchetto v2.0 (6 lug 2026)\n\n- [x] **Sincronizzazione con la proposta finale + riallineamento v2.1 (21 lug 2026, questo)**"
+   "old": "- [x] **Restructuring to a single instrument + package v2.0 (6 Jul 2026, this one)**",
+   "new": "- [x] Restructuring to a single instrument + package v2.0 (6 Jul 2026)\n\n- [x] **Synchronization with the final proposal + v2.1 realignment (21 Jul 2026, this one)**"
   },
   {
-   "label": "blocco gate v2.1",
+   "label": "v2.1 gate block",
    "tag": "A",
    "decision": "D44(vii)+D45+D42",
-   "old": "- [ ] Gate G0: ambiente + test non-tree verdi + profiling costo fit\n\n- [ ] Gate G1: audit → registro, alfabeto e T* CONGELATI\n\n- [ ] Gate G2: piano confermativo congelato (OSF opzionale)\n\n- [ ] Gate G3: context tree validato sui quattro processi analitici\n\n- [ ] Gate G4: modelli di riferimento + letture descrittive\n\n- [ ] Gate G5: inferenza confermativa (P1, P2; S1)\n\n- [ ] Gate G6: latino + sottocampioni appaiati\n\n- [ ] Gate G7: piano di sensibilità (13 celle) → scrittura",
-   "new": "**Ordine di esecuzione v2.1 (D44(vii)): G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7.**\n\n- [ ] Gate G0: ambiente + test non-tree verdi (asserzioni reali) + infrastruttura deterministica (profilazione → G3; D45)\n\n- [ ] Gate G1: audit → registro, alfabeto e T* CONGELATI (con O2/O8 risolti)\n\n- [ ] Gate G3: context tree validato sui quattro processi analitici + profilazione O6 + studio di calibrazione del null O7\n\n- [ ] Gate G2: piano confermativo congelato (OSF opzionale; richiede O7 risolto)\n\n- [ ] Gate G4: modelli di riferimento + letture descrittive\n\n- [ ] Gate G5: inferenza confermativa (P1, P2; S1) — richiede O7 risolto\n\n- [ ] Gate G6: latino + sottocampioni appaiati\n\n- [ ] Gate G7: piano di sensibilità (13 celle, partizione D42) → scrittura"
+   "old": "- [ ] Gate G0: environment + non-tree tests green + fit cost profiling\n\n- [ ] Gate G1: audit → registry, alphabet and T* FROZEN\n\n- [ ] Gate G2: confirmatory plan frozen (OSF optional)\n\n- [ ] Gate G3: context tree validated on the four analytical processes\n\n- [ ] Gate G4: reference models + descriptive readings\n\n- [ ] Gate G5: confirmatory inference (P1, P2; S1)\n\n- [ ] Gate G6: Latin + paired subsamples\n\n- [ ] Gate G7: sensitivity plan (13 cells) → writing",
+   "new": "**v2.1 execution order (D44(vii)): G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7.**\n\n- [ ] Gate G0: environment + non-tree tests green (real assertions) + deterministic infrastructure (profiling → G3; D45)\n\n- [ ] Gate G1: audit → registry, alphabet and T* FROZEN (with O2/O8 resolved)\n\n- [ ] Gate G3: context tree validated on the four analytical processes + O6 profiling + O7 null calibration study\n\n- [ ] Gate G2: confirmatory plan frozen (OSF optional; requires O7 resolved)\n\n- [ ] Gate G4: reference models + descriptive readings\n\n- [ ] Gate G5: confirmatory inference (P1, P2; S1) — requires O7 resolved\n\n- [ ] Gate G6: Latin + paired subsamples\n\n- [ ] Gate G7: sensitivity plan (13 cells, D42 partition) → writing"
   }
  ],
  "01_spans": [
@@ -523,148 +524,148 @@
    "label": "header",
    "tag": "A",
    "decision": "v2.1",
-   "old": "Versione 2.0 — 6 luglio 2026. Sostituisce la v1.0 (archiviata in `archive_v1/`). Destinatario: te. Lingua: italiano. Documento tecnico vincolante: `01_MASTER_SPEC.md` v2.0 (citato come §N); decisioni: `02_DECISION_LOG.md` v2.0 (D01–D39).",
-   "new": "Versione 2.1 — 21 luglio 2026. Sostituisce la v2.0 (6 luglio 2026); la v1.0 resta archiviata in `archive_v1/`. Destinatario: te. Lingua: italiano. Documento tecnico vincolante: `01_MASTER_SPEC.md` v2.1 (citato come §N); decisioni: `02_DECISION_LOG.md` v2.1 (D01–D51; O7 bloccante per G2/G5). Ordine di esecuzione v2.1 dei gate (D44(vii)): **G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7**."
+   "old": "Version 2.0 — 6 July 2026. It replaces v1.0 (archived in `archive_v1/`). Addressee: you. Language: Italian. Binding technical document: `01_MASTER_SPEC.md` v2.0 (cited as §N); decisions: `02_DECISION_LOG.md` v2.0 (D01–D39).",
+   "new": "Version 2.1 — 21 July 2026. It replaces v2.0 (6 July 2026); v1.0 remains archived in `archive_v1/`. Addressee: you. Language: Italian. Binding technical document: `01_MASTER_SPEC.md` v2.1 (cited as §N); decisions: `02_DECISION_LOG.md` v2.1 (D01–D51; O7 blocking for G2/G5). v2.1 execution order of the gates (D44(vii)): **G0 → G1 → G3 → G2 → G4 → G5 → G6 → G7**."
   },
   {
-   "label": "Fase 0 chiusura",
+   "label": "Phase 0 closure",
    "tag": "A",
    "decision": "D45",
-   "old": "**Chiusura fase:** profilazione preliminare del costo di un fit sintetico (per l'item O6) → **Gate G0** insieme ai test non-tree della Fase 1.",
-   "new": "**Chiusura fase:** nessuna profilazione richiesta a G0 (O6 è spostato a G3; D45; un microbenchmark sintetico indicativo è ammesso solo via il candidato in quarantena D47, etichettato come indicativo). **Gate G0** si chiude in Fase 1a con i test non-tree reali e l'infrastruttura deterministica verificata."
+   "old": "**Phase closure:** preliminary profiling of the cost of a synthetic fit (for item O6) → **Gate G0** together with the non-tree tests of Phase 1.",
+   "new": "**Phase closure:** no profiling required at G0 (O6 is moved to G3; D45; an indicative synthetic microbenchmark is admitted only via the quarantined candidate D47, labelled as indicative). **Gate G0** closes in Phase 1a with the real non-tree tests and the deterministic infrastructure verified."
   },
   {
-   "label": "Fase 1 -> 1a/1b",
+   "label": "Phase 1 -> 1a/1b",
    "tag": "A",
    "decision": "D45+D44(vii)+D50+D43+D51",
-   "old": "## FASE 1 — Pipeline dati + audit del corpus → Gate G1 (settimane 2–3, ~18–20 h)\n\n**Obiettivo:** scaricare i treebank (v2.18, §2.5, con SHA-256 e commit in PROVENANCE.md), leggerli, produrre l'audit che **congela alfabeto, registro e T***. **Cosa impari:** il formato CoNLL-U; i multiword token latini (que/ue) e perché si espandono; l'alfabeto UPOS+DEPREL come funzione totale (§3.4); le GATE-A/GATE-B; cosa è T* e perché serve (§4.2). **Cosa fa l'AI:** `conllu_reader`, `registry`, `alphabet`, `sequences`, `blocks` + test (§7);\n\n`run_audit` → `audit_report.md`. **Decisioni umane:** compili `config/registry_overrides.yaml` mappando ogni prefisso `sent_id` a (autore, opera, regime) contro le tabelle verificate di §2.3; risolvi il duplicato *Inno a Demetra* (O2); controlli GATE-A (es. vocativi > 2%?) e GATE-B; verifichi gli inserti in versi di Petronio (O4); prendi nota di T* calcolato (atteso vincolante: \"HEX meno Iliade\"). **Criterio di accettazione (G1):** nessuna frase non assegnata; gates risolti; `alphabet.json`, registro e T* congelati; tutti i test non-tree verdi (G0 incluso). **Touchpoint supervisore linguistico. Subito dopo G1: Gate G2** — congelamento del piano confermativo (§4.4/§5; hash del piano registrato; deposito OSF opzionale). Da qui in poi, prima di toccare dati reali con un modello, il piano è chiuso; ogni modifica passa dal Decision Log. **Prompt-tipo (EN):**\n\nImplement `conllu_reader.py` per §3.2 and `alphabet.py` per §3.4 (TOTAL function; order of operations normative), tests first (§7, incl. a synthetic CoNLL-U fixture with one MWT range and one empty node). Then `run_audit.py` producing `audit_report.md` with the contingency tables, GATE-A/B evaluations, per-regime restricted-position fractions (D35), and the T* computation per §4.2. Do not freeze anything — I review before G1.",
-   "new": "## FASE 1a — Pipeline non-tree → chiusura Gate G0 (settimana 2, ~8–10 h)\n\n**Obiettivo:** implementare e testare tutto ciò che non è l'albero: `conllu_reader`, `registry`, `alphabet`, `sequences`, `blocks` + test (§7) con asserzioni reali (zero skip nel set G0), più l'infrastruttura deterministica (derivazione dei seed, risoluzione della config, scrittura del manifest per run con sidecar minimo — §6.4/D46, protezione da sovrascrittura). **Cosa impari:** il formato CoNLL-U; i multiword token latini (que/ue) e perché si espandono; l'alfabeto UPOS+DEPREL come funzione totale (§3.4). **Criterio di accettazione (G0, riformulato da D45):** ambiente bloccato; tutti i test non-tree verdi con asserzioni reali; infrastruttura deterministica verificata. Nessuna profilazione qui: O6 → G3 (D45). **Clausola di acquisizione parallela (D45):** il clone dei treebank e la compilazione di `PROVENANCE.md` (v2.18, §2.5, con SHA-256 e commit) sono acquisizione, non audit, non toccano modelli e possono procedere in parallelo a G0; l'audit di G1 resta rigorosamente dopo G0. **Prompt-tipo (EN):**\n\nImplement `conllu_reader.py` per §3.2 and `alphabet.py` per §3.4 (TOTAL function; order of operations normative), tests first (§7, incl. a synthetic CoNLL-U fixture with one MWT range and one empty node). Real assertions only — no skipped tests in the G0 set. Also implement the deterministic infrastructure: seed derivation, config resolution, run-manifest writing with minimal sidecars (§6.4/D46), overwrite protection.\n\n## FASE 1b — Audit del corpus → Gate G1 (settimana 3, ~10 h)\n\n**Obiettivo:** con i treebank acquisiti (`PROVENANCE.md` compilato), produrre l'audit che **congela alfabeto, registro e T\\***. **Cosa impari:** le GATE-A/GATE-B; cosa è T* e perché serve (§4.2; ambito del contrasto primario, D51). **Cosa fa l'AI:** `run_audit` → `audit_report.md`. **Decisioni umane:** compili `config/registry_overrides.yaml` mappando ogni prefisso `sent_id` a (autore, opera, regime) contro le tabelle verificate di §2.3; risolvi il duplicato *Inno a Demetra* (O2 — nota D43(vi): la decisione ha conseguenze inferenziali dichiarate sul piano-autore, tracciate come O8); verifichi la partizione autoriale 3/3 (O8); controlli GATE-A (es. vocativi > 2%? — in caso di attivazione vale D50: C0 resta l'unica primaria e le celle `oth` diventano a interpretazione obbligatoria) e GATE-B; verifichi gli inserti in versi di Petronio (O4); prendi nota di T* calcolato (atteso vincolante: \"HEX meno Iliade\"; ambito: solo contrasto primario, D51). **Criterio di accettazione (G1):** nessuna frase non assegnata; gates risolti; O2/O8 risolti; `alphabet.json`, registro e T* congelati; tutti i test non-tree verdi (G0 incluso). **Touchpoint supervisore linguistico.** **Nota v2.1 (D44(vii)): il Gate G2 non segue più immediatamente G1** — è riposizionato dopo G3, perché il congelamento del piano richiede la risoluzione di O7 (validità del sign-flip), che a sua volta richiede l'albero implementato. L'invariante di D30 resta intatto: prima di G2 solo dati sintetici; i primi fit su dati reali restano a G4, dopo il congelamento. **Prompt-tipo (EN):**\n\nImplement `run_audit.py` producing `audit_report.md` with the contingency tables, GATE-A/B evaluations, per-regime restricted-position fractions (D35), and the T* computation per §4.2 (primary-contrast scope, D51). Do not freeze anything — I review before G1."
+   "old": "## PHASE 1 — Data pipeline + corpus audit → Gate G1 (weeks 2–3, ~18–20 h)\n\n**Goal:** download the treebanks (v2.18, §2.5, with SHA-256 and commit in PROVENANCE.md), read them, produce the audit that **freezes alphabet, registry and T***. **What you learn:** the CoNLL-U format; the Latin multiword tokens (que/ue) and why they are expanded; the UPOS+DEPREL alphabet as a total function (§3.4); GATE-A/GATE-B; what T* is and why it is needed (§4.2). **What the AI does:** `conllu_reader`, `registry`, `alphabet`, `sequences`, `blocks` + tests (§7);\n\n`run_audit` → `audit_report.md`. **Human decisions:** you compile `config/registry_overrides.yaml` mapping every `sent_id` prefix to (author, work, regime) against the verified tables of §2.3; you resolve the duplicate *Hymn to Demeter* (O2); you check GATE-A (e.g. vocatives > 2%?) and GATE-B; you verify the verse inserts of Petronius (O4); you take note of the computed T* (binding expectation: \"HEX minus Iliad\"). **Acceptance criterion (G1):** no unassigned sentence; gates resolved; `alphabet.json`, registry and T* frozen; all the non-tree tests green (G0 included). **Touchpoint with the linguistic supervisor. Immediately after G1: Gate G2** — freeze of the confirmatory plan (§4.4/§5; hash of the plan recorded; OSF deposit optional). From here on, before touching real data with a model, the plan is closed; every change goes through the Decision Log. **Template prompt (EN):**\n\nImplement `conllu_reader.py` per §3.2 and `alphabet.py` per §3.4 (TOTAL function; order of operations normative), tests first (§7, incl. a synthetic CoNLL-U fixture with one MWT range and one empty node). Then `run_audit.py` producing `audit_report.md` with the contingency tables, GATE-A/B evaluations, per-regime restricted-position fractions (D35), and the T* computation per §4.2. Do not freeze anything — I review before G1.",
+   "new": "## PHASE 1a — Non-tree pipeline → closure of Gate G0 (week 2, ~8–10 h)\n\n**Goal:** implement and test everything that is not the tree: `conllu_reader`, `registry`, `alphabet`, `sequences`, `blocks` + tests (§7) with real assertions (zero skips in the G0 set), plus the deterministic infrastructure (derivation of the seeds, resolution of the config, writing of the per-run manifest with minimal sidecar — §6.4/D46, overwrite protection). **What you learn:** the CoNLL-U format; the Latin multiword tokens (que/ue) and why they are expanded; the UPOS+DEPREL alphabet as a total function (§3.4). **Acceptance criterion (G0, reformulated by D45):** locked environment; all the non-tree tests green with real assertions; deterministic infrastructure verified. No profiling here: O6 → G3 (D45). **Parallel acquisition clause (D45):** the clone of the treebanks and the compilation of `PROVENANCE.md` (v2.18, §2.5, with SHA-256 and commit) are acquisition, not audit, touch no models and may proceed in parallel with G0; the G1 audit remains strictly after G0. **Template prompt (EN):**\n\nImplement `conllu_reader.py` per §3.2 and `alphabet.py` per §3.4 (TOTAL function; order of operations normative), tests first (§7, incl. a synthetic CoNLL-U fixture with one MWT range and one empty node). Real assertions only — no skipped tests in the G0 set. Also implement the deterministic infrastructure: seed derivation, config resolution, run-manifest writing with minimal sidecars (§6.4/D46), overwrite protection.\n\n## PHASE 1b — Corpus audit → Gate G1 (week 3, ~10 h)\n\n**Goal:** with the treebanks acquired (`PROVENANCE.md` compiled), produce the audit that **freezes alphabet, registry and T\\***. **What you learn:** GATE-A/GATE-B; what T* is and why it is needed (§4.2; scope of the primary contrast, D51). **What the AI does:** `run_audit` → `audit_report.md`. **Human decisions:** you compile `config/registry_overrides.yaml` mapping every `sent_id` prefix to (author, work, regime) against the verified tables of §2.3; you resolve the duplicate *Hymn to Demeter* (O2 — note D43(vi): the decision has declared inferential consequences for the author plan, tracked as O8); you verify the 3/3 authorial partition (O8); you check GATE-A (e.g. vocatives > 2%? — if it triggers, D50 applies: C0 remains the only primary and the `oth` cells become of mandatory interpretation) and GATE-B; you verify the verse inserts of Petronius (O4); you take note of the computed T* (binding expectation: \"HEX minus Iliad\"; scope: primary contrast only, D51). **Acceptance criterion (G1):** no unassigned sentence; gates resolved; O2/O8 resolved; `alphabet.json`, registry and T* frozen; all the non-tree tests green (G0 included). **Touchpoint with the linguistic supervisor.** **v2.1 note (D44(vii)): Gate G2 no longer immediately follows G1** — it is repositioned after G3, because the freezing of the plan requires the resolution of O7 (validity of the sign-flip), which in turn requires the implemented tree. The invariant of D30 remains intact: before G2 only synthetic data; the first fits on real data remain at G4, after the freeze. **Template prompt (EN):**\n\nImplement `run_audit.py` producing `audit_report.md` with the contingency tables, GATE-A/B evaluations, per-regime restricted-position fractions (D35), and the T* computation per §4.2 (primary-contrast scope, D51). Do not freeze anything — I review before G1."
   },
   {
-   "label": "Fase 2 G3+G2",
+   "label": "Phase 2 G3+G2",
    "tag": "A",
    "decision": "D44+D45+D47",
-   "old": "**Criterio di accettazione (G3):** tutti i test elencati in §7 per G3 verdi; T5.1 completato e loggato. **Touchpoint supervisore matematico.** Nessun dato reale è ancora stato toccato da un modello.",
-   "new": "**In più nella v2.1 (D44/D45):** (a) **profilazione O6** del costo di fit (conferma del budget D37) — qui, non a G0; (b) **studio di calibrazione del null (O7, bloccante per G2/G5):** su soli dati sintetici, generazione da un unico processo (H0 vera), partizione in 11 pseudo-documenti con il profilo di taglie del corpus (disponibile dopo G1), esecuzione della catena completa (LODO, T*-matching, media sui seed, sign-flip) e misura dell'errore di tipo I empirico ai livelli nominali, con la permutazione di P2 come controllo positivo; software: `pipeline/run_null_calibration.py` + `tests/test_null_calibration.py`; consegna: report di calibrazione. **Criterio di accettazione (G3):** tutti i test elencati in §7 per G3 verdi (incluso `test_null_calibration`); T5.1 completato e loggato; profilazione O6 registrata; report di calibrazione O7 consegnato. **Touchpoint supervisore matematico** (in agenda anche D18-A1, la proposta di emendamento sulla politica di crescita depositata via D47). Nessun dato reale è ancora stato toccato da un modello. **Al termine di G3: Gate G2** — congelamento del piano confermativo (§4.4/§5; hash del piano registrato; deposito OSF opzionale; **richiede O7 risolto**). Da qui in poi, prima di toccare dati reali con un modello, il piano è chiuso; ogni modifica passa dal Decision Log."
+   "old": "**Acceptance criterion (G3):** all the tests listed in §7 for G3 green; T5.1 completed and logged. **Touchpoint with the mathematical supervisor.** No real data has yet been touched by a model.",
+   "new": "**In addition in v2.1 (D44/D45):** (a) **O6 profiling** of the fit cost (confirmation of the D37 budget) — here, not at G0; (b) **null calibration study (O7, blocking for G2/G5):** on synthetic data only, generation from a single process (H0 true), partition into 11 pseudo-documents with the size profile of the corpus (available after G1), execution of the complete chain (LODO, T*-matching, mean over the seeds, sign-flip) and measurement of the empirical type I error at the nominal levels, with the P2 permutation as positive control; software: `pipeline/run_null_calibration.py` + `tests/test_null_calibration.py`; delivery: calibration report. **Acceptance criterion (G3):** all the tests listed in §7 for G3 green (including `test_null_calibration`); T5.1 completed and logged; O6 profiling recorded; O7 calibration report delivered. **Touchpoint with the mathematical supervisor** (also on the agenda D18-A1, the amendment proposal on the growth policy deposited via D47). No real data has yet been touched by a model. **At the end of G3: Gate G2** — freeze of the confirmatory plan (§4.4/§5; hash of the plan recorded; OSF deposit optional; **requires O7 resolved**). From here on, before touching real data with a model, the plan is closed; every change goes through the Decision Log."
   },
   {
-   "label": "Fase 3 nota",
+   "label": "Phase 3 note",
    "tag": "A",
    "decision": "realignment ⑦",
-   "old": "**Criterio (G4):** diagnostiche verdi; figure/tabelle con manifest; niente statistiche confermative ancora.",
-   "new": "**Criterio (G4):** diagnostiche verdi; figure/tabelle con manifest; niente statistiche confermative ancora. **Nota (dichiarata):** la precedenza delle letture descrittive (G4) sull'inferenza (G5) è presentazionale, non epistemica: il piano confermativo è già congelato a G2, quindi vedere le descrittive non apre gradi di libertà analitici."
+   "old": "**Criterion (G4):** diagnostics green; figures/tables with manifest; no confirmatory statistics yet.",
+   "new": "**Criterion (G4):** diagnostics green; figures/tables with manifest; no confirmatory statistics yet. **Note (declared):** the precedence of the descriptive readings (G4) over the inference (G5) is presentational, not epistemic: the confirmatory plan is already frozen at G2, so seeing the descriptive readings opens no analytical degrees of freedom."
   },
   {
-   "label": "Fase 4 minimi",
+   "label": "Phase 4 minima",
    "tag": "A",
    "decision": "D43",
-   "old": "Holm su famiglia {P1, P2} (soglie 0.025/0.05; minimi raggiungibili 1/2048 e 1/462 — dichiarati).",
-   "new": "Holm su famiglia {P1, P2} (soglie 0.025/0.05; minimi raggiungibili 1/2048 e 1/462, con lateralità dichiarata accanto a ogni soglia — D43: per la permutazione a gruppi disuguali le soglie uni- e bilaterale coincidono)."
+   "old": "Holm on the family {P1, P2} (thresholds 0.025/0.05; reachable minima 1/2048 and 1/462 — declared).",
+   "new": "Holm on the family {P1, P2} (thresholds 0.025/0.05; reachable minima 1/2048 and 1/462, with sidedness declared beside every threshold — D43: for the permutation with unequal groups the one- and two-sided thresholds coincide)."
   },
   {
-   "label": "Fase 4 criterio",
+   "label": "Phase 4 criterion",
    "tag": "A",
    "decision": "D43+D44+D49",
-   "old": "**Criterio (G5):** test §7 verdi (incluso label-free byte-identico); risultati con p esatti Tier-1 e Tier-2 (piano autore: minimo 0.05, dichiarato), effetti in bit, CI bootstrap; dot plot per documento come display primario.",
-   "new": "**Criterio (G5):** test §7 verdi (incluso label-free byte-identico); risultati con p esatti Tier-1, più il piano-autore **descrittivo senza α** (D43: soglie strutturali dichiarate — permutazione bilaterale 2/20 = 0,10; sign-flip unilaterale 1/64 ≈ 0,016; punteggio di blocco = media non pesata dei suoi documenti; rerun Lisia-fusa anch'esso senza α), effetti in bit, CI bootstrap (etichettate \"tra documenti\", §5.3); colonne descrittive `G_own` e frazioni di pool own-regime (D44/D49); dot plot per documento come display primario. **Prerequisito (D44): O7 risolto** — nessuna inferenza confermativa su P1 prima della validazione del sign-flip."
+   "old": "**Criterion (G5):** §7 tests green (including the byte-identical label-free one); results with exact Tier-1 and Tier-2 p-values (author plan: minimum 0.05, declared), effects in bits, bootstrap CIs; per-document dot plot as primary display.",
+   "new": "**Criterion (G5):** §7 tests green (including the byte-identical label-free one); results with exact Tier-1 p-values, plus the author plan **descriptive without α** (D43: declared structural thresholds — two-sided permutation 2/20 = 0.10; one-sided sign-flip 1/64 ≈ 0.016; block score = unweighted mean of its documents; Lysias-merged rerun also without α), effects in bits, bootstrap CIs (labelled \"between documents\", §5.3); descriptive columns `G_own` and own-regime pool fractions (D44/D49); per-document dot plot as primary display. **Prerequisite (D44): O7 resolved** — no confirmatory inference on P1 before the validation of the sign-flip."
   },
   {
-   "label": "Fase 5 sidedness",
+   "label": "Phase 5 sidedness",
    "tag": "A",
    "decision": "D43",
-   "old": "P2-latino (permutazione esatta C(8,2) = 28 → qualitativa per costruzione, niente α)",
-   "new": "P2-latino (permutazione esatta C(8,2) = 28, soglie coincidenti per entrambe le lateralità — D43 → qualitativa per costruzione, niente α)"
+   "old": "Latin P2 (exact permutation C(8,2) = 28 → qualitative by construction, no α)",
+   "new": "Latin P2 (exact permutation C(8,2) = 28, thresholds coinciding for both sidednesses — D43 → qualitative by construction, no α)"
   },
   {
-   "label": "Fase 6 partizione",
+   "label": "Phase 6 partition",
    "tag": "A",
    "decision": "D42+D50+D45",
-   "old": "Budget ≈ 3–5 ore macchina (confermato dal profiling di G0, O6). **Disciplina di claim:** una conclusione si dichiara solo se stabile in segno su tutte le 13 celle; l'instabilità è essa stessa un risultato (T4/F10).",
-   "new": "Budget ≈ 3–5 ore macchina (confermato dal profiling di G3, O6/D45). **Disciplina di claim (D42):** le 13 celle sono partizionate — (i) blocco di **robustezza parametrica** (C0 + le 7 celle OAT): stabilità di segno **richiesta** per qualunque conclusione sostanziale; (ii) blocco di **analisi di rappresentazione** (le 5 celle fattoriali non-C0: alfabeto × confine): cambiano l'oggetto osservato, quindi gli esiti si **riportano e interpretano**, mai come condizioni automatiche di validità (un effetto presente su ud23 e assente su solo-UPOS localizza la firma nell'informazione di dipendenza: è un risultato, non un fallimento di robustezza); ogni conclusione primaria si riferisce esplicitamente alla rappresentazione primaria; l'instabilità nel blocco (i) è essa stessa un risultato (T4/F10). **Se GATE-A si è attivata a G1 (D50):** C0 resta l'unica primaria; le celle `(ud23, oth)` sono a interpretazione obbligatoria nei Risultati."
+   "old": "Budget ≈ 3–5 machine hours (confirmed by the G0 profiling, O6). **Claim discipline:** a conclusion is declared only if stable in sign over all the 13 cells; the instability is itself a result (T4/F10).",
+   "new": "Budget ≈ 3–5 machine hours (confirmed by the G3 profiling, O6/D45). **Claim discipline (D42):** the 13 cells are partitioned — (i) block of **parametric robustness** (C0 + the 7 OAT cells): sign stability **required** for any substantive conclusion; (ii) block of **analysis of representation** (the 5 non-C0 factorial cells: alphabet × boundary): they change the observed object, so the outcomes are **reported and interpreted**, never as automatic conditions of validity (an effect present on ud23 and absent on UPOS-only localizes the signature in the dependency information: it is a result, not a failure of robustness); every primary conclusion refers explicitly to the primary representation; the instability in block (i) is itself a result (T4/F10). **If GATE-A triggered at G1 (D50):** C0 remains the only primary; the `(ud23, oth)` cells are of mandatory interpretation in the Results."
   },
   {
-   "label": "Fase 7 limiti",
+   "label": "Phase 7 limits",
    "tag": "A",
    "decision": "D43",
-   "old": "Limiti (piano-autore 0.05; confondenti;",
-   "new": "Limiti (piano-autore descrittivo senza α, soglia strutturale bilaterale 0,10 — D43; confondenti;"
+   "old": "Limitations (author plan 0.05; confounders;",
+   "new": "Limitations (author plan descriptive without α, two-sided structural threshold 0.10 — D43; confounders;"
   },
   {
-   "label": "checklist piano-autore",
+   "label": "author-plan checklist",
    "tag": "A",
    "decision": "D43",
-   "old": "- [ ] perché la permutazione si fa a documento (exchangeability) e perché il piano-autore ha minimo 0.05;",
-   "new": "- [ ] perché la permutazione si fa a documento (exchangeability), perché ogni soglia dichiara la propria lateralità (D43) e perché il piano-autore è descrittivo senza α (soglia strutturale bilaterale di P2 = 0,10);"
+   "old": "- [ ] why the permutation is done per document (exchangeability) and why the author plan has a minimum of 0.05;",
+   "new": "- [ ] why the permutation is done per document (exchangeability), why every threshold declares its own sidedness (D43) and why the author plan is descriptive without α (two-sided structural threshold of P2 = 0.10);"
   },
   {
-   "label": "checklist nuovi item",
+   "label": "checklist new items",
    "tag": "A",
    "decision": "D44+D49",
-   "old": "- [ ] cosa i risultati NON dimostrano:",
-   "new": "- [ ] perché il sign-flip di P1 richiede la simmetria congiunta dei segni e non solo quella marginale, perché resta una questione aperta (D44/O7) e come lo studio di calibrazione su sintetici la verifica; - [ ] perché il guadagno pooled (P2) non distingue da solo \"meno struttura condizionale\" da \"maggiore distanza dalla miscela\" e a cosa serve la lettura descrittiva G_own (D49); - [ ] cosa i risultati NON dimostrano:"
+   "old": "- [ ] what the results do NOT demonstrate:",
+   "new": "- [ ] why the P1 sign-flip requires the joint symmetry of the signs and not only the marginal one, why it remains an open question (D44/O7) and how the calibration study on synthetic data verifies it; - [ ] why the pooled gain (P2) does not by itself distinguish \"less conditional structure\" from \"greater distance from the mixture\" and what the descriptive reading G_own is for (D49); - [ ] what the results do NOT demonstrate:"
   },
   {
-   "label": "decisioni item 1",
+   "label": "decisions item 1",
    "tag": "A",
    "decision": "D41",
-   "old": "le misure di ordine basso sono sue troncature lisciate: diagnostiche, non risultati; la JSD resta come appendice facoltativa.",
-   "new": "le misure di ordine basso sono sue troncature lisciate: diagnostiche, non risultati; la JSD è una lettura distribuzionale descrittiva prevista, senza α né test (D41; era \"appendice facoltativa\" fino alla v2.0)."
+   "old": "the low-order measures are its smoothed truncations: diagnostics, not results; the JSD remains as an optional appendix.",
+   "new": "the low-order measures are its smoothed truncations: diagnostics, not results; the JSD is a planned descriptive distributional reading, without α or test (D41; it was an \"optional appendix\" until v2.0)."
   },
   {
-   "label": "decisioni item 9-11",
+   "label": "decisions items 9-11",
    "tag": "A",
    "decision": "D42+D44+D43+D49+D50+D51",
-   "old": "8. **D06/GATE-A, D18/T5.1.** Soglia d'allerta sugli scarti di annotazione; audit riga-per-riga della corrispondenza con Schürmann & Grassberger.",
-   "new": "8. **D06/GATE-A, D18/T5.1.** Soglia d'allerta sugli scarti di annotazione; audit riga-per-riga della corrispondenza con Schürmann & Grassberger.\n\n9. **D42 — Robustezza parametrica vs analisi di rappresentazione.** Le 13 celle di sensibilità non sono tutte uguali: le perturbazioni dei parametri devono confermare il segno; i cambi di rappresentazione (alfabeto, confini) cambiano l'oggetto osservato e si interpretano, non si usano come veto automatico.\n\n10. **D44/O7 — Validità del sign-flip di P1: questione aperta, bloccante.** La costruzione garantisce la simmetria marginale di ΔCE sotto H0, non l'invarianza congiunta richiesta dal sign-flip esatto (i pool di addestramento si sovrappongono → componente di modo comune). Si risolve con uno studio di calibrazione su dati sintetici prima del congelamento del piano; per questo G2 è riposizionato dopo G3 (D44(vii)). Conseguenza pratica: nessuna inferenza confermativa su P1 prima di O7.\n\n11. **D43 + D49–D51 — Sincronizzazione v2.1.** Lateralità dichiarata accanto a ogni soglia e piano-autore descrittivo senza α (D43); lettura descrittiva G_own per la sede della firma (D49); GATE-A non duplica la configurazione primaria (D50); T* calcolato sul solo contrasto primario, con il costo di potenza della taglia uniforme dichiarato (D51)."
+   "old": "8. **D06/GATE-A, D18/T5.1.** Alert threshold on the annotation discards; row-by-row audit of the correspondence with Schürmann & Grassberger.",
+   "new": "8. **D06/GATE-A, D18/T5.1.** Alert threshold on the annotation discards; row-by-row audit of the correspondence with Schürmann & Grassberger.\n\n9. **D42 — Parametric robustness vs analysis of representation.** The 13 sensitivity cells are not all equal: the perturbations of the parameters must confirm the sign; the changes of representation (alphabet, boundaries) change the observed object and are interpreted, not used as an automatic veto.\n\n10. **D44/O7 — Validity of the P1 sign-flip: open question, blocking.** The construction guarantees the marginal symmetry of ΔCE under H0, not the joint invariance required by the exact sign-flip (the training pools overlap → common-mode component). It is resolved with a calibration study on synthetic data before the freeze of the plan; for this reason G2 is repositioned after G3 (D44(vii)). Practical consequence: no confirmatory inference on P1 before O7.\n\n11. **D43 + D49–D51 — v2.1 synchronization.** Sidedness declared beside every threshold and author plan descriptive without α (D43); descriptive reading G_own for the seat of the signature (D49); GATE-A does not duplicate the primary configuration (D50); T* computed on the primary contrast only, with the power cost of the uniform size declared (D51)."
   },
   {
-   "label": "nota strumenti",
+   "label": "tools note",
    "tag": "A",
    "decision": "D45",
-   "old": "fit singolo ≈ 1–3 s (da profilare a G0), piano di sensibilità completo ≈ 3–5 ore.",
-   "new": "fit singolo ≈ 1–3 s (da profilare a G3; O6/D45), piano di sensibilità completo ≈ 3–5 ore."
+   "old": "single fit ≈ 1–3 s (to be profiled at G0), complete sensitivity plan ≈ 3–5 hours.",
+   "new": "single fit ≈ 1–3 s (to be profiled at G3; O6/D45), complete sensitivity plan ≈ 3–5 hours."
   },
   {
-   "label": "registro crosswalk",
+   "label": "register crosswalk",
    "tag": "A",
    "decision": "D40",
-   "old": "## A. Fonti della proposta (numerazione originale)",
-   "new": "**Nota v2.1 (2026-07-21; D40).** La numerazione della Sezione A è quella della proposta PRE-finale. La proposta finale ha rinumerato la bibliografia in [1]–[22]; corrispondenza verificata sul testo finale il 2026-07-21: registro 1→[1], 2→[6], 3→[18]/[19], 4→[2], 5→[4], 6→[5], 7→[22], 8→[7], 9→[20], 10→[15], 11→[3], 12→[16], 13→[11], 14→[14], 15→[8], 16→[9], 18→[12], 20→[10], 22→[17], 25→[13]. Le voci 17, 19 e 21 del registro non sono citate nella proposta finale (il registro resta il superinsieme delle fonti del preprint). La voce [21] della proposta (Greco et al. 2023) era assente dal registro ed è stata aggiunta come voce 26. La regola resta invariata: nulla si cita nel preprint se non è in questo registro; la passata O5 riverifica anche questa corrispondenza.\n\n## A. Fonti della proposta (numerazione originale della proposta PRE-finale)"
+   "old": "## A. Sources of the proposal (original numbering)",
+   "new": "**v2.1 note (2026-07-21; D40).** The numbering of Section A is that of the PRE-final proposal. The final proposal renumbered the bibliography as [1]–[22]; correspondence verified on the final text on 2026-07-21: register 1→[1], 2→[6], 3→[18]/[19], 4→[2], 5→[4], 6→[5], 7→[22], 8→[7], 9→[20], 10→[15], 11→[3], 12→[16], 13→[11], 14→[14], 15→[8], 16→[9], 18→[12], 20→[10], 22→[17], 25→[13]. Entries 17, 19 and 21 of the register are not cited in the final proposal (the register remains the superset of the sources of the preprint). Entry [21] of the proposal (Greco et al. 2023) was absent from the register and has been added as entry 26. The rule remains unchanged: nothing is cited in the preprint unless it is in this register; the O5 pass also rechecks this correspondence.\n\n## A. Sources of the proposal (original numbering of the PRE-final proposal)"
   },
   {
-   "label": "registro #2",
+   "label": "register #2",
    "tag": "A",
    "decision": "D40/O5",
-   "old": "2. **Mansilla, R. & Bush, E.** \"Increase of Complexity from Classical Greek to Latin Poetry\". *Complex Systems* (volume/pagine da completare) [P/T].",
-   "new": "2. **Mansilla, R. & Bush, E. (2003).** \"Increase of Complexity from Classical Greek to Latin Poetry\". *Complex Systems* 14(3): 201–213. [P — dettagli dalla bibliografia della proposta finale, 2026-07-21; verifica su fonte primaria in O5]"
+   "old": "2. **Mansilla, R. & Bush, E.** \"Increase of Complexity from Classical Greek to Latin Poetry\". *Complex Systems* (volume/pages to be completed) [P/T].",
+   "new": "2. **Mansilla, R. & Bush, E. (2003).** \"Increase of Complexity from Classical Greek to Latin Poetry\". *Complex Systems* 14(3): 201–213. [P — details from the bibliography of the final proposal, 2026-07-21; verification on the primary source in O5]"
   },
   {
-   "label": "registro #8",
+   "label": "register #8",
    "tag": "A",
    "decision": "D40/O5",
-   "old": "8. **Šeļa, A. & Gronas, M.** \"Measuring Rhythm Regularity in Verse: Entropy of Inter-Stress Intervals\". *CEUR* *Workshop Proceedings* Vol-3290 (venue del volume da verificare, probabile CHR 2022) [P/T].",
-   "new": "8. **Šeļa, A. & Gronas, M. (2022).** \"Measuring Rhythm Regularity in Verse: Entropy of Inter-Stress Intervals\". In *CHR 2022: Computational Humanities Research Conference*, CEUR Workshop Proceedings Vol-3290, Anversa, pp. 231–242. [P — dalla proposta finale, 2026-07-21; O5]"
+   "old": "8. **Šeļa, A. & Gronas, M.** \"Measuring Rhythm Regularity in Verse: Entropy of Inter-Stress Intervals\". *CEUR* *Workshop Proceedings* Vol-3290 (venue of the volume to be verified, probably CHR 2022) [P/T].",
+   "new": "8. **Šeļa, A. & Gronas, M. (2022).** \"Measuring Rhythm Regularity in Verse: Entropy of Inter-Stress Intervals\". In *CHR 2022: Computational Humanities Research Conference*, CEUR Workshop Proceedings Vol-3290, Antwerp, pp. 231–242. [P — from the final proposal, 2026-07-21; O5]"
   },
   {
-   "label": "registro #9",
+   "label": "register #9",
    "tag": "A",
    "decision": "D40/O5",
-   "old": "9. **Cover, T. M. & Thomas, J. A.* Elements of Information Theory*, 2ª ed., Wiley (la proposta indica 2008; l'edizione standard è 2006 — verificare l'edizione effettivamente citata) [S/T].",
-   "new": "9. **Cover, T. M. & Thomas, J. A. (2006).** *Elements of Information Theory*, 2ª ed., Wiley-Interscience. [S — la proposta finale cita l'edizione 2006; conferma editoriale in O5]"
+   "old": "9. **Cover, T. M. & Thomas, J. A.* Elements of Information Theory*, 2nd ed., Wiley (the proposal indicates 2008; the standard edition is 2006 — verify the edition actually cited) [S/T].",
+   "new": "9. **Cover, T. M. & Thomas, J. A. (2006).** *Elements of Information Theory*, 2nd ed., Wiley-Interscience. [S — the final proposal cites the 2006 edition; editorial confirmation in O5]"
   },
   {
-   "label": "registro #10",
+   "label": "register #10",
    "tag": "A",
    "decision": "D40/O5",
-   "old": "10. **Herrera, S., Silai, I.-M., Guillaume, B., Kahane, S. (2025).** \"Extraction of Contrastive Rules from Syntactic Treebanks. A Case Study in Romance Languages\". ACL Anthology 2025.quasy-1.5 (dettagli venue QUASY da completare) [P/T].",
-   "new": "10. **Herrera, S., Silai, I.-M., Guillaume, B., Kahane, S. (2025).** \"Extraction of Contrastive Rules from Syntactic Treebanks: A Case Study in Romance Languages\". In *Proceedings of the Third Workshop on Quantitative Syntax (QUASY, SyntaxFest 2025)*, ACL, pp. 26–38; ACL Anthology 2025.quasy-1.5. [P — dalla proposta finale, 2026-07-21; O5]"
+   "old": "10. **Herrera, S., Silai, I.-M., Guillaume, B., Kahane, S. (2025).** \"Extraction of Contrastive Rules from Syntactic Treebanks. A Case Study in Romance Languages\". ACL Anthology 2025.quasy-1.5 (details of the QUASY venue to be completed) [P/T].",
+   "new": "10. **Herrera, S., Silai, I.-M., Guillaume, B., Kahane, S. (2025).** \"Extraction of Contrastive Rules from Syntactic Treebanks: A Case Study in Romance Languages\". In *Proceedings of the Third Workshop on Quantitative Syntax (QUASY, SyntaxFest 2025)*, ACL, pp. 26–38; ACL Anthology 2025.quasy-1.5. [P — from the final proposal, 2026-07-21; O5]"
   },
   {
-   "label": "registro #25 + #26",
+   "label": "register #25 + #26",
    "tag": "A",
    "decision": "D40/O5",
-   "old": "25. **AGLDT 2.1** (Ancient Greek and Latin Dependency Treebank, Perseus) — la risorsa sorgente va accreditata; riferimento canonico candidato: **Bamman & Crane 2011** (l'esistenza del riferimento è confermata dalla bibliografia di [14]; titolo e venue esatti da verificare) [T]. *Fine del registro. Ogni nuova fonte introdotta nel corso del progetto va aggiunta qui con stato e ruolo, prima di essere citata altrove.*",
-   "new": "25. **AGLDT 2.1** (Ancient Greek and Latin Dependency Treebank, Perseus) — la risorsa sorgente va accreditata; riferimento canonico: **Bamman, D. & Crane, G. (2011).** \"The Ancient Greek and Latin Dependency Treebanks\". In C. Sporleder, A. van den Bosch, K. Zervanou (a cura di), *Language Technology for Cultural Heritage*, Springer, Berlino–Heidelberg, pp. 79–98. [P — dettagli dalla bibliografia della proposta finale, 2026-07-21; verifica su fonte primaria in O5]\n\n## E. Aggiunte v2.1 (2026-07-21)\n\n26. **Greco, M., Cometa, A., Artoni, F., Frank, R., Moro, A. (2023).** \"False perspectives on human language: Why statistics needs linguistics\". *Frontiers in Language Sciences* 2: 1178932. DOI: 10.3389/flang.2023.1178932. [V 2026-07-21 — verificata su fonte primaria presente nei materiali di progetto] — Ruolo: principio di dipendenza-dalla-rappresentazione delle misure statistiche (citata nella proposta finale §2.4: il surprisal acquista contenuto linguistico solo rispetto al modello che definisce eventi e probabilità); pertinente in Metodi (la coppia UPOS+DEPREL come proiezione lineare con perdita) e Limiti. Aggiunta in v2.1 perché citata dalla proposta finale ma assente dal registro.\n\n*Fine del registro. Ogni nuova fonte introdotta nel corso del progetto va aggiunta qui con stato e ruolo, prima di essere citata altrove.*"
+   "old": "25. **AGLDT 2.1** (Ancient Greek and Latin Dependency Treebank, Perseus) — the source resource must be credited; candidate canonical reference: **Bamman & Crane 2011** (the existence of the reference is confirmed by the bibliography of [14]; exact title and venue to be verified) [T]. *End of the register. Every new source introduced during the project must be added here with status and role, before being cited elsewhere.*",
+   "new": "25. **AGLDT 2.1** (Ancient Greek and Latin Dependency Treebank, Perseus) — the source resource must be credited; canonical reference: **Bamman, D. & Crane, G. (2011).** \"The Ancient Greek and Latin Dependency Treebanks\". In C. Sporleder, A. van den Bosch, K. Zervanou (eds.), *Language Technology for Cultural Heritage*, Springer, Berlin–Heidelberg, pp. 79–98. [P — details from the bibliography of the final proposal, 2026-07-21; verification on the primary source in O5]\n\n## E. v2.1 additions (2026-07-21)\n\n26. **Greco, M., Cometa, A., Artoni, F., Frank, R., Moro, A. (2023).** \"False perspectives on human language: Why statistics needs linguistics\". *Frontiers in Language Sciences* 2: 1178932. DOI: 10.3389/flang.2023.1178932. [V 2026-07-21 — verified on the primary source present in the project materials] — Role: principle of representation-dependence of statistical measures (cited in the final proposal §2.4: surprisal acquires linguistic content only with respect to the model that defines events and probabilities); relevant in Methods (the UPOS+DEPREL pair as a lossy linear projection) and Limitations. Added in v2.1 because it is cited by the final proposal but was absent from the register.\n\n*End of the register. Every new source introduced during the project must be added here with status and role, before being cited elsewhere.*"
   }
  ],
  "04": [

@@ -1,37 +1,41 @@
-# CHANGELOG — RIALLINEAMENTO DOCUMENTALE v2.1 (2026-07-21)
+> **English translation; the Italian original governs** (V3-012).
+> Original: `docs/audit/CHANGELOG_RIALLINEAMENTO_v2_1.md` at commit `5f1ec06` (tag `archive/pre-realign`), kept at this path until V3-012; SHA-256 `e3974f14af668d1d3b2da7684764ba252eda408322f6c83780312f0a82579501`.
+> Translated on 2026-09-27. Structure, values and identifiers follow the original, including Italian file names; numbers use English notation. The site labels of the tables are translated as in `AUDIT_EDITS_v2_1.json`, where they were Italian. Any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
 
-Esecuzione delle decisioni **D40–D51** (ratificate da Massimo il 2026-07-21; adozione dei file = ratifica finale) sui cinque documenti operativi. Ogni edit è stato applicato con ancoraggio esatto e fallimento rumoroso; la traccia macchina-leggibile completa (old/new verbatim per ogni edit) è in `AUDIT_EDITS_v2_1.json`. Il restauro della Master Spec è documentato per esteso in `RESTAURO_01_MASTER_SPEC.md` (D48).
+# CHANGELOG — DOCUMENTARY REALIGNMENT v2.1 (2026-07-21)
 
-**Legenda tag:** R = restauro (D48); A = emendamento ratificato; RA = entrambi nello stesso sito.
+Execution of the decisions **D40–D51** (ratified by Massimo on 2026-07-21; adoption of the files = final ratification) on the five operational documents. Every edit was applied with exact anchoring and loud failure; the complete machine-readable trace (old/new verbatim for every edit) is in `AUDIT_EDITS_v2_1.json`. The restoration of the Master Spec is documented in full in `RESTAURO_01_MASTER_SPEC.md` (D48).
 
-## Protocollo di adozione nel repository (`~/Projects/hexis/docs/`)
+**Tag legend:** R = restoration (D48); A = ratified amendment; RA = both at the same site.
 
-1. **Commit 1 (baseline dichiarata):** committare le conversioni `.md` del 2026-07-21 tal quali (i cinque file caricati in sessione), con messaggio che dichiara il danno da generazione PDF (D48). Questo preserva il punto di partenza verificabile.
-2. **Commit 2 (v2.1):** sostituire i cinque file con le versioni di questa consegna e committare insieme `RESTAURO_01_MASTER_SPEC.md`, `CHANGELOG_RIALLINEAMENTO_v2_1.md` e `AUDIT_EDITS_v2_1.json` (suggerito: in `docs/` o `docs/audit/`). Il `git diff` fra i due commit è la verifica indipendente e integrale di ogni modifica qui dichiarata.
-3. La v2.0 in PDF può essere archiviata (es. `archive_v2_0_pdf/`) come registrazione storica; non è più la fonte canonica.
+## Adoption protocol in the repository (`~/Projects/hexis/docs/`)
 
-## Sintesi per documento
+1. **Commit 1 (declared baseline):** commit the `.md` conversions of 2026-07-21 as they are (the five files uploaded in session), with a message that declares the damage from PDF generation (D48). This preserves the verifiable starting point.
+2. **Commit 2 (v2.1):** replace the five files with the versions of this delivery and commit together `RESTAURO_01_MASTER_SPEC.md`, `CHANGELOG_RIALLINEAMENTO_v2_1.md` and `AUDIT_EDITS_v2_1.json` (suggested: in `docs/` or `docs/audit/`). The `git diff` between the two commits is the independent and complete verification of every change declared here.
+3. The v2.0 in PDF may be archived (e.g. `archive_v2_0_pdf/`) as a historical record; it is no longer the canonical source.
 
-**00_LEGGIMI_INDICE.md — 12 edit.** Versione 2.1; nuova sezione «Che cosa è cambiato nella v2.1»; tabella dei documenti aggiornata (51 decisioni, O7 bloccante, DN-1–3); ordine di lettura D32–D51; novità di verifica v2.1 (Greco et al. 2023); stato del progetto con ordine di esecuzione v2.1 e gate riordinati G0→G1→G3→G2→G4→…
+## Summary per document
 
-| # | Tag | Decisione | Sito |
+**00_LEGGIMI_INDICE.md — 12 edits.** Version 2.1; new section «What changed in v2.1»; table of the documents updated (51 decisions, O7 blocking, DN-1–3); reading order D32–D51; v2.1 verification news (Greco et al. 2023); project status with v2.1 execution order and reordered gates G0→G1→G3→G2→G4→…
+
+| # | Tag | Decision | Site |
 | --- | --- | --- | --- |
-| 1 | A | v2.1 | header versione |
-| 2 | A | D41 | nota storica JSD |
-| 3 | A | v2.1 | sezione v2.1 |
-| 4 | A | v2.1 | riga Spec |
-| 5 | A | v2.1 | riga Spec gate |
-| 6 | A | v2.1 | riga Decision Log |
-| 7 | A | v2.1 | riga Roadmap |
-| 8 | A | v2.1 | riga Handoff |
-| 9 | A | v2.1 | ordine lettura |
-| 10 | A | v2.1 | verifiche fondanti |
-| 11 | A | v2.1 | stato v2.1 |
-| 12 | A | D44(vii)+D45+D42 | blocco gate v2.1 |
+| 1 | A | v2.1 | version header |
+| 2 | A | D41 | JSD historical note |
+| 3 | A | v2.1 | v2.1 section |
+| 4 | A | v2.1 | Spec row |
+| 5 | A | v2.1 | Spec gate row |
+| 6 | A | v2.1 | Decision Log row |
+| 7 | A | v2.1 | Roadmap row |
+| 8 | A | v2.1 | Handoff row |
+| 9 | A | v2.1 | reading order |
+| 10 | A | v2.1 | foundational checks |
+| 11 | A | v2.1 | v2.1 status |
+| 12 | A | D44(vii)+D45+D42 | v2.1 gate block |
 
-**01_MASTER_SPEC.md — 6 sostituzioni di blocco + 40 edit puntuali.** Riemissione v2.1: restauro D48 (vedi RESTAURO) + tabella degli emendamenti in testa + emendamenti D40–D51 come da tabella nel documento stesso. Verifiche superate: YAML §6.3 analizzato dal parser (23 `deprel_keep`, ultima `parataxis`, d_max 8, famiglia [P1, P2]); batteria finale 11/11 (zero riferimenti fantasma §6.5, zero «optional appendix» non annotati, zero «min p = 0.05», zero «profiled at G0», glifi ripristinati, ordine v2.1 dichiarato due volte, header e footer v2.1).
+**01_MASTER_SPEC.md — 6 block replacements + 40 point edits.** v2.1 reissue: D48 restoration (see RESTAURO) + table of the amendments at the top + amendments D40–D51 as per the table in the document itself. Checks passed: YAML §6.3 parsed by the parser (23 `deprel_keep`, last `parataxis`, d_max 8, family [P1, P2]); final battery 11/11 (zero ghost references §6.5, zero unannotated «optional appendix», zero «min p = 0.05», zero «profiled at G0», glyphs restored, v2.1 order declared twice, v2.1 header and footer).
 
-Blocchi (pass A): | # | Tag | Decisione | Sito |
+Blocks (pass A): | # | Tag | Decision | Site |
 | --- | --- | --- | --- |
 | 1 | R | D48 | B1 §4.1 node fields |
 | 2 | R | D48 | B2 §4.1 training pass |
@@ -40,7 +44,7 @@ Blocchi (pass A): | # | Tag | Decisione | Sito |
 | 5 | R | D48 | B5 §6.3 YAML |
 | 6 | RA | D48+D44+D45 | B6 §9 DAG |
 
-Edit puntuali (pass B): | # | Tag | Decisione | Sito |
+Point edits (pass B): | # | Tag | Decision | Site |
 | --- | --- | --- | --- |
 | 1 | A | v2.1 | header version |
 | 2 | A | v2.1 | v2.1 summary + amendment table |
@@ -83,9 +87,9 @@ Edit puntuali (pass B): | # | Tag | Decisione | Sito |
 | 39 | A | v2.1 | footer |
 | 40 | A | D41 | v2.0 summary historical note |
 
-**02_DECISION_LOG.md — 15 edit.** Versione 2.1; disciplina append-only: le voci D01–D39 restano intatte nel testo, con il solo campo di stato esteso dove emendate (D06→D50; D18→D18-A1 via D47; D20/D21/D24→D43; D26→D46; D30→D44(vii); D32→D41; D33→D40+D43; D36→D44, congelata come registrazione storica con clausola (i) valida; D37→D42+D50); §II-bis con **D40–D51 per esteso**; §III con O6 spostato a G3, **O7 bloccante** e O8; §IV con i nodi differiti DN-1/2/3 e i loro gate determinanti.
+**02_DECISION_LOG.md — 15 edits.** Version 2.1; append-only discipline: the entries D01–D39 remain intact in the text, with only the status field extended where amended (D06→D50; D18→D18-A1 via D47; D20/D21/D24→D43; D26→D46; D30→D44(vii); D32→D41; D33→D40+D43; D36→D44, frozen as a historical record with clause (i) valid; D37→D42+D50); §II-bis with **D40–D51 in full**; §III with O6 moved to G3, **O7 blocking** and O8; §IV with the deferred nodes DN-1/2/3 and their decisive gates.
 
-| # | Tag | Decisione | Sito |
+| # | Tag | Decision | Site |
 | --- | --- | --- | --- |
 | 1 | A | v2.1 | — |
 | 2 | A | v2.1 | — |
@@ -103,35 +107,35 @@ Edit puntuali (pass B): | # | Tag | Decisione | Sito |
 | 14 | A | D44 | — |
 | 15 | A | D45 | — |
 
-**03_ROADMAP_OPERATIVA_IT.md — 21 edit.** Versione 2.1; Fase 0 senza profilazione (D45); **Fase 1 divisa in 1a/1b** con clausola di acquisizione parallela e nota di riposizionamento di G2 (D44(vii)); Fase 2 con O6+O7 e «al termine: Gate G2»; Fase 3 con la nota sulla separazione presentazionale G4/G5; Fase 4 con lateralità dichiarata, piano-autore descrittivo senza α e prerequisito O7; Fase 5 nota lateralità; Fase 6 con la partizione D42 e la regola D50; Fase 7 limiti aggiornati; checklist con tre item nuovi/aggiornati (D43, D44, D49); «decisioni che definiscono» con item 1 aggiornato (D41) e nuovi item 9–11; nota strumenti (O6→G3); registro bibliografico con **nota di crosswalk alla numerazione finale**, completamenti alle voci 2, 8, 9, 10, 25 marcati [P — dalla proposta finale; verifica O5] e **voce 26 (Greco et al. 2023) [V 2026-07-21 su fonte primaria nei materiali]**.
+**03_ROADMAP_OPERATIVA_IT.md — 21 edits.** Version 2.1; Phase 0 without profiling (D45); **Phase 1 split into 1a/1b** with parallel acquisition clause and note on the repositioning of G2 (D44(vii)); Phase 2 with O6+O7 and «at the end: Gate G2»; Phase 3 with the note on the presentational separation G4/G5; Phase 4 with declared sidedness, author plan descriptive without α and O7 prerequisite; Phase 5 sidedness note; Phase 6 with the D42 partition and the D50 rule; Phase 7 limits updated; checklist with three new/updated items (D43, D44, D49); «decisions that define» with item 1 updated (D41) and new items 9–11; tools note (O6→G3); bibliographic register with **crosswalk note to the final numbering**, completions to entries 2, 8, 9, 10, 25 marked [P — from the final proposal; O5 verification] and **entry 26 (Greco et al. 2023) [V 2026-07-21 on a primary source in the materials]**.
 
-| # | Tag | Decisione | Sito |
+| # | Tag | Decision | Site |
 | --- | --- | --- | --- |
 | 1 | A | v2.1 | header |
-| 2 | A | D45 | Fase 0 chiusura |
-| 3 | A | D45+D44(vii)+D50+D43+D51 | Fase 1 -> 1a/1b |
-| 4 | A | D44+D45+D47 | Fase 2 G3+G2 |
-| 5 | A | realignment ⑦ | Fase 3 nota |
-| 6 | A | D43 | Fase 4 minimi |
-| 7 | A | D43+D44+D49 | Fase 4 criterio |
-| 8 | A | D43 | Fase 5 sidedness |
-| 9 | A | D42+D50+D45 | Fase 6 partizione |
-| 10 | A | D43 | Fase 7 limiti |
-| 11 | A | D43 | checklist piano-autore |
-| 12 | A | D44+D49 | checklist nuovi item |
-| 13 | A | D41 | decisioni item 1 |
-| 14 | A | D42+D44+D43+D49+D50+D51 | decisioni item 9-11 |
-| 15 | A | D45 | nota strumenti |
-| 16 | A | D40 | registro crosswalk |
-| 17 | A | D40/O5 | registro #2 |
-| 18 | A | D40/O5 | registro #8 |
-| 19 | A | D40/O5 | registro #9 |
-| 20 | A | D40/O5 | registro #10 |
-| 21 | A | D40/O5 | registro #25 + #26 |
+| 2 | A | D45 | Phase 0 closure |
+| 3 | A | D45+D44(vii)+D50+D43+D51 | Phase 1 -> 1a/1b |
+| 4 | A | D44+D45+D47 | Phase 2 G3+G2 |
+| 5 | A | realignment ⑦ | Phase 3 note |
+| 6 | A | D43 | Phase 4 minima |
+| 7 | A | D43+D44+D49 | Phase 4 criterion |
+| 8 | A | D43 | Phase 5 sidedness |
+| 9 | A | D42+D50+D45 | Phase 6 partition |
+| 10 | A | D43 | Phase 7 limits |
+| 11 | A | D43 | author-plan checklist |
+| 12 | A | D44+D49 | checklist new items |
+| 13 | A | D41 | decisions item 1 |
+| 14 | A | D42+D44+D43+D49+D50+D51 | decisions items 9-11 |
+| 15 | A | D45 | tools note |
+| 16 | A | D40 | register crosswalk |
+| 17 | A | D40/O5 | register #2 |
+| 18 | A | D40/O5 | register #8 |
+| 19 | A | D40/O5 | register #9 |
+| 20 | A | D40/O5 | register #10 |
+| 21 | A | D40/O5 | register #25 + #26 |
 
-**04_AI_HANDOFF_PROMPT.md — 15 edit.** Versione 2.1; bootstrap con D01–D51, O7 bloccante e ordine v2.1; regola 2 (JSD→D41), regola 3 (clausola O7: mai congelare/eseguire inferenza confermativa P1 pre-O7), regola 7 (G2 dopo G3), regola 10 (manifest D46); template CLAUDE.md con enumerazioni complete e lateralità (D43), tre nuovi «Do not» (pre-O7, candidates/, celle di rappresentazione) e freeze aggiornato; checklist di revisione con controlli D43/D44/D49 e limiti aggiornati.
+**04_AI_HANDOFF_PROMPT.md — 15 edits.** Version 2.1; bootstrap with D01–D51, O7 blocking and v2.1 order; rule 2 (JSD→D41), rule 3 (O7 clause: never freeze/run confirmatory P1 inference pre-O7), rule 7 (G2 after G3), rule 10 (D46 manifest); `CLAUDE.md` template with complete enumerations and sidedness (D43), three new «Do not» (pre-O7, candidates/, representation cells) and updated freeze; review checklist with D43/D44/D49 checks and updated limits.
 
-| # | Tag | Decisione | Sito |
+| # | Tag | Decision | Site |
 | --- | --- | --- | --- |
 | 1 | A | v2.1 | header |
 | 2 | A | v2.1 | bootstrap design tag |
@@ -149,11 +153,11 @@ Edit puntuali (pass B): | # | Tag | Decisione | Sito |
 | 14 | A | D43+D44+D49 | checklist method |
 | 15 | A | D43+v2.1 | checklist text |
 
-## Correzione dichiarata in esecuzione (da ratificare con l'adozione)
+## Correction declared during execution (to be ratified with the adoption)
 
-Nella sessione di audit precedente Claude aveva raddoppiato le soglie bilaterali anche per permutazioni a **gruppi disuguali**. La regola corretta, ora scritta in D43 e applicata ovunque: la soglia bilaterale vale 2× l'unilaterale **solo se l'orbita di randomizzazione contiene lo specchio del segno** — sempre per i sign-flip; per le permutazioni di etichette solo con gruppi uguali; con gruppi disuguali le soglie coincidono. Claim ritirati: 2/462 (→ 1/462, entrambe le lateralità), 2/28 (→ 1/28 ≈ 0,036; D24 numericamente invariata), Lisia-fusa 2/56 (→ **1/56 ≈ 0,018, sotto Holm-1**; lo status senza α resta), fallback O2 a 5 blocchi 0,20 (→ 1/10 = 0,10). Restano validi: piano-autore P2 bilaterale 2/20 = 0,10 (gruppi uguali) e P1-autore unilaterale 1/64 ≈ 0,0156. La proposta finale (§6.11) dichiara esattamente 1/2048, 1/462, 0,10 e ≈0,016 — coerente con la regola corretta.
+In the previous audit session Claude had doubled the two-sided thresholds also for permutations with **unequal groups**. The correct rule, now written in D43 and applied everywhere: the two-sided threshold is 2× the one-sided **only if the randomization orbit contains the mirror of the sign** — always for sign-flips; for label permutations only with equal groups; with unequal groups the thresholds coincide. Claims withdrawn: 2/462 (→ 1/462, both sidednesses), 2/28 (→ 1/28 ≈ 0.036; D24 numerically unchanged), Lysias-merged 2/56 (→ **1/56 ≈ 0.018, below Holm-1**; the status without α remains), O2 fallback with 5 blocks 0.20 (→ 1/10 = 0.10). Still valid: author plan P2 two-sided 2/20 = 0.10 (equal groups) and P1-author one-sided 1/64 ≈ 0.0156. The final proposal (§6.11) declares exactly 1/2048, 1/462, 0.10 and ≈0.016 — consistent with the correct rule.
 
-## Fuori ambito di questa consegna (promemoria)
+## Outside the scope of this delivery (reminder)
 
-- **Erratum proposta-side (§6.11):** «non può raggiungere la significatività di famiglia» → «non può raggiungere la significatività **congiunta** della famiglia» (P1-autore da solo ha piso 0,0156 < 0,025). Da integrare nella passata E1–E20 sul docx della proposta, che resta un deliverable separato.
-- **ASSUMPTIONS.md §B3:** il testo integrale della proposta D18-A1 va completato da quel file (fuori dai cinque documenti) al touchpoint di Fase 2.
+- **Proposal-side erratum (§6.11):** «cannot reach family significance» → «cannot reach the **joint** significance of the family» (P1-author alone has a floor of 0.0156 < 0.025). To be integrated into the E1–E20 pass on the docx of the proposal, which remains a separate deliverable.
+- **ASSUMPTIONS.md §B3:** the full text of the D18-A1 proposal must be completed from that file (outside the five documents) at the Phase 2 touchpoint.

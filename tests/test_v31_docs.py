@@ -30,6 +30,16 @@ ARCHIVE_TRANSLATIONS = {
     'archive/docs/TEST_INVENTORY.md': 'docs/TEST_INVENTORY.md',
     'archive/docs/V2_RECONCILIATION.md': 'docs/V2_RECONCILIATION.md',
     'archive/docs/g1_ratification_record.md': 'docs/g1_ratification_record.md',
+    'archive/docs/audit/AUDIT_EDITS_v2_1.json': 'docs/audit/AUDIT_EDITS_v2_1.json',
+    'archive/docs/audit/CHANGELOG_RIALLINEAMENTO_v2_1.md': 'docs/audit/CHANGELOG_RIALLINEAMENTO_v2_1.md',
+    'archive/docs/audit/RESTAURO_01_MASTER_SPEC.md': 'docs/audit/RESTAURO_01_MASTER_SPEC.md',
+    'archive/docs/history/v2.1/00_LEGGIMI_INDICE.md': 'docs/history/v2.1/00_LEGGIMI_INDICE.md',
+    'archive/docs/history/v2.1/03_ROADMAP_OPERATIVA_IT.md': 'docs/history/v2.1/03_ROADMAP_OPERATIVA_IT.md',
+    'archive/docs/history/v2.1/INDEX.md': 'docs/history/v2.1/INDEX.md',
+    # A PDF is read as a Markdown file with the same name.
+    'archive/HEXIS_research_proposal.md': 'HEXIS_research_proposal.pdf',
+    'archive/docs/archive_v2_0_pdf/00_LEGGIMI_INDICE.md': 'docs/archive_v2_0_pdf/00_LEGGIMI_INDICE.pdf',
+    'archive/docs/archive_v2_0_pdf/03_ROADMAP_OPERATIVA_IT.md': 'docs/archive_v2_0_pdf/03_ROADMAP_OPERATIVA_IT.pdf',
 }
 
 

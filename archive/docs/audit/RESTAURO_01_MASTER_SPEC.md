@@ -1,15 +1,19 @@
-# RESTAURO DEI BLOCCHI NORMATIVI — 01_MASTER_SPEC (D48)
+> **English translation; the Italian original governs** (V3-012).
+> Original: `docs/audit/RESTAURO_01_MASTER_SPEC.md` at commit `5f1ec06` (tag `archive/pre-realign`), kept at this path until V3-012; SHA-256 `1cd156432f067063a597bbc19a7e0dce6dd296026082877424ef320893693065`.
+> Translated on 2026-09-27. Only the Italian prose is translated: the introduction, the site headings and the before/after labels. The quoted blocks of the Master Spec, already in English, are reproduced byte for byte. Numbers use English notation. Any translator's note is marked *[Translator's note: …]* and changes nothing in the original.
 
-**Data:** 2026-07-21. **Baseline:** conversioni `.md` del 2026-07-21 (canoniche; da committare tal quali con danno dichiarato — commit 1). **Restauro:** questo intervento (commit 2), interamente deterministico: ogni sito è determinato da un'occorrenza parallela intatta nello stesso documento o dal contesto immediato; nessuna ricostruzione discrezionale. I corsivi orfani sono irrecuperabili e non normativi (dichiarato in D48).
+# RESTORATION OF THE NORMATIVE BLOCKS — 01_MASTER_SPEC (D48)
 
-**Contabilità del danno (esecuzione vs censimento).** Il censimento preliminare su PDF contava 33 siti (A15/B6/C7/D5). L'esecuzione, che vede il testo byte per byte, ha contato con precisione maggiore: **6 blocchi riunificati** (da **32 frammenti** recintati: node-fields ×2, training ×4, §6.1 ×8, §6.2 ×9, §6.3 ×6, §9 ×3), **15 ricongiunzioni di riga** (14 interne ai blocchi + 1 in §2.5), **8 ripristini di glifo** (𝔻 ∖ {d} ×2 in §4.2/§5.2, da occorrenza parallela p. 9 e dal Decision Log D36; `s*` ×2 in §4.1/§4.3, da P_{s*} intatto; monotone-stop ×1, ricongiunto al sito `s*` di §4.1; D̄(d) ×4, tre in §4.4 e uno in App. B, da occorrenza parallela nella tabella §1.2) e **7 riparazioni di enfasi** (§1.1; §4.1 correspondence; §4.1 selezione; §4.3 Fallbacks; §4.4 P2 e S1; §4.5 never-inferential; §10 Results — contando P2/S1 come due). Il delta rispetto al censimento (+3 riparazioni elementari) deriva da conteggi più fini rivelati dal testo: §6.1 aveva 8 frammenti e non 7; D̄(d) ricorre 4 volte e non 3; P2/S1 sono due siti gemelli.
+**Date:** 2026-07-21. **Baseline:** `.md` conversions of 2026-07-21 (canonical; to be committed as they are with declared damage — commit 1). **Restoration:** this intervention (commit 2), entirely deterministic: every site is determined by an intact parallel occurrence in the same document or by the immediate context; no discretionary reconstruction. The orphan italics are unrecoverable and non-normative (declared in D48).
 
-**Nota sulle voci RA.** Sei interventi sono al tempo stesso restauro ed emendamento ratificato (tag RA): il blocco restaurato incorpora anche l'aggiunta v2.1 (es. §6.1 aggiunge `run_null_calibration.py` e `candidates/` per D44/D47; §9 adotta l'ordine v2.1 per D44(vii); §4.2/§4.4/§5.1/§5.2 sono riscritture integrali che uniscono restauro e decisioni D41–D51). La colonna «decisione» lo dichiara; il confronto prima/dopo mostra entrambe le componenti.
+**Accounting of the damage (execution vs census).** The preliminary census on the PDF counted 33 sites (A15/B6/C7/D5). The execution, which sees the text byte by byte, counted with greater precision: **6 blocks reunified** (from **32 fenced fragments**: node-fields ×2, training ×4, §6.1 ×8, §6.2 ×9, §6.3 ×6, §9 ×3), **15 line rejoinings** (14 inside the blocks + 1 in §2.5), **8 glyph restorations** (𝔻 ∖ {d} ×2 in §4.2/§5.2, from the parallel occurrence on p. 9 and from the Decision Log D36; `s*` ×2 in §4.1/§4.3, from the intact P_{s*}; monotone-stop ×1, rejoined at the `s*` site of §4.1; D̄(d) ×4, three in §4.4 and one in App. B, from the parallel occurrence in the table §1.2) and **7 emphasis repairs** (§1.1; §4.1 correspondence; §4.1 selection; §4.3 Fallbacks; §4.4 P2 and S1; §4.5 never-inferential; §10 Results — counting P2/S1 as two). The delta with respect to the census (+3 elementary repairs) derives from finer counts revealed by the text: §6.1 had 8 fragments and not 7; D̄(d) occurs 4 times and not 3; P2/S1 are two twin sites.
+
+**Note on the RA entries.** Six interventions are at the same time restoration and ratified amendment (tag RA): the restored block also incorporates the v2.1 addition (e.g. §6.1 adds `run_null_calibration.py` and `candidates/` for D44/D47; §9 adopts the v2.1 order for D44(vii); §4.2/§4.4/§5.1/§5.2 are complete rewrites that join restoration and decisions D41–D51). The «decision» column declares it; the before/after comparison shows both components.
 
 ---
-## Sito 1 — B1 §4.1 node fields  [tag R — D48]
+## Site 1 — B1 §4.1 node fields  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 ```text
@@ -26,7 +30,7 @@ children: dict[symbol -> Node]
 ```
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 ```text
@@ -40,9 +44,9 @@ children: dict[symbol -> Node]
 
 ---
 
-## Sito 2 — B2 §4.1 training pass  [tag R — D48]
+## Site 2 — B2 §4.1 training pass  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 ```text
@@ -70,7 +74,7 @@ for node in path: node.counts[x] += 1; node.total += 1
 ```
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 ```text
@@ -90,9 +94,9 @@ for node in path: node.counts[x] += 1; node.total += 1
 
 ---
 
-## Sito 3 — B3 §6.1 repository tree  [tag RA — D48+D44+D47]
+## Site 3 — B3 §6.1 repository tree  [tag RA — D48+D44+D47]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 ```text
@@ -152,7 +156,7 @@ curves (§4.2/4.4)
 ```
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 ```text
@@ -193,9 +197,9 @@ hexis/
 
 ---
 
-## Sito 4 — B4 §6.2 interfaces  [tag RA — D48+D44]
+## Site 4 — B4 §6.2 interfaces  [tag RA — D48+D44]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 ```text
@@ -263,7 +267,7 @@ def exact_sign_flip(values: np.ndarray, sided: str) -> PermResult
 ```
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 ```text
@@ -303,9 +307,9 @@ def exact_sign_flip(values: np.ndarray, sided: str) -> PermResult               
 
 ---
 
-## Sito 5 — B5 §6.3 YAML  [tag R — D48]
+## Site 5 — B5 §6.3 YAML  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 ```text
@@ -351,7 +355,7 @@ blocks: {n_block: 1000, min_frac: 0.5}   # descriptive F7 only (D34)
 ```
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 ```text
@@ -384,9 +388,9 @@ blocks: {n_block: 1000, min_frac: 0.5}   # descriptive F7 only (D34)
 
 ---
 
-## Sito 6 — B6 §9 DAG  [tag RA — D48+D44+D45]
+## Site 6 — B6 §9 DAG  [tag RA — D48+D44+D45]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 ```text
@@ -408,7 +412,7 @@ G7 sensitivity plan complete (T4, F10) → writing
 ```
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 ```text
@@ -429,15 +433,15 @@ G7  sensitivity plan complete (T4, F10) → writing
 
 ---
 
-## Sito 7 — §1.1 R1 + emphasis  [tag RA — D48+D41]
+## Site 7 — §1.1 R1 + emphasis  [tag RA — D48+D41]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 read at three depths of the same instrument: - **root (order 0):** symbol distribution — descriptive reading; optional JSD appendix (R1); -**context gain (order ≥ 1):**
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 read at three depths of the same instrument: - **root (order 0):** symbol distribution — descriptive distributional reading incl. R1 (D41); - **context gain (order ≥ 1):**
@@ -445,16 +449,16 @@ read at three depths of the same instrument: - **root (order 0):** symbol distri
 
 ---
 
-## Sito 8 — §2.5 wrapped comment  [tag R — D48]
+## Site 8 — §2.5 wrapped comment  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 git checkout r2.18     # confirm tag; else the tagged release matching the
 pinned version
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 git checkout r2.18     # confirm tag; else the tagged release matching the pinned version
@@ -462,15 +466,15 @@ git checkout r2.18     # confirm tag; else the tagged release matching the pinne
 
 ---
 
-## Sito 9 — §4.1 emphasis  [tag R — D48]
+## Site 9 — §4.1 emphasis  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 Scientific claims rest on *a well-**defined MDL context model applied uniformly to all regimes*, not on numerical replication
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 Scientific claims rest on **a well-defined MDL context model applied uniformly to all regimes**, not on numerical replication
@@ -478,15 +482,15 @@ Scientific claims rest on **a well-defined MDL context model applied uniformly t
 
 ---
 
-## Sito 10 — §4.1 selection s*  [tag R — D48]
+## Site 10 — §4.1 selection s*  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 **Selection at a position** with matching path s₀ ⊂ … ⊂ s_k: s *= deepest s_j with, for every i = 1…j,* `total(s_i)` `≥ k_min` *and* `Δ(s_i) > γ` *(monotone-stop**). Variant `argmax`
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 **Selection at a position** with matching path s₀ ⊂ … ⊂ s_k: `s*` = deepest s_j with, for every i = 1…j, `total(s_i) ≥ k_min` and `Δ(s_i) > γ` (monotone-stop). Variant `argmax`
@@ -494,15 +498,15 @@ Scientific claims rest on **a well-defined MDL context model applied uniformly t
 
 ---
 
-## Sito 11 — §4.2 full paragraph  [tag RA — D48+D46+D51]
+## Site 11 — §4.2 full paragraph  [tag RA — D48+D46+D51]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 Let the primary-contrast document set be 𝔻 = HEX ∪ PROSE (Greek: 5 + 6 = 11 docs). All training subsamples draw **whole sentences uniformly without replacement until ≥ T* retained tokens**; S = 20 seeds per condition (seed derivation §6.5); seed-mean reported with sd. - **(a) Reference models** (descriptive only): one per regime, fit on ALL its documents, full data, no LODO. Used for §4.5 readings and R1. Never used for confirmatory statistics. - **(b) Regime LODO models** (for P1): for evaluation document d and training regime R_tr ∈ {HEX, PROSE}: pool = docs of R_tr minus d (if R_d = R_tr); subsample to T*; fit; evaluate d. - (c) Pooled LODO models (for P2/S1; label-free by construction): for evaluation document d: pool =* 𝔻 *\ {d} —* no regime information used anywhere*; subsample to T*; fit; evaluate d. **T* (GATED:G1):** T* = min over ALL training conditions in (b) and (c) of available retained tokens (the binding condition is expected to be "HEX minus Iliad"). One T* per language, used uniformly across (b) and (c) so that gain and CE are size-comparable. Contingency (pre-registered): if T* < 15k retained tokens, record D-amendment and add learning-curve emphasis (below). **Learning curves (descriptive):** CE(d|R_tr) vs training size T ∈ {5k, 10k, 20k, T*} for representative documents — makes the size-dependence of every conclusion visible (F8).
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 Let the primary-contrast document set be 𝔻 = HEX ∪ PROSE (Greek: 5 + 6 = 11 docs). All training subsamples draw **whole sentences uniformly without replacement until ≥ T* retained tokens**; S = 20 seeds per condition (seed derivation §6.4); seed-mean reported with sd. - **(a) Reference models** (descriptive only): one per regime, fit on ALL its documents, full data, no LODO. Used for §4.5 readings and R1. Never used for confirmatory statistics. - **(b) Regime LODO models** (for P1): for evaluation document d and training regime R_tr ∈ {HEX, PROSE}: pool = docs of R_tr minus d (if R_d = R_tr); subsample to T*; fit; evaluate d. - **(c) Pooled LODO models** (for P2/S1; label-free by construction): for evaluation document d: pool = 𝔻 ∖ {d} — **no regime information used anywhere**; subsample to T*; fit; evaluate d. **T* (GATED:G1; scope per D51):** T* = min over the training conditions of protocols (b) and (c) **on the primary contrast only** of available retained tokens (binding condition expected: "HEX minus Iliad" from (b); for (c) it is 𝔻 minus its largest document). Exploratory arms (tragedy, PROSE_POST) run at their own binding sizes, documented separately and labeled non-comparable with primary readings (D51). One T* per language, used uniformly across (b) and (c): this purchases cross-reading comparability (root/gain/transfer at one common training size — the locus narrative) at a **declared cost of P2 power**, since the protocol-(c) pool could support a larger training size; the cost is made visible descriptively by the learning curves, whose protocol-(c) curves extend beyond T* where the pool permits (D51). Contingency (pre-registered): if T* < 15k retained tokens, record D-amendment and add learning-curve emphasis (below). **Learning curves (descriptive):** CE(d|R_tr) vs training size T ∈ {5k, 10k, 20k, T*} for representative documents — makes the size-dependence of every conclusion visible (F8).
@@ -510,15 +514,15 @@ Let the primary-contrast document set be 𝔻 = HEX ∪ PROSE (Greek: 5 + 6 = 11
 
 ---
 
-## Sito 12 — §4.3 emphasis + s*  [tag R — D48]
+## Site 12 — §4.3 emphasis + s*  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 Walk the matching path; select s *by the frozen rule;* `codelen(t) = −log2 P_{s*}(x_t)` *. Fallbacks:**
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 Walk the matching path; select `s*` by the frozen rule; `codelen(t) = −log2 P_{s*}(x_t)`. **Fallbacks:**
@@ -526,15 +530,15 @@ Walk the matching path; select `s*` by the frozen rule; `codelen(t) = −log2 P_
 
 ---
 
-## Sito 13 — §4.4 full paragraph + G_own  [tag RA — D48+D41+D49]
+## Site 13 — §4.4 full paragraph + G_own  [tag RA — D48+D41+D49]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 For evaluation document d with N_d evaluated positions: - **CE(d | R_tr)** = seed-mean of (1/N_d) Σ_t codelen_selected(t) under protocol (b). **ΔCE(d) = CE(d | other) − CE(d | own)**; > 0 ⇒ own-regime advantage. **P1 = mean_d ΔCE(d)** over all 11 evaluation documents. No position restriction: ΔCE is a within-document difference, so position/sentence-length effects cancel between the two models. - **Context gain** at position t under a pooled LODO model (protocol c): `g(t) = codelen_root(t) − codelen_selected(t)` ≥ 0-ish (can be negative at k_min/γ boundaries; keep signed), where codelen_root uses the SAME fitted model's root predictor. **Position restriction (D35):** the primary gain statistic uses only positions with `available_past ≥ 4` (i.e., at least the 5th retained token of its sentence). Rationale: under P-RESET, early positions mechanically lack context; if regimes differ in sentence length (editorial segmentation!), unrestricted means would confound gain with sentence length. The unrestricted variant is a sensitivity cell; the fraction of qualifying positions per regime is reported (audit + T3). **G(d)** = seed-mean of mean_t∈restricted g(t). **P2 = mean_{d**∈**HEX} G(d) − mean_{d**∈**PROSE} G(d)**. - **Depth score:** D̄ (d) = seed-mean of mean_t∈restricted depth_selected(t), same protocol/restriction. **S1 = mean_{d**∈**HEX} D̄ (d) − mean_{d**∈**PROSE} D̄ (d)**. - **R1 (optional appendix):** JSD(P_root^HEX, P_root^PROSE) between reference-model root distributions; JSD(P,Q) = ½Σ P log(P/M) + ½Σ Q log(Q/M), M = (P+Q)/2, ∈ [0,1] bits. Labeled: computed on **smoothed** (add-β) distributions.
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 For evaluation document d with N_d evaluated positions: - **CE(d | R_tr)** = seed-mean of (1/N_d) Σ_t codelen_selected(t) under protocol (b). **ΔCE(d) = CE(d | other) − CE(d | own)**; > 0 ⇒ own-regime advantage. **P1 = mean_d ΔCE(d)** over all 11 evaluation documents. No position restriction: ΔCE is a within-document difference, so position/sentence-length effects cancel between the two models. - **Context gain** at position t under a pooled LODO model (protocol c): `g(t) = codelen_root(t) − codelen_selected(t)` ≥ 0-ish (can be negative at k_min/γ boundaries; keep signed), where codelen_root uses the SAME fitted model's root predictor. **Position restriction (D35):** the primary gain statistic uses only positions with `available_past ≥ 4` (i.e., at least the 5th retained token of its sentence). Rationale: under P-RESET, early positions mechanically lack context; if regimes differ in sentence length (editorial segmentation!), unrestricted means would confound gain with sentence length. The unrestricted variant is a sensitivity cell; the fraction of qualifying positions per regime is reported (audit + T3). **G(d)** = seed-mean of mean_t∈restricted g(t). **P2 = mean_{d∈HEX} G(d) − mean_{d∈PROSE} G(d)**. Estimand note (D49): G(d) is the gain **of the pooled model**; a group difference in G admits two readings — flatter conditional structure in a regime, or greater distance of that regime from the pooled mixture (the latter overlapping with what P1 measures) — which P2 alone does not separate; see the descriptive `G_own` below and the claim wording in §5.8. - **Depth score:** D̄(d) = seed-mean of mean_t∈restricted depth_selected(t), same protocol/restriction. **S1 = mean_{d∈HEX} D̄(d) − mean_{d∈PROSE} D̄(d)**. - **R1 (descriptive distributional reading; D41):** JSD(P_root^HEX, P_root^PROSE) between reference-model root distributions; JSD(P,Q) = ½Σ P log(P/M) + ½Σ Q log(Q/M), M = (P+Q)/2, ∈ [0,1] bits. **No test, no α.** Labeled: computed on **smoothed** (add-β), **size-unmatched** reference models (not T*-matched), hence weakly size-dependent; displayed with this label wherever it appears. A T*-matched variant is deferred (DN-1).
@@ -544,15 +548,15 @@ For evaluation document d with N_d evaluated positions: - **CE(d | R_tr)** = see
 
 ---
 
-## Sito 14 — §4.5 emphasis  [tag R — D48]
+## Site 14 — §4.5 emphasis  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 Reported once per regime for SG96 comparability; never inferential** (D19/D32).
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 Reported once per regime for SG96 comparability; **never inferential** (D19/D32).
@@ -560,15 +564,15 @@ Reported once per regime for SG96 comparability; **never inferential** (D19/D32)
 
 ---
 
-## Sito 15 — §5.1 full rewrite  [tag RA — D43]
+## Site 15 — §5.1 full rewrite  [tag RA — D43]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 Tokens nest in sentences, sentences in documents, documents in authors; document-mates share author, dialect, topic, annotation habits. **Randomization unit = document.** - **Tier 1 (primary): exact document-level schemes.** Greek primary contrast: 11 documents → P2/S1/R1 label permutation exact over C(11,5) = 462 assignments (min attainable p = 1/462 ≈ 0.0022); P1 sign-flip exact over 2^11 = 2048 (min one-sided p ≈ 0.00049). Both minima < 0.025, so Holm-family significance is attainable — stated explicitly. - **Tier 2 (ultra-conservative): exact author-level permutation.** {Homer, Hesiod, Hymn-anon} vs {Herodotus, Thucydides, Lysias}: C(6,3) = 20 → min p = 0.05 exactly. Reported openly: author-level significance below 0.05 is structurally unattainable with this corpus; hence effect sizes, CIs and the cross-validated transfer design carry much of the evidential weight. Robustness rerun with Lysias' four orations merged into one author-level pseudo-document. - The v1 Tier-3 chunk-level benchmark is **removed** (chunks no longer exist in inference; D34). p-value convention: `p = (1 + #{perm stat` `≥ observed}) / (1 + #perms)` for Monte Carlo; exact enumeration where listed (no add-one needed but reported both ways for transparency).
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 Tokens nest in sentences, sentences in documents, documents in authors; document-mates share author, dialect, topic, annotation habits. **Randomization unit = document.** **Sidedness rule (D43, binding):** every declared floor states its sidedness; the two-sided floor doubles the one-sided floor only when the randomization orbit contains the sign-mirror of the observed configuration — always for sign-flips, for label permutations only with equal group sizes; with unequal groups the floors coincide. - **Tier 1 (primary): exact document-level schemes.** Greek primary contrast: 11 documents → P2/S1 label permutation exact over C(11,5) = 462 assignments (unequal 5/6 → one- and two-sided floors coincide at 1/462 ≈ 0.0022); P1 sign-flip exact over 2^11 = 2048 (one-sided floor 1/2048 ≈ 0.00049; two-sided 2/2048 ≈ 0.00098). All Tier-1 floors < 0.025, so Holm-family significance is attainable — stated explicitly. - **Tier 2 (author-level): descriptive robustness without α (D43).** {Homer, Hesiod, Hymn-anon} vs {Herodotus, Thucydides, Lysias} (partition verified at G1 → O8, coupled to O2): label permutation C(6,3) = 20 (equal 3/3 → one-sided floor 1/20 = 0.05; **operative two-sided floor 2/20 = 0.10**, P2 being two-sided); sign-flip 2^6 = 64 (one-sided floor 1/64 ≈ 0.0156). Correct statement: the author-level plan cannot attain joint family significance (P2's floor 0.10 > 0.05); P1 alone could formally cross Holm-1 (0.0156 < 0.025); to avoid an incoherent partial-α family, **no α is spent at Tier 2** (revisitable at G2: DN-2). Declared cost, stated openly: Tier 2 was the design's only inferential answer to intra-author dependence; withdrawing α is a real cost. Its role: verify that sign and magnitude persist when intra-author dependence is removed by construction; sign, magnitude, and exact p values (labeled descriptive) are reported. **Author-block score (D43(v)):** unweighted mean of the per-document scores within the block — the document remains the measurement unit; the block is the randomization unit. **Lysias-merged rerun (D20/D43(iv)):** the four orations merged into one pseudo-document → 8 documents (5/3, unequal): label permutation C(8,3) = 56 (floors coincide at 1/56 ≈ 0.018), sign-flip 2^8 = 256. Declared **robustness analysis without α**; its P2 floor lies below Holm-1, so its outcome is reported but never substitutes the primary Tier-1 result. - The v1 Tier-3 chunk-level benchmark is **removed** (chunks no longer exist in inference; D34). p-value convention: `p = (1 + #{perm stat ≥ observed}) / (1 + #perms)` for Monte Carlo; exact enumeration where listed (no add-one needed but reported both ways for transparency).
@@ -576,9 +580,9 @@ Tokens nest in sentences, sentences in documents, documents in authors; document
 
 ---
 
-## Sito 16 — §5.2 full rewrite  [tag RA — D48+D44]
+## Site 16 — §5.2 full rewrite  [tag RA — D48+D44]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 **P2/S1 (exact permutation on label-free scores).** G(d) and D̄ (d) are computed under protocol (c), a score function of (d, 𝔻{d}) that never consults regime labels. Under H0 ("all documents generated by one process; labels arbitrary"), the score vector is exchangeable across label assignments, so permuting labels over the FIXED score vector is an exact randomization test. This **fixes a flaw in v1's H3b**, where regime-specific held- out profiles were permuted at document level although the scores themselves depended on the labels — subtly invalid; corrected here by construction.
@@ -590,7 +594,7 @@ Tokens nest in sentences, sentences in documents, documents in authors; document
 **Why no refit-per-permutation:** a fully refit permutation (462 × all fits) is unnecessary given the label-free construction, and would cost ≈ 10² laptop-hours for no additional validity.
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 **P2/S1 (exact permutation on label-free scores).** G(d) and D̄(d) are computed under protocol (c), a score function of (d, 𝔻 ∖ {d}) that never consults regime labels. Under H0 ("all documents generated by one process; labels arbitrary"), the score vector is exchangeable across label assignments, so permuting labels over the FIXED score vector is an exact randomization test. This **fixes a flaw in v1's H3b**, where regime-specific held-out profiles were permuted at document level although the scores themselves depended on the labels — subtly invalid; corrected here by construction. Requirement: joint exchangeability of the label-free score vector — guaranteed by the construction (D36(i) stands).
@@ -604,15 +608,15 @@ Tokens nest in sentences, sentences in documents, documents in authors; document
 
 ---
 
-## Sito 17 — §10 emphasis  [tag R — D48]
+## Site 17 — §10 emphasis  [tag R — D48]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 before any real-data computation. *Results**
 ```
 
-**Dopo (testo restaurato):**
+**After (restored text):**
 
 ```text
 before any real-data computation.* **Results**
@@ -620,15 +624,15 @@ before any real-data computation.* **Results**
 
 ---
 
-## Sito 18 — App B glossary  [tag RA — D48+D49+D44]
+## Site 18 — App B glossary  [tag RA — D48+D49+D44]
 
-**Prima (testo danneggiato, verbatim dalla baseline):**
+**Before (damaged text, verbatim from the baseline):**
 
 ```text
 `ΔCE(d)` own-regime advantage; `g(t)` code-length gain vs root; `G(d)` restricted document-mean gain; `D̄ (d)` restricted document-mean depth;
 ```
 
-**Dopo (testo restaurato + emendato):**
+**After (restored + amended text):**
 
 ```text
 `ΔCE(d)` own-regime advantage; `g(t)` code-length gain vs root; `G(d)` restricted document-mean gain (pooled model); `G_own(d)` descriptive own-regime restricted gain (D49); `own_regime_pool_fraction` per-document own-regime token share of the protocol-(c) training subsample (D44); `D̄(d)` restricted document-mean depth;
