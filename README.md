@@ -51,7 +51,7 @@ The plan was written, reviewed and deposited on 15 September 2026, under the wor
 
 ## How this project was made
 
-HORMATHOS is an independent project by Leonardo Tornabene, a student, carried out alone and outside any institution. The research question, the design and its successive revisions, every decision in the log, the reviews and the acceptance of each step are the author's. The code, tests and most documents were written with AI coding assistants — Claude Code (Anthropic) and Codex (OpenAI) — working from the author's specifications and checked by the author at every step; many commits carry a `Co-Authored-By` line naming the assistant. [CLAUDE.md](CLAUDE.md) and [AGENTS.md](AGENTS.md) are the standing instructions given to those assistants, identical to [docs/04_AI_HANDOFF_PROMPT.md](docs/04_AI_HANDOFF_PROMPT.md).
+HORMATHOS is an independent project by Leonardo Tornabene, a student, carried out alone and outside any institution. The research question, the design and its successive revisions, every decision in the log, the reviews and the acceptance of each step are the author's. The code, tests and most documents were written with AI coding assistants (Claude Code by Anthropic and Codex by OpenAI)working from the author's specifications and checked by the author at every step; many commits carry a `Co-Authored-By` line naming the assistant. [CLAUDE.md](CLAUDE.md) and [AGENTS.md](AGENTS.md) are the standing instructions given to those assistants, identical to [docs/04_AI_HANDOFF_PROMPT.md](docs/04_AI_HANDOFF_PROMPT.md).
 
 ## Repository layout
 
