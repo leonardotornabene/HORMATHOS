@@ -6,7 +6,7 @@ The figures of the study, one panel per image, full width, each with a short exp
 
 The texts come from an annotated corpus of ancient Greek. Each word carries two labels: its part of speech (noun, verb, …) and its syntactic relation in the sentence (subject, object, …). Joining the two gives one **symbol** per word, for example `NOUN:nsubj`, a noun that is the subject. A sentence thus becomes a sequence of symbols.
 
-A model is trained to predict each symbol from the ones before it in the same sentence. The texts are grouped into seven **blocks**, two in hexameter verse (Homeric and Hesiodic tradition) and five in prose (Herodotus, Thucydides, Athenaeus, Diodorus, Plutarch). Each block is scored by a model trained only on the other six, so no text is predicted by a model that has seen it.
+A model is trained to predict each symbol from the ones before it in the same sentence. The texts are grouped into seven **blocks**, two in hexameter verse (Homeric and Hesiodic tradition) and five in prose (Herodotus, Thucydides, Athenaeus, Diodorus, Plutarch). Each block is scored by a model trained on documents from the other six blocks. [Limits of the comparison](../../docs/RESULTS.md#what-the-results-support-and-what-they-do-not).
 
 - A **target** is a symbol the model is scored on: every kept symbol from the fifth of its sentence on, so that each has at least four predecessors.
 - **Bits per target** measure prediction cost: one bit is the information in a fair yes/no choice. Fewer bits mean better prediction.

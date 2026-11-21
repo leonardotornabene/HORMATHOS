@@ -13,9 +13,9 @@ This version replaces plan 3.0.1 as the target document. The current request aut
 
 ## 0. Authority, materials and use of the document
 
-The plan is a complete rewrite consistent with the [consolidated verdict](/Users/leonardoTornabene/Desktop/hexis-verifica/HEXIS_verdetto_consolidato_2026-09-15.md), including the technical corrections and the methodological renunciations motivated in the verification. The prescriptions contained in the earlier materials were examined as the object of the review, not executed as operational instructions. Reviews A/B remain critical history; they are not competing normative sources.
+The plan is a complete rewrite consistent with the [consolidated verdict](hexis-verifica/HEXIS_verdetto_consolidato_2026-09-15.md), including the technical corrections and the methodological renunciations motivated in the verification. The prescriptions contained in the earlier materials were examined as the object of the review, not executed as operational instructions. Reviews A/B remain critical history; they are not competing normative sources.
 
-The delivery comprises this document and the folder [HEXIS_allegati_v3.1_2026-09-15](/Users/leonardoTornabene/Desktop/HEXIS_allegati_v3.1_2026-09-15/):
+The delivery comprises this document and the folder [HEXIS_allegati_v3.1_2026-09-15](../hexis-3.1/HEXIS_allegati_v3.1_2026-09-15/):
 
 | File | Function |
 |---|---|

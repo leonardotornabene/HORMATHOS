@@ -1,6 +1,6 @@
 # docs/contracts/ — the plan fixed before the campaign
 
-This folder holds the research plan of HORMATHOS and its machine-readable contracts, deposited on 15 September 2026, before the final campaign was run. Everything the study measures was defined here first. The code reads its values from these files, and the settings in [`config/`](../../config/README.md) are checked against them. The deposit carries the project's working title of the time, HEXIS 3.1, in its folder and file names. These names are fixed with its bytes.
+This folder holds the research plan of HORMATHOS and its machine-readable contracts, dated 15 September 2026 and adopted in the repository on 16 September, before the final campaign was run. Everything the study measures was defined here first. The code reads its values from these files, and the settings in [`config/`](../../config/README.md) are checked against them. The deposit carries the project's working title of the time, HEXIS 3.1, in its folder and file names. These names are fixed with its bytes.
 
 ## Two folders
 

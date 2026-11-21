@@ -20,7 +20,7 @@ Translator's notes are marked *[Translator's note: …]* and change nothing in t
 |---|---|
 | [`HEXIS_piano_definitivo_v3.1_2026-09-15.md`](HEXIS_piano_definitivo_v3.1_2026-09-15.md) | the plan. Start here |
 | `HEXIS_allegati_v3.1_2026-09-15/`, `HEXIS_v3_allegati/`, `hexis-verifica/` | the readable texts of the deposit's attachments, previous version and verdict. A text that exists only inside a ZIP archive sits in a folder named after the archive |
-| `check_companions.py`, `pairs_all.json` | the check of the translations: for each original–translation pair listed in `pairs_all.json`, it compares the header hash, the structure (headings, tables, lists) and every number |
+| `check_companions.py`, `pairs_all.json` | the check of the translations: for each original–translation pair listed in `pairs_all.json`, it checks the original’s hash in the translation header, compares document structure, and checks for missing numeric tokens after normalization. The numeric comparison ignores signs and token order and permits additional numbers in the translation |
 
 To run the check from the repository root:
 

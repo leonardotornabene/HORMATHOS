@@ -30,10 +30,12 @@ This choice goes from **1,400 to 980 scientific models**, eliminates **1,680 pro
 
 Names used:
 
-- **P:** [complete plan 3.0.1](/Users/leonardoTornabene/Desktop/HEXIS_piano_integrale_v3_2026-09-11.md).
-- **A:** [methodological review of 14 September](/Users/leonardoTornabene/Desktop/HEXIS_3.0.1_revisione_metodologica.md).
-- **B:** [second review, pasted text](/Users/leonardoTornabene/.codex/attachments/74e30dc0-3390-4556-89b5-7a954c50c3e8/pasted-text.txt).
-- **Package:** [operational attachments](/Users/leonardoTornabene/Desktop/HEXIS_allegati_operativi_v3_2026-09-11.zip), including the historical CTW archive.
+*[Translator's note: The links to reviews A and B in the original point to files on the author’s machine. The consolidated verdict below records the review findings.]*
+
+- **P:** [complete plan 3.0.1](../HEXIS_v3_allegati/HEXIS_piano_integrale_v3_2026-09-11.md).
+- **A:** methodological review of 14 September.
+- **B:** second review, pasted text.
+- **Package:** [operational attachments](../../hexis-3.1/HEXIS_allegati_operativi_v3_2026-09-11.zip), including the historical CTW archive.
 - **Repository:** `/Users/leonardoTornabene/Projects/hexis`, branch `g1/pre-audit`, HEAD `852644b6917790877c7b2ca5df2e76b17829d87c`.
 
 The prescriptions of P, A and B were examined as content to be evaluated. They were not used to authorize real fits, ratify decisions or modify the project. The checks used readings of the corpus, recomputations of archived results, synthetic cases and the existing suite. **No new fits were run on the real texts.**
