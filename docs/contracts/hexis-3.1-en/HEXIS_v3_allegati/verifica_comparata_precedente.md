@@ -167,7 +167,7 @@ The second plan makes a scientifically defensible choice for the available mater
 
 The elimination of `m` is a concrete practical improvement: all 109,108 eligible positions of the primary set can contribute to their respective means, without a further random subsampling. The blocks can keep uniform weight in the contrast even if they contain different numbers of positions. Equality of the weights across blocks does not require equality of the number of their targets.
 
-Also correct are: signed gain; separation between computational variability and scientific replicates; visibility of the seven scores; declaration of the alphabet built also on the tragic probe; distinction between a Rissanen-inspired model and a replica of the original algorithm; maintenance of the held-out evaluation without updates.
+Also correct are: signed gain; separation between computational variability and scientific replicates; visibility of the seven scores; declaration of the alphabet built also on the tragedy probe; distinction between a Rissanen-inspired model and a replica of the original algorithm; maintenance of the held-out evaluation without updates.
 
 The rank of the 21 allocations is mathematically computable and descriptively legitimate if it remains so. It adds no replicates, causal identification or inferential validity. It is not indispensable to the scientific value of the work and must not drive its narrative.
 
@@ -240,7 +240,7 @@ An autonomous and minimal reproduction of the normative pseudocode was built:
 - eager growth of the contexts up to depth 8;
 - add-beta with beta 0.5;
 - pre-update counts and probabilities;
-- `L_self` and `L_parent` on the predicted occurrences;
+- `L_self` and `L_parent` on the occurrences specified by the pseudocode;
 - thresholds `k_min = 2`, `gamma = 0`;
 - literal monotone selection;
 - frozen evaluation on an independent sequence;

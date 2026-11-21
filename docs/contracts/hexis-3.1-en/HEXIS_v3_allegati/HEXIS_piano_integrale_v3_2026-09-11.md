@@ -37,7 +37,7 @@ The closest precedent on the relation between variable contexts and rhythm is Ga
 
 Descriptions of the following type are admitted: «with this encoding and this protocol, the block presents a gain of X bits per symbol; the order control changes it by Y». An arithmetic difference between the means of the two sets of blocks is admitted.
 
-Not identified are: causality of the metre; separate effect of chronology, author or genre; “true” entropy of Greek; mutual information of the language; overall grammatical complexity; cognitive difficulty of reading; absence of dependencies beyond the depth usable by the sample. A small or null result does not demonstrate the absence of linguistic structure.
+Not identified are: causality of the metre; separate effect of chronology, author or genre; “true” entropy of Greek; mutual information of the language; overall grammatical complexity; cognitive difficulty of reading; absence of dependencies beyond the depth usable by the sample. A small or zero result does not demonstrate the absence of linguistic structure.
 
 The symbols are annotations made on the complete text: DEPREL can depend on information later than the word and on its syntactic head. Their prediction is not equivalent to the prediction of the words by a reader. Moreover, the sequence eliminates the hierarchy of the dependencies: it keeps categories and relations, not the complete syntactic tree.
 
@@ -113,7 +113,7 @@ The verified upstream XML files confirm the bibliographic headers of Theogony, W
 
 The Shield keeps a label of Hesiodic tradition without asserting authorial authenticity. The Hymn to Demeter keeps the author “Anonymous” and is prudentially associated with the Homeric block. It is not necessary to solve an attribution problem to exclude these texts together from the training. The Iliad makes up about 97.5% of the tokens of the Homeric block: the block results reflect this dominance, which must appear in the report.
 
-### 3.4 Tragic probe
+### 3.4 Tragedy probe
 
 | Document | C0 tokens | Evaluated positions |
 |---|---:|---:|
@@ -201,7 +201,7 @@ It is not a uniform sample of single tokens: it favours the integrity of the sen
 
 The numerical sensitivities reuse exactly the C0 ledger of the same seed and fold. `q_half` reuses the permutation of the sentences, but the random cut of the last sentence can change: token-by-token nesting is **not** guaranteed. `upos_only` keeps the C0 ledger. `oth` reuses the order of the same sentences but can stop elsewhere because of the different lengths. The boundary cell uses the same C0 sample.
 
-**Explicit decision on finding C5.** The final fragment, already present in the proposal `piano_ultimato`, is kept, after re-examining the objection of the proposal `piano_finale`. The operational priority is an exactly equal contribution of tokens from each block. The accepted cost is that an internal cut creates a start of the sampled stream that does not coincide with the start of the source sentence. BOS means the end of the history available in the stream, not proof of a natural linguistic boundary. It is not claimed that the cost is identically null; the loss of the token-by-token nesting of `q_half` is part of the same decision.
+**Explicit decision on finding C5.** The final fragment, already present in the proposal `piano_ultimato`, is kept, after re-examining the objection of the proposal `piano_finale`. The operational priority is an exactly equal contribution of tokens from each block. The accepted cost is that an internal cut creates a start of the sampled stream that does not coincide with the start of the source sentence. BOS means the end of the history available in the stream, not proof of a natural linguistic boundary. The plan does not claim that the cost is identically zero; the loss of the token-by-token nesting of `q_half` is part of the same decision.
 
 The additional C0 census over the 20 seeds found 671 fragments in 840 contributions, 563 of them with a start internal to the sentence. At D=8, 3,477 training targets out of 7,462,560 are directly affected, about 0.0466%. This share does not mathematically bound the variation of the predictions: the posterior weights can propagate the effect. Eliminating all fragments, without replacing them, on the seven folds of the first seed, the maximum absolute deviation of Q was 0.000685 bits/symbol. It is a local feasibility check, not a complete final sensitivity nor a universal guarantee.
 
@@ -312,7 +312,7 @@ A normalization deviation within `1e-12` is tolerated in the small tests; beyond
 
 ### 7.1 Primary configuration of the boundaries
 
-C0 resets the history at every sentence or fragment. Sentences are not concatenated only because they are contiguous in the sampling permutation. Documents, parts or gaps are not crossed. The training statistically aggregates separate streams.
+C0 resets the history at every sentence or fragment. Adjacency in the sampling permutation does not justify concatenating sentences. Documents, parts or gaps are not crossed. The training statistically aggregates separate streams.
 
 ### 7.2 `bound` sensitivity
 
@@ -352,7 +352,7 @@ Even if the training roots of the two arms are identical, **the root CE of the t
 
 In the seven real folds of the first seed already examined, shuffled G is zero at the recorded numerical precision, so Q coincides numerically with original G. This preliminary outcome is declared before the final run; it is not assumed to hold for all seeds and cells. The 700 shuffled fits are a predefined control that can refute the interpretation of G alone, not an operation to be omitted because the first pilot is favourable.
 
-There is no theorem imposing a shuffled G exactly null in finite samples: the CTW mixture does not necessarily select the root. In the additional i.i.d. control the stopping weight at the root is about 0.80775 and the gain about 0.000195 bits/symbol. Moreover, within-sentence shuffling does not in general produce an i.i.d. sequence. The numerical coincidence with the root predictor must be described as an observed result, not as a mathematical necessity.
+No theorem requires shuffled G to equal exactly zero in finite samples: the CTW mixture does not necessarily select the root. In the additional i.i.d. control the stopping weight at the root is about 0.80775 and the gain about 0.000195 bits/symbol. Moreover, within-sentence shuffling does not in general produce an i.i.d. sequence. The numerical coincidence with the root predictor must be described as an observed result, not as a mathematical necessity.
 
 ## 8. Measures, weights and mandatory results
 
@@ -388,7 +388,7 @@ D_{Q,s}=\frac{1}{2}\sum_{b\in HEX}Q_{b,s}
 -\frac{1}{5}\sum_{b\in PROSE\_ALL}Q_{b,s}.
 \]
 
-The primary result is `D_Q = mean_s D_Q,s` in C0. Also mandatorily reported are the seven `mean_s Q_b,s`, the corresponding original/shuffled G and the contrasts `D_G_original` and `D_G_shuffled`. None of the latter replaces Q because it gives a larger separation.
+The primary result is `D_Q = mean_s D_Q,s` in C0. Also mandatorily reported are the seven `mean_s Q_b,s`, the corresponding original/shuffled G and the contrasts `D_G_original` and `D_G_shuffled`. Keep Q as the primary result even if either contrast yields greater separation.
 
 The groups have uniform weight **across blocks**, not across tokens. The mean over seeds is arithmetic. The SD over seeds uses denominator S−1; minimum and maximum are also reported. No p-values, bootstrap CIs, Holm, population confidence intervals, Bayes factors between regimes or percentages of “significance” are computed. Tokens, documents of the same block or seeds are not reused as independent n.
 
@@ -434,7 +434,7 @@ R1 is run for C0, `oth` and `upos_only`, without CTW fits and without seeds. A m
 
 ### 8.4 Probe without new training
 
-For each tragic document evaluate the two arms under all 7×20 original/shuffled C0 models, using `shuffle_probe` for the transformation of the test. Compute CE, CE0, G and Q per document/fold/seed. Report the seven means over seeds and a document summary that assigns weight 1/7 to the folds and 1/20 to the seeds.
+For each tragedy text, evaluate the two arms under all 7×20 original/shuffled C0 models, using `shuffle_probe` for the transformation of the test. Compute CE, CE0, G and Q per document/fold/seed. Report the seven means over seeds and a document summary that assigns weight 1/7 to the folds and 1/20 to the seeds.
 
 The folds share training and the seeds share texts: the dispersion is descriptive, not an inferential interval. Do not aggregate the six tragedies into an eighth block and do not compare directly the summary of the probe with a primary block as if they had identical exposure to the training. The probe is not an independent check of generalization outside the corpus, since its inventory is included in the alphabet.
 
@@ -602,11 +602,11 @@ The tests must verify properties or cases with an independently known answer. Co
 | T29 | Same dataset/sample: exact repeatability of identities; CE within tolerance across platforms | Reproducibility gate, without a promise of bit-identity of the floats |
 | T30 | Consistency of the perimeter and block of the contrasts before certificates and completeness | Rejection of different hashes, absent certificates, missing cells/fits/probes/R1, duplicates and corrupted artifacts; checks of §14.2 |
 
-T08 comprises two distinct campaigns: the earlier synthetic pipeline checked 1,680 derived keys with its own convention; `validate_contract.py` checks 3,360 of them with `hexis-v3-rng-1`, over 20 seeds × 7 held-out × 6 contributors × 4 purposes. They are not the same set automatically doubled by the arms. The results, the version of the derivation and the keys considered remain identified separately. The collision check on these sets does not prove universal absence of collisions.
+T08 comprises two distinct campaigns: the earlier synthetic pipeline checked 1,680 derived keys with its own convention; `validate_contract.py` checks 3,360 derived keys with `hexis-v3-rng-1`, over 20 seeds × 7 held-out × 6 contributors × 4 purposes. They are not the same set automatically doubled by the arms. The results, the version of the derivation and the keys considered remain identified separately. The collision check on these sets does not prove universal absence of collisions.
 
 ### 12.1 Frozen synthetic battery
 
-Reuse the generation algorithms and the seeds of the earlier `verify_synthetic.py`, already identified by the hashes of the CTW package. Training 53,304, independent test 100,000, first four targets excluded, five seeds for the small sources. Do not regenerate until passing.
+Reuse the generation algorithms and the seeds of the earlier `verify_synthetic.py`, already identified by the hashes of the CTW package. Training 53,304, independent test 100,000, first four targets excluded, five seeds for the small sources. Do not resample the test cases to obtain a pass.
 
 | Source | Rule | Quantitative criterion |
 |---|---|---|
@@ -659,7 +659,7 @@ The act includes the campaigns of 203 real C0/sensitivity fits, the order contro
 | `src/hexis/conllu_reader.py` | Keep the verified parsing; ensure the required identity, order and coordinates |
 | `src/hexis/registry.py` | Apply the Greek registry of 18 prefixes / 17 documents, map of 7 blocks, roles and flags; no heuristics on titles |
 | `src/hexis/alphabet.py` | Reuse mapping and audit; complete freeze and inventories with the rules of §4 |
-| `src/hexis/sequences.py` | Implement/reset-verify streams, fragments and context-only SEP |
+| `src/hexis/sequences.py` | Implement and verify resets for sentence and fragment streams, and SEP in contexts only |
 | `src/hexis/config.py` | Replace the presence check with strict validation of the v3 schema |
 | `src/hexis/model/context_tree.py` | Implement non-binary CTW, frozen model, log-prior and the API of §11; replace the stubs of the selector |
 | `src/hexis/model/diagnostics.py` | Implement resolved/unobserved masses and support; retire the selected depth |
@@ -795,7 +795,7 @@ Technical completion is independent of the sign and size of D_Q. The project con
 | D_Q changes sign or size in the sensitivities | The comparative conclusion depends on the analytical choices; show all cells |
 | D6, D8 and D12 almost equal | Greater depth does not improve performance in the sample/protocol; not absence of deep linguistic dependencies |
 | `upos_only` and C0 differ | Results dependent on the level of representation; no automatic identification of the causal contribution of DEPREL |
-| Heterogeneous tragic probes | The original comparison does not define a uniform property of “verse”; no additional category is trained |
+| Heterogeneous tragedy probes | The original comparison does not define a uniform property of “verse”; no additional category is trained |
 | High JSD with similar Q | Marginal differences of the symbols, without a corresponding difference in the measured order advantage |
 
 The report must expose, next to the main result: composition of the corpus; 2 HEX blocks against 5 prose blocks; chronological confounding; leave-one-block-out training balanced by block but not by regime; offline annotations; shuffling conditional on the per-sentence composition; seed variability as computational variability; earlier observation of the pilots.

@@ -43,10 +43,10 @@ The three Greek CoNLL-U files were read again, re-encoded with a separate proced
 | UPOS-only alphabet | 12 symbols |
 | Budget per training block | 8,884 tokens |
 | Training per fold: six blocks | 53,304 tokens |
-| Tragic probe, C0 tokens | 22,275 |
-| Tragic probe, eligible positions | 12,769 |
+| Tragedy probe, C0 tokens | 22,275 |
+| Tragedy probe, eligible positions | 12,769 |
 
-The inventory of the alphabet also includes the tragic probe, as in the proposal examined. It is a closed and transductive inventory of symbols; no counts of the held-out text are transferred into the training.
+The inventory of the alphabet also includes the tragedy probe, as in the proposal examined. It is a closed and transductive inventory of symbols; no counts of the held-out text are transferred into the training.
 
 The sampler was implemented outside the repository: permutation of the sentences, whole sentences up to the budget, at most one final contiguous fragment, exactly 8,884 tokens per contribution. All documents of the held-out block are excluded. The numerical sensitivities use the same samples; the halved budget reuses the same initial permutation. A new encoding can change the stopping point of the sample, and this is recorded.
 
@@ -131,7 +131,7 @@ The second case is deliberately difficult: the model must estimate many contextu
 
 ## 6. Real pilot and sensitivities
 
-**140 C0 fits** were completed: seven folds × 20 seeds. In addition nine sensitivities were run on all seven folds, one seed each: **63 fits**, for 203 main and sensitivity fits in all. The tragic probe was evaluated under each of the 140 C0 models without training additional models.
+**140 C0 fits** were completed: seven folds × 20 seeds. In addition nine sensitivities were run on all seven folds, one seed each: **63 fits**, for 203 main and sensitivity fits in all. The tragedy probe was evaluated under each of the 140 C0 models without training additional models.
 
 The sensitivities cover total pseudocount 1, `rho=0.9`, split probability suggested by the source, half training, depth 6/12, `oth` alphabet, UPOS-only and context separator.
 
@@ -171,7 +171,7 @@ Separate profiling with Python 3.12.14, NumPy 2.3.5 and PyYAML 6.0.3; ordinary C
 |---|---:|
 | C0 fit, 53,304 tokens | 0.63–0.70 seconds |
 | Evaluation of the excluded block | 0.024–0.224 seconds |
-| Evaluation of the whole tragic probe | 0.046–0.055 seconds |
+| Evaluation of the whole tragedy probe | 0.046–0.055 seconds |
 | Peak RSS of the process in the C0 benchmark | 174.4 MiB |
 | Maximum RSS in the real sensitivity pilots | about 240 MiB, depth 12 |
 | Maximum RSS of the synthetic battery | about 254 MiB |

@@ -98,9 +98,9 @@ The primary source confirms that the default proposed by the authors is beta abo
 
 The published version is: Kontoyiannis, Mertzanis, Panotopoulou, Papageorgiou and Skoularidou, *Bayesian Context Trees: Modelling and Exact Inference for Discrete Time Series*, **JRSS Series B 84(4), September 2022, 1287–1323**, DOI **10.1111/rssb.12511**. [Publisher's page](https://academic.oup.com/jrsssb/article/84/4/1287/7073257). The reasoning on the prior is in §2.2 of the [primary arXiv version v3](https://arxiv.org/html/2007.14900v3#S2.SS2). Adding the editorial metadata is appropriate; calling the same authors' preprint a «secondary source» is incorrect.
 
-A is right that the counts can be reused. A and rho require new evidences/weights; a lower D requires forcing the leaves at the new limit and recursively recomputing the weights of the ancestors. Truncating only the evaluation of a D12 model while keeping its weights is not equivalent to redoing D8. In the synthetic case, correct truncation with reweighting reproduced D8 with zero error.
+A is right that the counts can be reused. Changing a or rho requires new evidences/weights; a lower D requires forcing the leaves at the new limit and recursively recomputing the weights of the ancestors. Truncating only the evaluation of a D12 model while keeping its weights is not equivalent to redoing D8. In the synthetic case, correct truncation with reweighting reproduced D8 with zero error.
 
-*[Translator's note: in «A and rho require new evidences/weights», A refers to the parameter a (the per-symbol Dirichlet mass), not to review A.]*
+*[Translator's note: the Italian original uses uppercase A for the per-symbol Dirichlet mass a in the sentence about recomputing evidence and weights.]*
 
 The reduction in count accumulation eliminates no scientific models:
 

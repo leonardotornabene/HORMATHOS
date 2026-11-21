@@ -29,7 +29,7 @@ These files accompany `HEXIS_piano_integrale_v3_2026-09-11.md`. The plan is comp
 
 `hexis_v3_design.json` is a target contract and cannot be passed to the old CLI as if it were a compatible configuration. The conversion to the application schema happens in the V0–V2 migration. The reference code does not implement all the type validations, the CLI, the manifests and the final outputs prescribed by the plan.
 
-The historical field `weighted_depth` returned by `ctw_reference.py` remains in the reference results for traceability; it is not the v3 scientific diagnostic. The latter is defined in `resolved_diagnostics.py`. No module of the project must import these files as a shortcut to passing the gates.
+The historical field `weighted_depth` returned by `ctw_reference.py` remains in the reference results for traceability; it is not the v3 scientific diagnostic. The latter is defined in `resolved_diagnostics.py`. Do not import these files into any project module to bypass the gates.
 
 ## Reproducing the additional checks
 

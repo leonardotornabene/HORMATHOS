@@ -42,7 +42,7 @@ Transmit **the whole operational archive**, not only the historical CTW archive.
 
 Correspondence of the historical titles cited in the plan: `HEXIS_verdetto_CTW_2026-09-11.md` is kept here as `verdetto_CTW_precedente.md`; `HEXIS_verifica_comparata_2026-09-11.md` as `verifica_comparata_precedente.md`. The shortened names do not indicate new judgements.
 
-The text governs the semantics and the JSON the values/lists. The executable contracts illustrate the specified operations, but do not implement all the public validations, the application manifests, the certificates, the CLI or the definitive outputs. No module of the future pipeline must import these prototypes as a shortcut to the gates. `report_contract.py` verifies bytes and keys; the pipeline must add checking of the contents, of the slots and of the canonical certificates, and then pass T26/T30.
+The text governs the semantics and the JSON the values/lists. The executable contracts illustrate the specified operations, but do not implement all the public validations, the application manifests, the certificates, the CLI or the definitive outputs. Do not import these prototypes into any module of the future pipeline to bypass the gates. `report_contract.py` verifies bytes and keys; the pipeline must add checking of the contents, of the slots and of the canonical certificates, and then pass T26/T30.
 
 The historical field `weighted_depth` remains in the prototype and in the evidence for traceability; the v3 scientific diagnostic is that of `resolved_diagnostics.py`.
 

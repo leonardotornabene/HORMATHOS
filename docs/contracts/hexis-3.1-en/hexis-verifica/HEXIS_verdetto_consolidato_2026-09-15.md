@@ -18,7 +18,7 @@ The recommended solution is a single one:
 2. Global `PART`/`ADV` merging, declared as a deliberate loss of detail, without attributing to it a complete normalization.
 3. Main result made of the **seven block profiles**, with the eleven documents visible; HEX/prose difference as a subordinate summary conditional on the available trainings.
 4. Frozen CTW, four-term Q, paired shuffling and JSD kept.
-5. Six cells: `C0`, `a_total1`, `q_half`, `D12`, `oth`, `upos`. Elimination of D6, `rho09`, `bound` and of the final tragic evaluations.
+5. Six cells: `C0`, `a_total1`, `q_half`, `D12`, `oth`, `upos`. Elimination of D6, `rho09`, `bound` and of the final evaluations on the tragedy texts.
 6. Detailed per-position persistence only in C0; verifiable aggregates for the sensitivities. One manifest and a restricted completeness check replace the separate certification apparatus.
 7. Correction of the attestations on the pilots: **the twenty-seed contrast already reconstructible is the original D_G, not a D_Q verified over twenty seeds**.
 
@@ -88,7 +88,7 @@ Both reviews correctly recognize the consistency of the CTW core and the need fo
 | G/CE0 makes the alphabets comparable, A §7 | It is a ratio with respect to different baselines, not a universal scale | Do not add the metric |
 | Token-weighted JSD mandatory, A §7 | R1 and Q have distinct populations and questions, already defined by P | Keep the original R1 and unsmoothed counts |
 | Rank 1/21 to be reintroduced, A §§3,7 | Computable but not necessary; it provides no inferential validity | Keep the retirement of the label permutations |
-| Tragic probe to be eliminated, B | It adds outputs and a scientific question without being a clean metrical control | Accept |
+| Tragedy probe to be eliminated, B | It adds outputs and a scientific question without being a clean metrical control | Accept |
 | Six cells, B | They keep local regularization, budget, higher depth and two representation choices | Accept |
 | Reduced persistence, A | Feasible, but four sums alone do not reconstruct all the diagnostics | Accept with the minimum contract of §7 |
 | Shuffled columns omitted because «constant», A | The root loss varies with the symbol; equality with the CTW is not guaranteed | Do not impose constants; keep the four losses where planned |
@@ -144,7 +144,7 @@ Do not give the eleven documents the status of eleven independent replicates. Ke
 
 Keep the three files, the UD commit, the hashes, the 18 prefixes, the 17 documents of the census and the eleven primary documents in seven blocks. Keep in the registry the original regimes `HEX`, `PROSE_CLASS`, `PROSE_POST`, `OTHER_VERSE`; `PROSE_ALL` is a report grouping of the two proses.
 
-The six tragedies become **documents in the census without final scoring**: no training, no probe evaluation, no tragic figure and no conclusion of specificity with respect to tragedy. Keep the history of the proofs already run, without renaming it final result.
+The six tragedies become **documents in the census without final scoring**: no training, no probe evaluation, no figure for the tragedy texts and no conclusion of specificity with respect to tragedy. Keep the history of the proofs already run, without renaming it final result.
 
 To avoid a further analytical variation, keep the alphabetic inventory defined over the whole census of 17 documents. It must be written explicitly: the six non-evaluated documents contribute only to the inventory of the types. After the merging **9 C0 types and 10 OTH types exclusive to those documents** remain, against 10 and 12 before; in UPOS none. The design remains closed and transductive. **Do not at the same time reduce the support to the primary documents alone:** it would give other alphabets, 91/95/11.
 
@@ -270,7 +270,7 @@ A calls ~37 nats an underflow threshold of `log1p(exp(x))`: this is wrong. `log1
 
 Use stable operations on the logs and explicit checks, as P requires. Derive **both** posterior weights from the difference between the two log-contributions, avoiding obtaining the small weight only as `1-stop`; do not rely on an indiscriminate `min(1, ...)`. Keep `root_stop` and, to interpret its saturation, the difference between the stop and split log-contributions at the root. Specify its sign and its unit in nats; the losses remain in bits.
 
-Do not build the extreme prior of the literature as `1-2**(-(m-1))` in float. The case must remain a numerical test, even if it is not a final cell. No test must impose that the shuffle collapses or that a larger D gives the same result.
+Do not build the extreme prior of the literature as `1-2**(-(m-1))` in float. The case must remain a numerical test, even if it is not a final cell. Tests must never require the shuffle to collapse or a larger D to give the same result.
 
 ### C16 — Keep the synthetics without turning them into a threshold for Greek
 
@@ -314,7 +314,7 @@ Keep negative or unstable results as legitimate outcomes. Add explicitly:
 - Technically successful annotation merging ≠ demonstrated linguistic homogeneity.
 - C0 and UPOS with similar contrasts: **concordance of the summary in two representations**, not proof that DEPREL does not contribute.
 - Different profiles or signs between weightings: dependence on the distribution of the targets, not choice of the «right» weight.
-- G_R numerically null: observed behaviour of the predictor under that control, not a theorem on order.
+- G_R numerically zero: observed behaviour of the predictor under that control, not a theorem on order.
 - D8/D12 similar: absence of improvement in the evaluated configurations, not absence of dependencies beyond eight symbols.
 - Absence of the probes: no final conclusion on specificity with respect to other metres.
 
@@ -352,7 +352,7 @@ Use a single parametrized executor for C0 and for the five sensitivities. `run_s
 
 Keep the responsibilities: audit/encoding, validation, descriptive execution and report. The document and block tables are the verifiable inputs; contrasts, summaries and figures are derived from the same report. Avoid multiple implementations of the same aggregation.
 
-Keep **five figures** of the plan, updated: corpus/annotation; G/Q profiles with document detail; sensitivities and two weightings; R1; supports and masses of the model. Eliminate the tragic figure. The history bands enter the existing tables and panels, without creating a new graphical apparatus.
+Keep **five figures** of the plan, updated: corpus/annotation; G/Q profiles with document detail; sensitivities and two weightings; R1; supports and masses of the model. Eliminate the figure for the tragedy texts. The history bands enter the existing tables and panels, without creating a new graphical apparatus.
 
 ### C24 — Keep the verification chain, remove the separate certificates
 
@@ -412,7 +412,7 @@ The plan underestimates some already working parts and suggests too direct a reu
 | `model/lexicon.py`, `blocks.py` | Retire lexicon and chunks from the scientific path; do not confuse chunks with dependency blocks |
 | `stats/permutation.py`, `bootstrap.py`, `holm.py` | Keep utilities and valid tests as historical code, without import in the descriptive pipeline |
 | `viz/plots.py` | Only five figures derived from the verified tables |
-| `tests/`, `conftest.py`, pytest configuration | Realign inventory and checks with the new contracts; forbid skips in the active acceptance checks. No tracked CI workflow exists: do not invent CI attestations nor make adding one mandatory |
+| `tests/`, `conftest.py`, pytest configuration | Realign inventory and checks with the new contracts; forbid skips in the active acceptance checks. The review found no tracked CI workflow: do not invent CI attestations nor make adding one mandatory |
 | `pyproject.toml`, `uv.lock` | Update description and necessary metadata; keep the stack without new libraries or unmotivated downgrades |
 | `.gitignore`, `LICENSE` and licence indications | Keep large working outputs out of Git; distinguish code, documents, source data and artifacts intended for publication |
 | `scripts/reacquire_raw_data.sh` | Preserve the local original; verify and correct any target version before advertising it |
@@ -454,7 +454,7 @@ Update together:
 - `AGENTS.md`, `CLAUDE.md`, `README.md`, configuration, registry, package metadata and test inventory;
 - structured contract, corpus expectations, alphabets, design lock and report contracts present in the attachments.
 
-Keep D01–D54, the proposed D55 and the G1 technical ratifications as history with a clear status. No retired clause must remain implicitly binding: confirmatory P1/P2, Latin, O7, permutation thresholds, 13 cells, sign-stability obligations and old gates must be declared **not applicable to the new version**, not «resolved» in the old project.
+Keep D01–D54, the proposed D55 and the G1 technical ratifications as history with a clear status. Retired clauses must cease to bind implicitly: confirmatory P1/P2, Latin, O7, permutation thresholds, 13 cells, sign-stability obligations and old gates must be declared **not applicable to the new version**, not «resolved» in the old project.
 
 Expressly preserve immutability of the raw files, provenance, label-free core, quarantine of the candidates, real tests and the prohibition of silent overwriting. The two reviews remain historical critical documents; they do not become normative sources competing with the consolidated specification.
 

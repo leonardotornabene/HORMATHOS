@@ -80,7 +80,7 @@ The protocol is **prospective after methodological development and observation o
 | Historical C0 pilot | 140 original models, seven blocks × twenty seeds, alphabet m=106 |
 | Historical sensitivities | 63 original models, seven for each of the nine historical configurations; seed 0 |
 | Historical order control | Seven C0 pairs at seed 0 only; not twenty paired seeds |
-| Subsequent contract 3.0.1 | Seven C0 pairs with new RNG plus one `bound` pair: 16 models and 84 tragic evaluations; historical proofs, not 3.1 results |
+| Subsequent contract 3.0.1 | Seven C0 pairs with new RNG plus one `bound` pair: 16 models and 84 evaluations on the tragedy texts; historical proofs, not 3.1 results |
 | Review of 12 September | Environment re-executions, diagnostics, fragments and report fixtures; not a final campaign |
 
 From the twenty original seeds one reconstructs **mean original D_G = −0.1780246797**, SD across seeds 0.0110277710, observed range [−0.1982444032, −0.1573585892] bits/symbol. The historical paired control allows **D_Q ≈ −0.1772407629 at seed 0 only**; here it coincides numerically with D_G. The shuffled arms needed to call D_Q the mean contrast over the twenty seeds, or the contrasts of the original sensitivities, are missing.
@@ -134,7 +134,7 @@ UPOS has the same tokens and targets as C0. The new merging changes no mask. The
 
 ### 3.4 Six documents only inventoried
 
-Sophocles' Trachiniae, Antigone, Ajax, Oedipus Tyrannus and Electra, and Aeschylus' Suppliant Women have role **`inventory_only`**: census, retention and inventory of types, without training, scoring, probe or tragic figure. They are texts in mixed metres, not a homogeneous control of trimeters. Their 22,275 C0 tokens and 12,769 potentially eligible positions remain audit counts, not positions to evaluate.
+Sophocles' Trachiniae, Antigone, Ajax, Oedipus Tyrannus and Electra, and Aeschylus' Suppliant Women have role **`inventory_only`**: census, retention and inventory of types, without training, scoring, probe evaluation or a figure for the tragedy texts. They are texts in mixed metres, not a homogeneous control of trimeters. Their 22,275 C0 tokens and 12,769 potentially eligible positions remain audit counts, not positions to evaluate.
 
 To keep the support choice of the verified plan, the alphabet uses all 17 documents. After the merging, the six non-evaluated documents add **9 exclusive C0 types, 10 OTH, zero UPOS**. The support therefore remains closed and transductive: the types of the complete corpus are known, without transferring frequencies or transitions to the training. Restricting to the primary documents alone would produce 91/95/11 types and would be another modification, excluded here.
 
@@ -219,7 +219,7 @@ It is a sampling that favours whole sentences, not a uniform sample of single to
 
 C0, `a_total1`, D12 and UPOS reuse exactly the C0 ledger per fold/seed. `q_half` reuses the permutation but the final random cut can change: no token-by-token nesting is promised. OTH reuses the order of the sentences but can stop elsewhere. The two arms always share the cut coordinates of their own sample.
 
-The final fragment is kept to guarantee an equal token contribution. The historical twenty-seed test found 671 fragments in 840 contributions, 563 with an internal start; the ablation at the first seed only produced a maximum absolute Q deviation of 0.000685 bits/symbol. These are local proofs with the old alphabet, not a universal bound or a final analysis to be repeated compulsorily.
+The final fragment is kept to guarantee an equal token contribution. The historical twenty-seed test found 671 fragments in 840 contributions, 563 with an internal start; the ablation, run only on the first seed, produced a maximum absolute Q deviation of 0.000685 bits/symbol. These are local proofs with the old alphabet, not a universal bound or a final analysis to be repeated compulsorily.
 
 Per contributor/pair record `fragment_count`, `internal_start_count`, `fragment_tokens`, `direct_context_targets = Σ min(D, fragment_length)` for fragments with start>0. The maximum is **six fragmented segments per pair, 2,940 segment occurrences in the whole campaign**, counted once per pair and shared by the two arms; the occurrences in the arms are at most 5,880. The reuse of the ledger across cells can further reduce the number of materially distinct segments.
 
@@ -323,13 +323,13 @@ For each pair `(cell, fold, seed)`:
 5. Shuffle independently each sentence of the test block with `shuffle_eval` and evaluate it under R; evaluate the original under O.
 6. Pair by identity of the eligible **slot**; the provenance of the moved token is a different field. Verify the one-to-one correspondence before aggregating.
 
-One permutation per seed is used: twenty in C0, ten in each sensitivity. Do not repeat until obtaining a change or a welcome sign. Record the share of slots with a different symbol, with an explicit denominator; constant sentences can remain identical. Sampling and shuffling contribute jointly to the computational variability, without a decomposition of the variances.
+One permutation per seed is used: twenty in C0, ten in each sensitivity. Do not draw additional permutations to obtain a change or a preferred sign. Record the share of slots with a different symbol, with an explicit denominator; constant sentences can remain identical. Sampling and shuffling contribute jointly to the computational variability, without a decomposition of the variances.
 
 The shuffle preserves length and multiset of every sentence/fragment and **the root counts of the training**. It does not preserve n-grams, grammaticality or syntactic dependencies. Permutation without replacement induces dependencies from finite composition: the control is neither i.i.d. nor a universal estimate of the bias.
 
 Root O and root R are equal as training distributions, but **their CE on the eligible test can differ**: the shuffle moves symbols across the boundary of the first four slots. The four terms of Q are always needed. The archived counterexample gives Q≈0.71346 and shortcut `CE_CTW_R−CE_CTW_O`≈−0.66505: it can even change the sign.
 
-G_R null at the recorded precision in some pilots is an observed result, not a general identity. A synthetic i.i.d. control of the package had root_stop≈0.80775 and G≈0.000195. The **490 final shuffled identities** remain mandatory even if they look redundant after a pilot.
+G_R was zero at the recorded precision in some pilots. This is an observed result, not a general identity. A synthetic i.i.d. control of the package had root_stop≈0.80775 and G≈0.000195. The **490 final shuffled identities** remain mandatory even if they look redundant after a pilot.
 
 ## 8. Scores, aggregations and R1
 
@@ -435,9 +435,9 @@ All cells use reset and two arms. No factorial combination. `a_total1` means tot
 
 The sensitivities compare ten seeds with **the same first ten C0 seeds**, through paired differences per block/seed and for both subordinate summaries. Do not subtract the twenty-seed C0 mean and call the comparison paired. Differences between variants are task differences; OTH also changes targets. Lower CE in UPOS, similar G or concordant contrasts give neither a universal scale nor a decomposition of the DEPREL contribution.
 
-D6, `rho09`, `bound` and all tragic evaluations are retired. The renunciations are explicit: no final sensitivity to the stop/split prior, no evaluation of boundary crossing, no specificity with respect to other metres. `a_total1` perturbs **another** prior. D12 checks only the increase of the maximum depth. These cuts limit the questions; they are not motivated by the similarity of the results in the pilot.
+D6, `rho09`, `bound` and all evaluations on the tragedy texts are retired. The renunciations are explicit: no final sensitivity to the stop/split prior, no evaluation of boundary crossing, no specificity with respect to other metres. `a_total1` perturbs **another** prior. D12 checks only the increase of the maximum depth. These cuts limit the questions; they are not motivated by the similarity of the results in the pilot.
 
-No sign-stability is a completion condition. Inversions and instabilities are reported, without changing cells, weights or seeds. Reusing counts for prior/D is an optional optimization, after verified equivalence: it requires new evidences/weights and correct leaves. Truncating a D12 while keeping its weights does not produce a D8. The scientific identities remain 980; no general cache system is needed.
+Completion does not require sign stability. Inversions and instabilities are reported, without changing cells, weights or seeds. Reusing counts for prior/D is an optional optimization, after verified equivalence: it requires new evidences/weights and correct leaves. Truncating a D12 while keeping its weights does not produce a D8. The scientific identities remain 980; no general cache system is needed.
 
 ## 11. Software contracts and persistence
 
@@ -518,7 +518,7 @@ Do not create a second band table with independent aggregation logic: the bands 
 4. **R1:** C0 7×7 matrix, JSD of the centroids in the three representations and contributions; complete data without selection of favourable contributions.
 5. **Supports and masses:** supports of the nodes, masses by length, unseen_mass and L_resolved with the semantics of §9.
 
-All derive from the verified tables. No tragic figure, per chunk, lexicon of contexts, network of reference models or learning curve. No inferential CI.
+All derive from the verified tables. No figures for tragedy, per-chunk figures, context lexicon, reference-model network or learning curve. No inferential CI.
 
 ### 11.7 Manifest, writing and resumption
 
@@ -581,7 +581,7 @@ Reuse exactly the algorithms, seeds and oracles of `ctw_validation/verify_synthe
 
 Training seeds 0–4, test 10000+seed; each sequence is a single stream; CTW D8/a0.5/ρ0.5. In the historical variable-memory generator, P(x_i=1)=0.2 if x_(i−1)=0, otherwise 0.1 if x_(i−2)=0, otherwise 0.9. Keep the order of the RNG calls and the initialization of the identified file. **Its realized oracle uses i=2,…,N−1 and denominator N−2; the scoring uses i=4,…,N−1 and N−4.** This verified fixture is explicitly kept, without describing the denominators as identical or silently redefining the oracle.
 
-Thresholds and seeds are not changed after the results. A JSON `analytic_pass=false` followed by exit 0 does not pass the gate. Keep the known lag-2 comparison recovered with respect to the reference of about 1 bit of the historical local selector, without reintroducing it in the Greek results.
+Thresholds and seeds are not changed after the results. A JSON `analytic_pass=false` followed by exit 0 does not pass the gate. Retain the documented comparison between recovery of the lag-2 dependency and the roughly 1-bit baseline of the historical local selector, without reintroducing that selector into the Greek results.
 
 **Historical m=106** stress, three seeds for uniform, lag 2 with copy 0.9/uniform innovation 0.1 and a binary core with rare symbols. In lag 2 the coincidence is 0.9+0.1/106, oracle about 1.13109 bits. Counts, normalization, execution and recording of the deficit are required, not reaching the oracle. No further calibration campaign for the new alphabets: m100/105/11 are covered by the parametrized checks of input/normalization/support.
 
@@ -639,7 +639,7 @@ Deposit the bytes of the contracts and of the plan with the external digests of 
 | `.gitignore`, `LICENSE`, licence documentation | Separate code, documents, raw files, large local outputs and materials intended for publication |
 | local `scripts/reacquire_raw_data.sh` | Preserve the original; any corrected and verified canonical version before advertising it |
 
-The verification finds working parsing/audit and statistical utilities, many scientific modules as stubs. `config.py` already rejects unknown/missing keys and some G1 structures: do not rewrite it as if it did not exist. The historical mapping can discard an unknown tag and the alphabet was sorted by frequency: these behaviours must be explicitly replaced. The existing writing does not yet provide all the required atomicity/resumption. The 327 historical passes do not attest a new CTW or an available pipeline; the behavioural test of label-free scores was a skip. No tracked CI workflow exists: do not invent CI attestations or introduce adding one as a requirement of this plan.
+The verification finds working parsing/audit and statistical utilities, many scientific modules as stubs. `config.py` already rejects unknown/missing keys and some G1 structures: do not rewrite it as if it did not exist. The historical mapping can discard an unknown tag and the alphabet was sorted by frequency: these behaviours must be explicitly replaced. The existing writing does not yet provide all the required atomicity/resumption. The 327 historical passes do not attest a new CTW or an available pipeline; the behavioural test of label-free scores was a skip. The review found no tracked CI workflow: do not invent CI attestations or introduce adding one as a requirement of this plan.
 
 ### 13.3 Acquisition and local files
 
@@ -724,7 +724,7 @@ Write per partition, do not concatenate the whole campaign in memory; keep one p
 | G_O positive, G_R similar | The gain does not clearly distinguish observed order and the chosen control |
 | Q positive, small contrast | Relative advantage under this predictor, without strong descriptive separation between the available groups |
 | Signs/magnitudes varying by cell or weight | Dependence on the declared choices and on the distribution of the targets; no selection of the preferred result |
-| G_R numerically null | Measured behaviour of the control; no collapse theorem or causal attribution of all of G to order |
+| G_R numerically zero | Measured behaviour of the control; no collapse theorem or causal attribution of all of G to order |
 | D8/D12 similar | No improvement in the evaluated configurations; not absence of dependencies beyond eight symbols |
 | C0/UPOS with similar contrasts | Concordance of the summary in two representations; not proof that DEPREL does not contribute |
 | Technically correct merging | Mitigation of the documented discontinuity; not demonstrated annotation homogeneity |

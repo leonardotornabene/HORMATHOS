@@ -38,7 +38,7 @@ The subsequent attestations keep the credit of their commits. The general V2 clo
 | T15 | V2 | 25 synthetic cases at the §12.1 thresholds on the canonical CTW; violation → non-zero exit |
 | T16 | V2 | Historical m106 stress: execution, normalization, supports, recorded deficit |
 | T17 | V2 | Length, multiset, mask and root counts preserved; slot distinct from provenance |
-| T18 | V2 | Counterexamples of internal dependence and of heterogeneous pool at the level of the sample and in G/Q: non-null G_R with two fitted models |
+| T18 | V2 | Counterexamples of internal dependence and of heterogeneous pool at the level of the sample and in G/Q: nonzero G_R with two fitted models |
 | T19 | V2 | Four-term Q; archived counterexample of sign inversion reproduced on the canonical CTW |
 | T20 | V2 | Aggregations/two weights |
 | T21 | V2 | Coupled sensitivities |
@@ -230,7 +230,7 @@ T11/T17/T22: support histograms per depth with BOS; counter of unobserved encoun
 
 ## Reconciliation 2B — 2026-09-18
 
-M4/T22/T26/T27/T29: `test_v31_completion.py` and `test_v31_report_semantics.py` cover the present lock, empty rows, per-model resources external to the identity, artifact arms/families, key types and semantic corruptions in report/resume also after recomputation of the hashes. The C0 sums of the four losses, L_resolved and unseen are reconstructed; exact counts/keys, CE within 1e-9 bits/target and diagnostics within 1e-12 per position. Schemas, duplicates, nulls, masses, supports and denominators verified also in the sensitivities. R1 keeps empirical and smoothed frequencies. Acceptance: **302 passed, 338 deselected**, zero skip/xfail. The real modelling checks, prefixed regeneration and figures remain for V3–V5; this coverage is synthetic.
+M4/T22/T26/T27/T29: `test_v31_completion.py` and `test_v31_report_semantics.py` cover the present lock, empty rows, per-model resources external to the identity, artifact arms/families, key types and semantic corruptions in report/resume also after recomputation of the hashes. The C0 sums of the four losses, L_resolved and unseen are reconstructed; exact counts/keys, CE within 1e-9 bits/target and diagnostics within 1e-12 per position. Schemas, duplicates, nulls, masses, supports and denominators verified also in the sensitivities. R1 keeps empirical and smoothed frequencies. Acceptance: **302 passed, 338 deselected**, zero skip/xfail. The real modelling checks, prespecified regeneration and figures remain for V3–V5; this coverage is synthetic.
 
 ## 2C closure, integral review and completion of the report — 2026-09-22
 
