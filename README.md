@@ -72,16 +72,7 @@ Every folder opens with a short page that says what it holds, why it is there an
 
 ## Reproduce
 
-The commands below install the locked environment, fetch the pinned corpus and run the acceptance tests.
-
-```bash
-uv sync --frozen
-git clone https://github.com/UniversalDependencies/UD_Ancient_Greek-Perseus data/raw/UD_Ancient_Greek-Perseus
-git -C data/raw/UD_Ancient_Greek-Perseus checkout 37837c7a3c592c9563f8c51cc63344b87247f8a5
-uv run pytest            # 431 passed, no skip
-```
-
-The SHA-256 of each input file is in [data/raw/PROVENANCE.md](data/raw/PROVENANCE.md). To verify the complete campaign, download the archives of the [GitHub Release](https://github.com/leonardotornabene/HORMATHOS/releases/tag/hormathos-v5-evidence) and follow [results/README.md](results/README.md). The commands that produced every run are in the [handoff](docs/HANDOFF.md). Rerunning the campaign or the report is done from the Git tag `hormathos-v5-evidence`, which fixes the code that produced the published evidence.
+Use the [reproduction guide](results/README.md#reproduce-the-published-campaign) to verify the release files or rerun the experiment from `hormathos-v5-evidence`. The [corpus guide](data/README.md#getting-the-corpus) identifies the three pinned Greek input files.
 
 ## Licences
 

@@ -46,17 +46,82 @@ The [GitHub Release `hormathos-v5-evidence`](https://github.com/leonardotornaben
 | `hormathos-campaign-v3006.tar.gz` (45 MB) | `3dadf6cecc303281897995b84c479721ce56e304859456f18dd9abb0164bec10` | `v1`, `v3-seed0-v3006` complete (490 pair records, 280 sample ledgers — which sentences each training sample took — and 140 position vectors — the loss at every scored position of the main setting) and its regeneration |
 | `hormathos-superseded-runs.tar.gz` (17 MB) | `1a4fbf43b021dd442285927e8a76e687d905020220d2a29e9c4931f368a42cc3` | earlier runs, superseded by the two reviews before the campaign and never resumed: `v1-development`, `v1-reproduction`, `v2-pre-v3-audit-2026-09-24`, `v3-seed0`, `v3-seed0-r4-r6`, their regenerations and logs |
 
-To verify, from the repository root after `uv sync --frozen`:
+## Reproduce the published campaign
+
+Start in a separate checkout of `hormathos-v5-evidence` (commit `9814871`) and install the locked environment:
 
 ```bash
-shasum -a 256 hormathos-campaign-v3006.tar.gz
-tar -xzf hormathos-campaign-v3006.tar.gz -C results/hexis31
-uv run python -c "from hormathos.pipeline import scientific_run as s; print(len(s.validate_run('results/hexis31/v3-seed0-v3006')['artifacts']))"   # 931
+git clone https://github.com/leonardotornabene/HORMATHOS.git hormathos-v5
+cd hormathos-v5
+git switch --detach hormathos-v5-evidence
+uv sync --frozen --python 3.12.13
 ```
 
-`validate_run` checks every artifact against the manifest and the command exits with an error if validation fails. Use this command in automation. The V5 log uses the historical diagnostic script [report_checks.py](hexis31/v5-logs/report_checks.py).
+### Verify the release files
 
-Extracted files that the repository does not track stay ignored by Git.
+Save `hormathos-campaign-v3006.tar.gz` from the [release](https://github.com/leonardotornabene/HORMATHOS/releases/tag/hormathos-v5-evidence) in the parent directory of the checkout. Run these commands from the checkout root:
+
+```bash
+archive=../hormathos-campaign-v3006.tar.gz
+digest=3dadf6cecc303281897995b84c479721ce56e304859456f18dd9abb0164bec10
+printf '%s  %s\n' "$digest" "$archive" | shasum -a 256 -c - &&
+  mkdir -p results/hexis31 &&
+  tar -xzf "$archive" -C results/hexis31
+```
+
+Then validate the three extracted directories:
+
+```bash
+uv run --no-sync python - <<'PYTHON'
+from pathlib import Path
+
+from hormathos.pipeline import corpus_run, scientific_run
+
+runs = Path("results/hexis31")
+for name, validate in (
+    ("v1", corpus_run.validate_run),
+    ("v3-seed0-v3006", scientific_run.validate_run),
+    ("v3-seed0-v3006-regeneration", scientific_run.validate_run),
+):
+    print(name, len(validate(runs / name)["artifacts"]))
+PYTHON
+```
+
+The expected counts are 9 corpus artifacts, 931 campaign artifacts and 73 regeneration artifacts. This checks the saved files against their manifests. The published regeneration covers seed 0 and includes 70 artifacts compared with the campaign. Use `validate_run` in automation to get an error exit status when a validation fails. The V5 log also lists the historical diagnostic [report_checks.py](hexis31/v5-logs/report_checks.py).
+
+### Rerun the experiment
+
+From the same clean checkout, [fetch the three pinned Greek CoNLL-U files](../data/README.md#getting-the-corpus) into `data/raw/UD_Ancient_Greek-Perseus`. The V2 acceptance tests read them even when the campaign uses the encoded corpus from the archive. Use the same corpus directory for both new runs and keep its contents stable throughout validation, fitting and report generation.
+
+The commands below use the extracted `results/hexis31/v1`. To rebuild V1 first, run `hormathos.pipeline.run_audit` and then `hormathos.pipeline.run_encode` with `--config config/default.yaml`, `--data-root data/raw/UD_Ancient_Greek-Perseus` and the same new `--output-dir`. Set `corpus` below to that directory.
+
+Choose two unused output directories. The release campaign already contains its final report and is closed. Use `--resume` to extend your own validated seed-0 run.
+
+```bash
+(
+  set -eu
+
+  config=config/default.yaml
+  corpus=results/hexis31/v1
+  campaign=results/hexis31/reproduction-v5
+  regeneration=results/hexis31/reproduction-v5-seed0
+
+  for output in "$campaign" "$regeneration"; do
+    uv run --no-sync python -m hormathos.pipeline.run_tree_validation \
+      --config "$config" --corpus-dir "$corpus" --output-dir "$output"
+    uv run --no-sync python -m hormathos.pipeline.run_descriptive \
+      --config "$config" --corpus-dir "$corpus" --output-dir "$output" --cell all --seed 0
+  done
+
+  uv run --no-sync python -m hormathos.pipeline.run_descriptive \
+    --config "$config" --corpus-dir "$corpus" --output-dir "$campaign" --cell all --resume
+  uv run --no-sync python -m hormathos.pipeline.run_report \
+    --config "$config" --corpus-dir "$corpus" --output-dir "$campaign" \
+    --regenerated-dir "$regeneration"
+)
+```
+
+The report checks the independent seed-0 run under the deposited comparison rules. Keys and counts must match exactly. The tolerance for a loss sum is `n × 10⁻⁸` bits for `n` eligible targets. See [the campaign handoff](../docs/HANDOFF.md#campaign-v4-and-report-v5--24-and-25-september-2026) for the original execution record.
 
 ## Licence
 

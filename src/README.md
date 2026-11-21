@@ -35,6 +35,8 @@ The exact commands of the final campaign are in the logs under [`results/hexis31
 
 [`docs/RESULTS.md`](../docs/RESULTS.md#the-question-and-the-measurement) defines every term used here. To read the code, start with `model/context_tree.py`, then `protocols/scores.py`, then `pipeline/run_descriptive.py`. Most modules open with a docstring naming the section of the plan they implement.
 
+When using the published CTW API directly, discard the instance if `CTW.fit()` raises. A failed fit can leave partial counts in that instance. Correct the input and retry from the beginning with a new `CTW`. For the published experiment, follow the [CLI reproduction procedure](../results/README.md#reproduce-the-published-campaign), which uses the deposited configuration and generates the samples and shuffles internally.
+
 ## Why the code must not change
 
 Every run records a hash of each `.py` file in `src/hormathos/`, together with the tests, the configuration and the locked dependencies. A published run can be resumed or reported only by the same code. Any change to these files would require a new run in a new folder, and no further run is authorized. The code that produced the published evidence is also fixed by the Git tag `hormathos-v5-evidence`.
