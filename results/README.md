@@ -54,7 +54,9 @@ tar -xzf hormathos-campaign-v3006.tar.gz -C results/hexis31
 uv run python -c "from hormathos.pipeline import scientific_run as s; print(len(s.validate_run('results/hexis31/v3-seed0-v3006')['artifacts']))"   # 931
 ```
 
-`validate_run` checks every artifact against the manifest. Extracted files that the repository does not track stay ignored by Git.
+`validate_run` checks every artifact against the manifest and the command exits with an error if validation fails. Use this command in automation. The V5 log uses the historical diagnostic script [report_checks.py](hexis31/v5-logs/report_checks.py).
+
+Extracted files that the repository does not track stay ignored by Git.
 
 ## Licence
 

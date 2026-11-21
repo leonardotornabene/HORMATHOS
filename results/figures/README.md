@@ -1,6 +1,6 @@
 # HORMATHOS figures
 
-The figures of the study, one panel per image, full width, each with a short explanation beside it. Every panel draws values of the published table named in its footer and nothing else. The [statement of results](../../docs/RESULTS.md) gives every number with its table and its limits; the terms used here are defined there too, in [The question and the measurement](../../docs/RESULTS.md#the-question-and-the-measurement).
+The figures of the study, one panel per image, full width, each with a short explanation beside it. The panels draw on published campaign and corpus tables. The [statement of results](../../docs/RESULTS.md) gives every number with its table and its limits; the terms used here are defined there too, in [The question and the measurement](../../docs/RESULTS.md#the-question-and-the-measurement).
 
 ## What is being measured
 
@@ -28,7 +28,7 @@ These panels are a presentation. The canonical figures are the five produced by 
 
 ![Share of source tokens kept per document](corpus__retention.svg)
 
-**What it shows:** the share of each document's tokens that the encoding keeps. **How to read it:** the encoding removes punctuation and a few other word classes, and words whose syntactic relation is not one of the 23 kept; the rest stays. **What to take from it:** every scored document keeps between 85% and 90% of its tokens, so no document is shaped by much heavier removals than the others.
+**What it shows:** the share of each document's tokens that the encoding keeps. **How to read it:** the encoding removes punctuation and a few other word classes, and words whose syntactic relation is not one of the 23 kept; the rest stays. **What to take from it:** the share of tokens kept ranges from about 85.44% to 90.43% across scored documents, so no document is shaped by much heavier removals than the others.
 
 ![Share of source tokens tagged particle and adverb, per document](corpus__part_adv.svg)
 
@@ -36,7 +36,7 @@ These panels are a presentation. The canonical figures are the five produced by 
 
 ## 2. Order advantage per block and per document
 
-The main result: Q for each block and each document in the main setting.
+These six profiles use the main setting. The points for individual seeds come from [block_pairs.csv](../hexis31/v3-seed0-v3006/block_pairs.csv) for blocks and [document_scores.csv](../hexis31/v3-seed0-v3006/document_scores.csv) for documents. The means and seed ranges for both levels come from [seed_summaries.csv](../hexis31/v3-seed0-v3006/seed_summaries.csv).
 
 ![Order advantage Q per block, main setting: both hexameter blocks below every prose block](profiles__q_block.svg)
 
@@ -56,11 +56,11 @@ The two gains of which Q is the difference:
 
 **What it shows:** the same gain for each document.
 
-![Gain after shuffling per block, main setting, in units of 10^-16 bits](profiles__g_shuffled_block.svg)
+![Gain after shuffling per block, main setting, in units of 10^-16 bits per target](profiles__g_shuffled_block.svg)
 
-**What it shows:** the gain when the symbols of each sentence are shuffled. **How to read it:** the axis is in units of 10⁻¹⁶ bits, a millionth of a billionth. **What to take from it:** once the order is destroyed the trained model does no better than symbol frequencies; values this small are at the level of the computer's rounding error.
+**What it shows:** the gain when the symbols of each sentence are shuffled. **How to read it:** the axis is in units of 10⁻¹⁶ bits per target. **What to take from it:** once the order is destroyed the trained model does no better than symbol frequencies; values this small are at the level of the computer's rounding error.
 
-![Gain after shuffling per document, main setting, in units of 10^-16 bits](profiles__g_shuffled_document.svg)
+![Gain after shuffling per document, main setting, in units of 10^-16 bits per target](profiles__g_shuffled_document.svg)
 
 **What it shows:** the same for each document.
 
@@ -91,6 +91,49 @@ These panels do not use the models. They compare how often each symbol occurs in
 ![Jensen–Shannon divergence between every pair of blocks, part of speech + relation](r1__matrix_ud23.svg)
 
 **What it shows:** for each pair of blocks, how different their symbol frequencies are, measured by the Jensen–Shannon divergence: 0 if identical, at most 1 bit. **How to read it:** darker cells are more different pairs. **What to take from it:** the two hexameter blocks are close to each other, the prose blocks are close to each other, and every hexameter–prose pair is further apart. The frequencies alone already differ between the two groups; this neither explains nor confirms the order advantage Q, which concerns order, not frequency.
+
+<details>
+<summary>Full 7 × 7 matrices for all three annotation schemes</summary>
+
+Each table gives the divergence between complete block distributions in bits. The matrices are symmetric and the diagonal is zero. The [published CSV](../hexis31/v3-seed0-v3006/jsd_pairs.csv) contains the 21 distinct pairs for each annotation scheme at full precision. Values below are rounded to six decimals.
+
+### Part of speech + relation
+
+| Block | Hesiodic tradition | Homeric tradition | Athenaeus | Diodorus | Herodotus | Plutarch | Thucydides |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Hesiodic tradition | 0 | 0.019219 | 0.122103 | 0.159383 | 0.129018 | 0.143105 | 0.133590 |
+| Homeric tradition | 0.019219 | 0 | 0.109465 | 0.148153 | 0.105706 | 0.126905 | 0.113307 |
+| Athenaeus | 0.122103 | 0.109465 | 0 | 0.020419 | 0.008898 | 0.012499 | 0.011728 |
+| Diodorus | 0.159383 | 0.148153 | 0.020419 | 0 | 0.031830 | 0.019680 | 0.026261 |
+| Herodotus | 0.129018 | 0.105706 | 0.008898 | 0.031830 | 0 | 0.012127 | 0.010295 |
+| Plutarch | 0.143105 | 0.126905 | 0.012499 | 0.019680 | 0.012127 | 0 | 0.009704 |
+| Thucydides | 0.133590 | 0.113307 | 0.011728 | 0.026261 | 0.010295 | 0.009704 | 0 |
+
+### Other relations kept
+
+| Block | Hesiodic tradition | Homeric tradition | Athenaeus | Diodorus | Herodotus | Plutarch | Thucydides |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Hesiodic tradition | 0 | 0.019727 | 0.121955 | 0.160368 | 0.129026 | 0.143201 | 0.133860 |
+| Homeric tradition | 0.019727 | 0 | 0.109125 | 0.150556 | 0.105875 | 0.127931 | 0.114601 |
+| Athenaeus | 0.121955 | 0.109125 | 0 | 0.022237 | 0.009087 | 0.013178 | 0.012546 |
+| Diodorus | 0.160368 | 0.150556 | 0.022237 | 0 | 0.033030 | 0.020078 | 0.026569 |
+| Herodotus | 0.129026 | 0.105875 | 0.009087 | 0.033030 | 0 | 0.012491 | 0.010672 |
+| Plutarch | 0.143201 | 0.127931 | 0.013178 | 0.020078 | 0.012491 | 0 | 0.009738 |
+| Thucydides | 0.133860 | 0.114601 | 0.012546 | 0.026569 | 0.010672 | 0.009738 | 0 |
+
+### Part of speech only
+
+| Block | Hesiodic tradition | Homeric tradition | Athenaeus | Diodorus | Herodotus | Plutarch | Thucydides |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Hesiodic tradition | 0 | 0.006041 | 0.071131 | 0.105904 | 0.073721 | 0.079803 | 0.073182 |
+| Homeric tradition | 0.006041 | 0 | 0.068845 | 0.109659 | 0.065179 | 0.075758 | 0.065728 |
+| Athenaeus | 0.071131 | 0.068845 | 0 | 0.011264 | 0.004768 | 0.004465 | 0.004326 |
+| Diodorus | 0.105904 | 0.109659 | 0.011264 | 0 | 0.022657 | 0.011243 | 0.017228 |
+| Herodotus | 0.073721 | 0.065179 | 0.004768 | 0.022657 | 0 | 0.004722 | 0.003507 |
+| Plutarch | 0.079803 | 0.075758 | 0.004465 | 0.011243 | 0.004722 | 0 | 0.003873 |
+| Thucydides | 0.073182 | 0.065728 | 0.004326 | 0.017228 | 0.003507 | 0.003873 | 0 |
+
+</details>
 
 ![Jensen–Shannon divergence between hexameter and prose, in the three annotation schemes](r1__centroids.svg)
 

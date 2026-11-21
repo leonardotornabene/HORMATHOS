@@ -257,8 +257,10 @@ def profiles(tables, documents, groups):
     panels = {}
     for metric, (title, meaning, scale, fmt, unit_label) in metrics.items():
         for level, (frame, units, labels, unit_groups, context) in levels.items():
+            point_source = 'block_pairs.csv' if level == 'block' else 'document_scores.csv'
             figure, axis = canvas(f'{title} per {level}, main setting', f'{meaning} {context}\n{MARKS}',
-                                  'results/hexis31/v3-seed0-v3006/seed_summaries.csv',
+                                  'results/hexis31/v3-seed0-v3006/'
+                                  f'{point_source} and seed_summaries.csv',
                                   1.3 + (0.42 if level == 'block' else 0.36) * len(units))
             rows = summary[summary['level'].eq(level) & summary['metric'].eq(metric)].set_index('unit')
             for y, (unit, group) in enumerate(zip(units, unit_groups)):
