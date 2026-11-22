@@ -91,9 +91,9 @@ The expected counts are 9 corpus artifacts, 931 campaign artifacts and 73 regene
 
 ### Rerun the experiment
 
-From the same clean checkout, [fetch the three pinned Greek CoNLL-U files](../data/README.md#getting-the-corpus) into `data/raw/UD_Ancient_Greek-Perseus`. The V2 acceptance tests read them even when the campaign uses the encoded corpus from the archive. Use the same corpus directory for both new runs and keep its contents stable throughout validation, fitting and report generation.
+From the same clean checkout, [fetch the three pinned Greek CoNLL-U files](../data/README.md#getting-the-corpus) into `data/raw/UD_Ancient_Greek-Perseus`. The V2 acceptance tests read them even when the campaign uses the encoded corpus from the archive. Use one encoded corpus directory for both new runs. Keep it read-only during validation, fitting and report generation, and let only one process write to each output directory. The report reads `audit_contingency.csv` again when it draws the corpus figure, so that file must remain stable too.
 
-The commands below use the extracted `results/hexis31/v1`. To rebuild V1 first, run `hormathos.pipeline.run_audit` and then `hormathos.pipeline.run_encode` with `--config config/default.yaml`, `--data-root data/raw/UD_Ancient_Greek-Perseus` and the same new `--output-dir`. Set `corpus` below to that directory.
+The commands below use `results/hexis31/v1`. The acceptance suite reads V1 at that path from the checkout root. To rebuild V1 in a clean checkout without extracting the archive, run `hormathos.pipeline.run_audit` and then `hormathos.pipeline.run_encode` with `--config config/default.yaml`, `--data-root data/raw/UD_Ancient_Greek-Perseus` and `--output-dir results/hexis31/v1`.
 
 Choose two unused output directories. The release campaign already contains its final report and is closed. Use `--resume` to extend your own validated seed-0 run.
 
@@ -115,13 +115,38 @@ Choose two unused output directories. The release campaign already contains its 
 
   uv run --no-sync python -m hormathos.pipeline.run_descriptive \
     --config "$config" --corpus-dir "$corpus" --output-dir "$campaign" --cell all --resume
+  uv run --no-sync python - "$campaign" "$regeneration" <<'PYTHON'
+import json
+from pathlib import Path
+import sys
+
+campaign, regeneration = map(Path, sys.argv[1:])
+expected = {path.name for path in campaign.glob("pair__*__s0.json")}
+actual = {path.name for path in regeneration.glob("pair__*__s0.json")}
+if len(expected) != 42 or actual != expected:
+    raise SystemExit("Expected the same 42 seed-0 pair records in both runs.")
+
+mismatches = []
+for name in sorted(expected):
+    original = json.loads((campaign / name).read_bytes())
+    regenerated = json.loads((regeneration / name).read_bytes())
+    for arm in ("original", "shuffled"):
+        left = original["models"][arm]["fingerprint"]
+        right = regenerated["models"][arm]["fingerprint"]
+        if left != right:
+            mismatches.append(f"{name} ({arm}): {left} != {right}")
+if mismatches:
+    raise SystemExit("Assess these model fingerprint differences before acceptance.\n"
+                     + "\n".join(mismatches))
+print("All 84 seed-0 model fingerprints match.")
+PYTHON
   uv run --no-sync python -m hormathos.pipeline.run_report \
     --config "$config" --corpus-dir "$corpus" --output-dir "$campaign" \
     --regenerated-dir "$regeneration"
 )
 ```
 
-The report checks the independent seed-0 run under the deposited comparison rules. Keys and counts must match exactly. The tolerance for a loss sum is `n × 10⁻⁸` bits for `n` eligible targets. See [the campaign handoff](../docs/HANDOFF.md#campaign-v4-and-report-v5--24-and-25-september-2026) for the original execution record.
+The fingerprint check before `run_report` implements the review step required by [V3-005(d)](../docs/02_DECISION_LOG.md#v3-005--closure-of-the-v3-review-and-re-attestation-of-v2-and-seed-0-2026-09-24). If any fingerprint differs, assess the listed differences before accepting the regeneration. The report then checks the independent seed-0 run under the deposited comparison rules. Keys and counts must match exactly. The tolerance for a loss sum is `n × 10⁻⁸` bits for `n` eligible targets. See [the campaign handoff](../docs/HANDOFF.md#campaign-v4-and-report-v5--24-and-25-september-2026) for the original execution record.
 
 ## Licence
 
